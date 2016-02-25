@@ -136,7 +136,8 @@ The following example demonstrates how to create a GraphFrame from vertex and ed
   <span class="o">(</span><span class="s">&quot;c&quot;</span><span class="o">,</span> <span class="s">&quot;Charlie&quot;</span><span class="o">,</span> <span class="mi">30</span><span class="o">),</span>
   <span class="o">(</span><span class="s">&quot;d&quot;</span><span class="o">,</span> <span class="s">&quot;David&quot;</span><span class="o">,</span> <span class="mi">29</span><span class="o">),</span>
   <span class="o">(</span><span class="s">&quot;e&quot;</span><span class="o">,</span> <span class="s">&quot;Esther&quot;</span><span class="o">,</span> <span class="mi">32</span><span class="o">),</span>
-  <span class="o">(</span><span class="s">&quot;f&quot;</span><span class="o">,</span> <span class="s">&quot;Fanny&quot;</span><span class="o">,</span> <span class="mi">36</span><span class="o">)</span>
+  <span class="o">(</span><span class="s">&quot;f&quot;</span><span class="o">,</span> <span class="s">&quot;Fanny&quot;</span><span class="o">,</span> <span class="mi">36</span><span class="o">),</span>
+  <span class="o">(</span><span class="s">&quot;g&quot;</span><span class="o">,</span> <span class="s">&quot;Gabby&quot;</span><span class="o">,</span> <span class="mi">60</span><span class="o">)</span>
 <span class="o">)).</span><span class="n">toDF</span><span class="o">(</span><span class="s">&quot;id&quot;</span><span class="o">,</span> <span class="s">&quot;name&quot;</span><span class="o">,</span> <span class="s">&quot;age&quot;</span><span class="o">)</span>
 <span class="c1">// Edge DataFrame</span>
 <span class="k">val</span> <span class="n">e</span> <span class="k">=</span> <span class="n">sqlContext</span><span class="o">.</span><span class="n">createDataFrame</span><span class="o">(</span><span class="nc">List</span><span class="o">(</span>
@@ -168,7 +169,8 @@ The following example demonstrates how to create a GraphFrame from vertex and ed
   <span class="p">(</span><span class="s">&quot;c&quot;</span><span class="p">,</span> <span class="s">&quot;Charlie&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span>
   <span class="p">(</span><span class="s">&quot;d&quot;</span><span class="p">,</span> <span class="s">&quot;David&quot;</span><span class="p">,</span> <span class="mi">29</span><span class="p">),</span>
   <span class="p">(</span><span class="s">&quot;e&quot;</span><span class="p">,</span> <span class="s">&quot;Esther&quot;</span><span class="p">,</span> <span class="mi">32</span><span class="p">),</span>
-  <span class="p">(</span><span class="s">&quot;f&quot;</span><span class="p">,</span> <span class="s">&quot;Fanny&quot;</span><span class="p">,</span> <span class="mi">36</span><span class="p">)</span>
+  <span class="p">(</span><span class="s">&quot;f&quot;</span><span class="p">,</span> <span class="s">&quot;Fanny&quot;</span><span class="p">,</span> <span class="mi">36</span><span class="p">),</span>
+  <span class="p">(</span><span class="s">&quot;g&quot;</span><span class="p">,</span> <span class="s">&quot;Gabby&quot;</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
 <span class="p">],</span> <span class="p">[</span><span class="s">&quot;id&quot;</span><span class="p">,</span> <span class="s">&quot;name&quot;</span><span class="p">,</span> <span class="s">&quot;age&quot;</span><span class="p">])</span>
 <span class="c"># Edge DataFrame</span>
 <span class="n">e</span> <span class="o">=</span> <span class="n">sqlContext</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">([</span>
@@ -178,7 +180,8 @@ The following example demonstrates how to create a GraphFrame from vertex and ed
   <span class="p">(</span><span class="s">&quot;f&quot;</span><span class="p">,</span> <span class="s">&quot;c&quot;</span><span class="p">,</span> <span class="s">&quot;follow&quot;</span><span class="p">),</span>
   <span class="p">(</span><span class="s">&quot;e&quot;</span><span class="p">,</span> <span class="s">&quot;f&quot;</span><span class="p">,</span> <span class="s">&quot;follow&quot;</span><span class="p">),</span>
   <span class="p">(</span><span class="s">&quot;e&quot;</span><span class="p">,</span> <span class="s">&quot;d&quot;</span><span class="p">,</span> <span class="s">&quot;friend&quot;</span><span class="p">),</span>
-  <span class="p">(</span><span class="s">&quot;d&quot;</span><span class="p">,</span> <span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="s">&quot;friend&quot;</span><span class="p">)</span>
+  <span class="p">(</span><span class="s">&quot;d&quot;</span><span class="p">,</span> <span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="s">&quot;friend&quot;</span><span class="p">),</span>
+  <span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="s">&quot;e&quot;</span><span class="p">,</span> <span class="s">&quot;friend&quot;</span><span class="p">)</span>
 <span class="p">],</span> <span class="p">[</span><span class="s">&quot;src&quot;</span><span class="p">,</span> <span class="s">&quot;dst&quot;</span><span class="p">,</span> <span class="s">&quot;relationship&quot;</span><span class="p">])</span>
 <span class="c"># Create a GraphFrame</span>
 <span class="n">g</span> <span class="o">=</span> <span class="n">GraphFrame</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span></code></pre></figure>
@@ -218,6 +221,7 @@ as <code>vertices</code> and <code>edges</code> fields in the GraphFrame.</p>
 <span class="c1">// | d|  David| 29|</span>
 <span class="c1">// | e| Esther| 32|</span>
 <span class="c1">// | f|  Fanny| 36|</span>
+<span class="c1">// | g|  Gabby| 60|</span>
 <span class="c1">// +--+-------+---+</span>
 
 <span class="n">g</span><span class="o">.</span><span class="n">edges</span><span class="o">.</span><span class="n">show</span><span class="o">()</span>
@@ -231,6 +235,7 @@ as <code>vertices</code> and <code>edges</code> fields in the GraphFrame.</p>
 <span class="c1">// |  e|  f|      follow|</span>
 <span class="c1">// |  e|  d|      friend|</span>
 <span class="c1">// |  d|  a|      friend|</span>
+<span class="c1">// |  a|  e|      friend|</span>
 <span class="c1">// +---+---+------------+</span>
 
 <span class="c1">// Get a DataFrame with columns &quot;id&quot; and &quot;inDeg&quot; (in-degree)</span>
@@ -279,8 +284,8 @@ as <code>vertices</code> and <code>edges</code> fields in the GraphFrame.</p>
 <span class="c"># |  a|  e|      friend|</span>
 <span class="c"># +---+---+------------+</span>
 
-<span class="c"># Get a DataFrame with columns &quot;id&quot; and &quot;inDeg&quot; (in-degree)</span>
-<span class="n">vertexInDegrees</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">inDegrees</span><span class="p">()</span>
+<span class="c"># Get a DataFrame with columns &quot;id&quot; and &quot;inDegree&quot; (in-degree)</span>
+<span class="n">vertexInDegrees</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">inDegrees</span>
 
 <span class="c"># Find the youngest user&#39;s age in the graph.</span>
 <span class="c"># This queries the vertex DataFrame.</span>
@@ -568,11 +573,11 @@ The following code snippets search for people connected to the user "Bob."
 <span class="k">val</span> <span class="n">g</span><span class="k">:</span> <span class="kt">GraphFrame</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="nc">Graphs</span><span class="o">.</span><span class="n">friends</span>  <span class="c1">// get example graph</span>
 
 <span class="c1">// Search from &quot;Esther&quot; for users of age &lt;= 32.</span>
-<span class="k">val</span> <span class="n">paths</span><span class="k">:</span> <span class="kt">DataFrame</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">bfs</span><span class="o">(</span><span class="s">&quot;name = &#39;Esther&#39;&quot;</span><span class="o">,</span> <span class="s">&quot;age &lt; 32&quot;</span><span class="o">).</span><span class="n">run</span><span class="o">()</span>
+<span class="k">val</span> <span class="n">paths</span><span class="k">:</span> <span class="kt">DataFrame</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">bfs</span><span class="o">.</span><span class="n">fromExpr</span><span class="o">(</span><span class="s">&quot;name = &#39;Esther&#39;&quot;</span><span class="o">).</span><span class="n">toExpr</span><span class="o">(</span><span class="s">&quot;age &lt; 32&quot;</span><span class="o">).</span><span class="n">run</span><span class="o">()</span>
 <span class="n">paths</span><span class="o">.</span><span class="n">show</span><span class="o">()</span>
 
 <span class="c1">// Specify edge filters or max path lengths.</span>
-<span class="n">g</span><span class="o">.</span><span class="n">bfs</span><span class="o">(</span><span class="s">&quot;name = &#39;Esther&#39;&quot;</span><span class="o">,</span> <span class="s">&quot;age &lt; 32&quot;</span><span class="o">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">bfs</span><span class="o">.</span><span class="n">fromExpr</span><span class="o">(</span><span class="s">&quot;name = &#39;Esther&#39;&quot;</span><span class="o">).</span><span class="n">toExpr</span><span class="o">(</span><span class="s">&quot;age &lt; 32&quot;</span><span class="o">)</span>
   <span class="o">.</span><span class="n">edgeFilter</span><span class="o">(</span><span class="s">&quot;relationship != &#39;friend&#39;&quot;</span><span class="o">)</span>
   <span class="o">.</span><span class="n">maxPathLength</span><span class="o">(</span><span class="mi">3</span><span class="o">)</span>
   <span class="o">.</span><span class="n">run</span><span class="o">()</span></code></pre></figure>
@@ -649,7 +654,7 @@ assigned to the SCC containing that vertex.</p>
     <figure class="highlight"><pre><code class="language-scala" data-lang="scala"><span class="k">import</span> <span class="nn">org.graphframes.examples</span>
 <span class="k">val</span> <span class="n">g</span><span class="k">:</span> <span class="kt">GraphFrame</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="nc">Graphs</span><span class="o">.</span><span class="n">friends</span>  <span class="c1">// get example graph</span>
 
-<span class="k">val</span> <span class="n">result</span> <span class="k">=</span> <span class="n">g</span><span class="o">.</span><span class="n">stronglyConnectedComponents</span><span class="o">.</span><span class="n">numIter</span><span class="o">(</span><span class="mi">10</span><span class="o">).</span><span class="n">run</span><span class="o">()</span>
+<span class="k">val</span> <span class="n">result</span> <span class="k">=</span> <span class="n">g</span><span class="o">.</span><span class="n">stronglyConnectedComponents</span><span class="o">.</span><span class="n">maxIter</span><span class="o">(</span><span class="mi">10</span><span class="o">).</span><span class="n">run</span><span class="o">()</span>
 <span class="n">result</span><span class="o">.</span><span class="n">vertices</span><span class="o">.</span><span class="n">select</span><span class="o">(</span><span class="s">&quot;id&quot;</span><span class="o">,</span> <span class="s">&quot;component&quot;</span><span class="o">).</span><span class="n">orderBy</span><span class="o">(</span><span class="s">&quot;component&quot;</span><span class="o">).</span><span class="n">show</span><span class="o">()</span></code></pre></figure>
 
   </div>
@@ -661,7 +666,7 @@ assigned to the SCC containing that vertex.</p>
     <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">graphframes.examples</span> <span class="kn">import</span> <span class="n">Graphs</span>
 <span class="n">g</span> <span class="o">=</span> <span class="n">Graphs</span><span class="p">(</span><span class="n">sqlContext</span><span class="p">)</span><span class="o">.</span><span class="n">friends</span><span class="p">()</span>  <span class="c"># Get example graph</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">stronglyConnectedComponents</span><span class="p">(</span><span class="n">numIter</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">stronglyConnectedComponents</span><span class="p">(</span><span class="n">maxIter</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">result</span><span class="o">.</span><span class="n">vertices</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s">&quot;id&quot;</span><span class="p">,</span> <span class="s">&quot;component&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">orderBy</span><span class="p">(</span><span class="s">&quot;component&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></code></pre></figure>
 
   </div>
@@ -691,7 +696,7 @@ trivial solutions (all nodes are identified into a single community).</p>
     <figure class="highlight"><pre><code class="language-scala" data-lang="scala"><span class="k">import</span> <span class="nn">org.graphframes.examples</span>
 <span class="k">val</span> <span class="n">g</span><span class="k">:</span> <span class="kt">GraphFrame</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="nc">Graphs</span><span class="o">.</span><span class="n">friends</span>  <span class="c1">// get example graph</span>
 
-<span class="k">val</span> <span class="n">result</span> <span class="k">=</span> <span class="n">g</span><span class="o">.</span><span class="n">labelPropagation</span><span class="o">.</span><span class="n">maxSteps</span><span class="o">(</span><span class="mi">5</span><span class="o">).</span><span class="n">run</span><span class="o">()</span>
+<span class="k">val</span> <span class="n">result</span> <span class="k">=</span> <span class="n">g</span><span class="o">.</span><span class="n">labelPropagation</span><span class="o">.</span><span class="n">maxIter</span><span class="o">(</span><span class="mi">5</span><span class="o">).</span><span class="n">run</span><span class="o">()</span>
 <span class="n">result</span><span class="o">.</span><span class="n">vertices</span><span class="o">.</span><span class="n">select</span><span class="o">(</span><span class="s">&quot;id&quot;</span><span class="o">,</span> <span class="s">&quot;label&quot;</span><span class="o">).</span><span class="n">show</span><span class="o">()</span></code></pre></figure>
 
   </div>
@@ -703,7 +708,7 @@ trivial solutions (all nodes are identified into a single community).</p>
     <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">graphframes.examples</span> <span class="kn">import</span> <span class="n">Graphs</span>
 <span class="n">g</span> <span class="o">=</span> <span class="n">Graphs</span><span class="p">(</span><span class="n">sqlContext</span><span class="p">)</span><span class="o">.</span><span class="n">friends</span><span class="p">()</span>  <span class="c"># Get example graph</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">labelPropagation</span><span class="p">(</span><span class="n">maxSteps</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">labelPropagation</span><span class="p">(</span><span class="n">maxIter</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 <span class="n">result</span><span class="o">.</span><span class="n">vertices</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s">&quot;id&quot;</span><span class="p">,</span> <span class="s">&quot;label&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></code></pre></figure>
 
   </div>
@@ -716,7 +721,7 @@ trivial solutions (all nodes are identified into a single community).</p>
 
 <ul>
   <li>The first implementation uses the standalone [[GraphFrame]] interface and runs PageRank
- for a fixed number of iterations.  This can be run by setting <code>numIter</code>.</li>
+ for a fixed number of iterations.  This can be run by setting <code>maxIter</code>.</li>
   <li>The second implementation uses the <code>org.apache.spark.graphx.Pregel</code> interface and runs PageRank
 until convergence.  This can be run by setting <code>tol</code>.</li>
 </ul>
@@ -744,10 +749,10 @@ personalizes the results for that vertex.</p>
 <span class="n">results</span><span class="o">.</span><span class="n">edges</span><span class="o">.</span><span class="n">select</span><span class="o">(</span><span class="s">&quot;src&quot;</span><span class="o">,</span> <span class="s">&quot;dst&quot;</span><span class="o">,</span> <span class="s">&quot;weight&quot;</span><span class="o">).</span><span class="n">show</span><span class="o">()</span>
 
 <span class="c1">// Run PageRank for a fixed number of iterations.</span>
-<span class="k">val</span> <span class="n">results2</span> <span class="k">=</span> <span class="n">g</span><span class="o">.</span><span class="n">pageRank</span><span class="o">.</span><span class="n">resetProbability</span><span class="o">(</span><span class="mf">0.15</span><span class="o">).</span><span class="n">numIter</span><span class="o">(</span><span class="mi">10</span><span class="o">).</span><span class="n">run</span><span class="o">()</span>
+<span class="k">val</span> <span class="n">results2</span> <span class="k">=</span> <span class="n">g</span><span class="o">.</span><span class="n">pageRank</span><span class="o">.</span><span class="n">resetProbability</span><span class="o">(</span><span class="mf">0.15</span><span class="o">).</span><span class="n">maxIter</span><span class="o">(</span><span class="mi">10</span><span class="o">).</span><span class="n">run</span><span class="o">()</span>
 
 <span class="c1">// Run PageRank personalized for vertex &quot;a&quot;</span>
-<span class="k">val</span> <span class="n">results3</span> <span class="k">=</span> <span class="n">g</span><span class="o">.</span><span class="n">pageRank</span><span class="o">.</span><span class="n">resetProbability</span><span class="o">(</span><span class="mf">0.15</span><span class="o">).</span><span class="n">numIter</span><span class="o">(</span><span class="mi">10</span><span class="o">).</span><span class="n">sourceId</span><span class="o">(</span><span class="s">&quot;a&quot;</span><span class="o">).</span><span class="n">run</span><span class="o">()</span></code></pre></figure>
+<span class="k">val</span> <span class="n">results3</span> <span class="k">=</span> <span class="n">g</span><span class="o">.</span><span class="n">pageRank</span><span class="o">.</span><span class="n">resetProbability</span><span class="o">(</span><span class="mf">0.15</span><span class="o">).</span><span class="n">maxIter</span><span class="o">(</span><span class="mi">10</span><span class="o">).</span><span class="n">sourceId</span><span class="o">(</span><span class="s">&quot;a&quot;</span><span class="o">).</span><span class="n">run</span><span class="o">()</span></code></pre></figure>
 
   </div>
 
@@ -767,10 +772,10 @@ personalizes the results for that vertex.</p>
 <span class="n">results</span><span class="o">.</span><span class="n">edges</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s">&quot;src&quot;</span><span class="p">,</span> <span class="s">&quot;dst&quot;</span><span class="p">,</span> <span class="s">&quot;weight&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
 <span class="c"># Run PageRank for a fixed number of iterations.</span>
-<span class="n">results2</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">pageRank</span><span class="p">(</span><span class="n">resetProbability</span><span class="o">=</span><span class="mf">0.15</span><span class="p">,</span> <span class="n">numIter</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">results2</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">pageRank</span><span class="p">(</span><span class="n">resetProbability</span><span class="o">=</span><span class="mf">0.15</span><span class="p">,</span> <span class="n">maxIter</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 
 <span class="c"># Run PageRank personalized for vertex &quot;a&quot;</span>
-<span class="n">results3</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">pageRank</span><span class="p">(</span><span class="n">resetProbability</span><span class="o">=</span><span class="mf">0.15</span><span class="p">,</span> <span class="n">numIter</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">sourceId</span><span class="o">=</span><span class="s">&quot;a&quot;</span><span class="p">)</span></code></pre></figure>
+<span class="n">results3</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">pageRank</span><span class="p">(</span><span class="n">resetProbability</span><span class="o">=</span><span class="mf">0.15</span><span class="p">,</span> <span class="n">maxIter</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">sourceId</span><span class="o">=</span><span class="s">&quot;a&quot;</span><span class="p">)</span></code></pre></figure>
 
   </div>
 

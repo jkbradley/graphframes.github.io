@@ -8,9 +8,9 @@
     
     <title>graphframes package &mdash; pygraphframes 0.1.0 documentation</title>
     
-    <link rel="stylesheet" href="static/nature.css" type="text/css" />
-    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="static/pygraphframes.css" type="text/css" />
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygraphframes.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
@@ -21,10 +21,10 @@
         HAS_SOURCE:  true
       };
     </script>
-    <script type="text/javascript" src="static/jquery.js"></script>
-    <script type="text/javascript" src="static/underscore.js"></script>
-    <script type="text/javascript" src="static/doctools.js"></script>
-    <script type="text/javascript" src="static/pygraphframes.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/pygraphframes.js"></script>
     <link rel="top" title="pygraphframes 0.1.0 documentation" href="index.html" />
     <link rel="next" title="graphframes.examples package" href="graphframes.examples.html" />
     <link rel="prev" title="Welcome to the GraphFrames Python API docs!" href="index.html" /> 
@@ -196,14 +196,14 @@ respectively.</p>
 
 <dl class="method">
 <dt id="graphframes.GraphFrame.labelPropagation">
-<tt class="descname">labelPropagation</tt><big>(</big><em>maxSteps</em><big>)</big><a class="headerlink" href="#graphframes.GraphFrame.labelPropagation" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">labelPropagation</tt><big>(</big><em>maxIter</em><big>)</big><a class="headerlink" href="#graphframes.GraphFrame.labelPropagation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Runs static label propagation for detecting communities in networks.</p>
 <p>See Scala documentation for more details.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>maxSteps</strong> &#8211; the number of super steps to be performed</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>maxIter</strong> &#8211; the number of iterations to be performed</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">GraphFrame with new vertices column &#8220;label&#8221;</td>
 </tr>
@@ -235,7 +235,7 @@ respectively.</p>
 
 <dl class="method">
 <dt id="graphframes.GraphFrame.pageRank">
-<tt class="descname">pageRank</tt><big>(</big><em>resetProbability=0.15</em>, <em>sourceId=None</em>, <em>numIter=None</em>, <em>tol=None</em><big>)</big><a class="headerlink" href="#graphframes.GraphFrame.pageRank" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">pageRank</tt><big>(</big><em>resetProbability=0.15</em>, <em>sourceId=None</em>, <em>maxIter=None</em>, <em>tol=None</em><big>)</big><a class="headerlink" href="#graphframes.GraphFrame.pageRank" title="Permalink to this definition">¶</a></dt>
 <dd><p>Runs the PageRank algorithm on the graph.
 Note: Exactly one of fixed_num_iter or tolerance must be set.</p>
 <p>See Scala documentation for more details.</p>
@@ -246,7 +246,7 @@ Note: Exactly one of fixed_num_iter or tolerance must be set.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>resetProbability</strong> &#8211; Probability of resetting to a random vertex.</li>
 <li><strong>sourceId</strong> &#8211; (optional) the source vertex for a personalized PageRank.</li>
-<li><strong>numIter</strong> &#8211; If set, the algorithm is run for a fixed number
+<li><strong>maxIter</strong> &#8211; If set, the algorithm is run for a fixed number
 of iterations. This may not be set if the <cite>tol</cite> parameter is set.</li>
 <li><strong>tol</strong> &#8211; If set, the algorithm is run until the given tolerance.
 This may not be set if the <cite>numIter</cite> parameter is set.</li>
@@ -279,14 +279,14 @@ This may not be set if the <cite>numIter</cite> parameter is set.</li>
 
 <dl class="method">
 <dt id="graphframes.GraphFrame.stronglyConnectedComponents">
-<tt class="descname">stronglyConnectedComponents</tt><big>(</big><em>numIter</em><big>)</big><a class="headerlink" href="#graphframes.GraphFrame.stronglyConnectedComponents" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">stronglyConnectedComponents</tt><big>(</big><em>maxIter</em><big>)</big><a class="headerlink" href="#graphframes.GraphFrame.stronglyConnectedComponents" title="Permalink to this definition">¶</a></dt>
 <dd><p>Runs the strongly connected components algorithm on this graph.</p>
 <p>See Scala documentation for more details.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>numIter</strong> &#8211; the number of iterations to run</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>maxIter</strong> &#8211; the number of iterations to run</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">GraphFrame with new vertex column &#8220;component&#8221;</td>
 </tr>
@@ -359,7 +359,7 @@ for vertex IDs.</p>
                         title="next chapter">graphframes.examples package</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
-    <li><a href="sources/graphframes.txt"
+    <li><a href="_sources/graphframes.txt"
            rel="nofollow">Show Source</a></li>
   </ul>
 <div id="searchbox" style="display: none">

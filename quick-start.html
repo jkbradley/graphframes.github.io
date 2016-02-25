@@ -169,7 +169,7 @@ by passing the JAR to the pyspark shell script as follows:</p>
 <span class="n">g</span> <span class="o">=</span> <span class="n">GraphFrame</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
 
 <span class="c"># Query: Get in-degree of each vertex.</span>
-<span class="n">g</span><span class="o">.</span><span class="n">inDegrees</span><span class="p">()</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">g</span><span class="o">.</span><span class="n">inDegrees</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
 <span class="c"># Query: Count the number of &quot;follow&quot; connections in the graph.</span>
 <span class="n">g</span><span class="o">.</span><span class="n">edges</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="s">&quot;relationship = &#39;follow&#39;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>

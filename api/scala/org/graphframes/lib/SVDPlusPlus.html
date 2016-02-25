@@ -41,10 +41,10 @@
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Implement SVD++ based on &quot;Factorization Meets the Neighborhood:
 a Multifaceted Collaborative Filtering Model&quot;,
-available at <a href="https://movie-datamining.googlecode.com/svn/trunk/kdd08koren.pdf" target="_blank">https://movie-datamining.googlecode.com/svn/trunk/kdd08koren.pdf</a>.</p><p>The prediction rule is r<sub>ui</sub> = u + b<sub>u</sub> + b<sub>i</sub> + q<sub>i</sub>*(p<sub>u</sub> + |N(u)|<sup><sup>-0.5</sup></sup>*sum(y)).
-See the details on page 6 of the article.</p><p>Configuration parameters: see the description of each parameter in the article.</p><p>Returns a graph with vertex attributes containing the trained model.  See object (static) members
-for names of output columns.
-</p></div><div class="toggleContainer block">
+available at <a href="https://movie-datamining.googlecode.com/svn/trunk/kdd08koren.pdf" target="_blank">https://movie-datamining.googlecode.com/svn/trunk/kdd08koren.pdf</a>.</p><p>Note: The status of this algorithm is EXPERIMENTAL. Its API and implementation may be changed
+in the future.</p><p>The prediction rule is r<sub>ui</sub> = u + b<sub>u</sub> + b<sub>i</sub> + q<sub>i</sub>*(p<sub>u</sub> + |N(u)|<sup><sup>-0.5</sup></sup>*sum(y)).
+See the details on page 6 of the article.</p><p>Configuration parameters: see the description of each parameter in the article.</p><p>Returns a DataFrame with vertex attributes containing the trained model.  See the object
+(static) members for the names of the output columns.</p></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="org.graphframes.lib.Arguments">Arguments</span>, <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a>, <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Any" class="extype" target="_top">Any</a></div>
         </div></div>
@@ -558,15 +558,15 @@ for names of output columns.
       </h4>
       
     </li><li name="org.graphframes.lib.SVDPlusPlus#run" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="run():org.graphframes.GraphFrame"></a>
-      <a id="run():GraphFrame"></a>
+      <a id="run():org.apache.spark.sql.DataFrame"></a>
+      <a id="run():DataFrame"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">run</span><span class="params">()</span><span class="result">: <a href="../GraphFrame.html" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a></span>
+        <span class="name">run</span><span class="params">()</span><span class="result">: <span class="extype" name="org.apache.spark.sql.DataFrame">DataFrame</span></span>
       </span>
       </h4>
       

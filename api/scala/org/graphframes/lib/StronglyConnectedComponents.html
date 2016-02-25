@@ -39,10 +39,10 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Compute the strongly connected component (SCC) of each vertex and return a graph with each vertex
-assigned to the SCC containing that vertex.</p><p>The resulting vertices DataFrame contains one additional column:</p><ul><li>component: (same type as vertex id) the id of some vertex in the connected component,
-   used as a unique identifier for this component</li></ul><p>The resulting edges DataFrame is the same as the original edges DataFrame.
-</p></div><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Compute the strongly connected component (SCC) of each vertex and return a DataFrame with each
+vertex assigned to the SCC containing that vertex.</p><p>The resulting DataFrame contains all the original vertex information and one additional column:</p><ul><li>component: (same type as vertex id) the id of some vertex in the connected component,
+   used as a unique identifier for this component
+</li></ul></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="org.graphframes.lib.Arguments">Arguments</span>, <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a>, <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Any" class="extype" target="_top">Any</a></div>
         </div></div>
@@ -399,6 +399,19 @@ assigned to the SCC containing that vertex.</p><p>The resulting vertices DataFra
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="org.graphframes.lib.StronglyConnectedComponents#maxIter" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="maxIter(value:Int):StronglyConnectedComponents.this.type"></a>
+      <a id="maxIter(Int):StronglyConnectedComponents.this.type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">maxIter</span><span class="params">(<span name="value">value: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.StronglyConnectedComponents">StronglyConnectedComponents</a>.this.type</span>
+      </span>
+      </h4>
+      
     </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a>
       <a id="ne(AnyRef):Boolean"></a>
@@ -438,29 +451,16 @@ assigned to the SCC containing that vertex.</p><p>The resulting vertices DataFra
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="org.graphframes.lib.StronglyConnectedComponents#numIter" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="numIter(value:Int):StronglyConnectedComponents.this.type"></a>
-      <a id="numIter(Int):StronglyConnectedComponents.this.type"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">numIter</span><span class="params">(<span name="value">value: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.StronglyConnectedComponents">StronglyConnectedComponents</a>.this.type</span>
-      </span>
-      </h4>
-      
     </li><li name="org.graphframes.lib.StronglyConnectedComponents#run" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="run():org.graphframes.GraphFrame"></a>
-      <a id="run():GraphFrame"></a>
+      <a id="run():org.apache.spark.sql.DataFrame"></a>
+      <a id="run():DataFrame"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">run</span><span class="params">()</span><span class="result">: <a href="../GraphFrame.html" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a></span>
+        <span class="name">run</span><span class="params">()</span><span class="result">: <span class="extype" name="org.apache.spark.sql.DataFrame">DataFrame</span></span>
       </span>
       </h4>
       

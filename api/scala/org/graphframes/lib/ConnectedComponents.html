@@ -39,8 +39,8 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Connected components algorithm.</p><p>Computes the connected component membership of each vertex and returns a graph with each vertex
-assigned a component ID.</p><p>The resulting vertices DataFrame contains one additional column:</p><ul><li>component: (same type as vertex id) the id of some vertex in the connected component,
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Connected components algorithm.</p><p>Computes the connected component membership of each vertex and returns a DataFrame of vertex
+information with each vertex assigned a component ID.</p><p>The resulting DataFrame contains all the vertex information and one additional column:</p><ul><li>component: (same type as vertex id) the id of some vertex in the connected component,
    used as a unique identifier for this component</li></ul><p>The resulting edges DataFrame is the same as the original edges DataFrame.
 </p></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
@@ -439,15 +439,15 @@ assigned a component ID.</p><p>The resulting vertices DataFrame contains one add
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li name="org.graphframes.lib.ConnectedComponents#run" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="run():org.graphframes.GraphFrame"></a>
-      <a id="run():GraphFrame"></a>
+      <a id="run():org.apache.spark.sql.DataFrame"></a>
+      <a id="run():DataFrame"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">run</span><span class="params">()</span><span class="result">: <a href="../GraphFrame.html" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a></span>
+        <span class="name">run</span><span class="params">()</span><span class="result">: <span class="extype" name="org.apache.spark.sql.DataFrame">DataFrame</span></span>
       </span>
       </h4>
       <p class="shortcomment cmt">Runs the algorithm.</p>

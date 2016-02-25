@@ -39,9 +39,10 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Computes shortest paths to the given set of landmark vertices.</p><p>The returned vertices DataFrame contains one additional column:</p><ul><li>distances (<code>MapType[vertex ID type, IntegerType]</code>): For each vertex v, a map containing
-  the shortest-path distance to each reachable landmark vertex.</li></ul><p>The resulting edges DataFrame is the same as the original edges DataFrame.
-</p></div><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Computes shortest paths to the given set of landmark vertices.</p><p>The returned DataFrame contains all the original vertex information as well as one additional
+column:</p><ul><li>distances (<code>MapType[vertex ID type, IntegerType]</code>): For each vertex v, a map containing
+  the shortest-path distance to each reachable landmark vertex.
+</li></ul></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="org.graphframes.lib.Arguments">Arguments</span>, <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a>, <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Any" class="extype" target="_top">Any</a></div>
         </div></div>
@@ -466,15 +467,15 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li name="org.graphframes.lib.ShortestPaths#run" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="run():org.graphframes.GraphFrame"></a>
-      <a id="run():GraphFrame"></a>
+      <a id="run():org.apache.spark.sql.DataFrame"></a>
+      <a id="run():DataFrame"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">run</span><span class="params">()</span><span class="result">: <a href="../GraphFrame.html" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a></span>
+        <span class="name">run</span><span class="params">()</span><span class="result">: <span class="extype" name="org.apache.spark.sql.DataFrame">DataFrame</span></span>
       </span>
       </h4>
       

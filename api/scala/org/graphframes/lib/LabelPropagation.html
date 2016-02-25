@@ -39,12 +39,11 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Run static Label Propagation for detecting communities in networks.</p><p>Each node in the network is initially assigned to its own community. At every superstep, nodes
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Run static Label Propagation for detecting communities in networks.</p><p>Each node in the network is initially assigned to its own community. At every iteration, nodes
 send their community affiliation to all neighbors and update their state to the mode community
 affiliation of incoming messages.</p><p>LPA is a standard community detection algorithm for graphs. It is very inexpensive
 computationally, although (1) convergence is not guaranteed and (2) one can end up with
-trivial solutions (all nodes are identified into a single community).</p><p>The resulting vertices DataFrame contains one additional column:</p><ul><li>label: (same type as vertex id) label of community affiliation</li></ul><p>The resulting edges DataFrame is the same as the original edges DataFrame.
-</p></div><div class="toggleContainer block">
+trivial solutions (all nodes are identified into a single community).</p><p>The resulting DataFrame contains all the original vertex information and one additional column:</p><ul><li>label: (same type as vertex id) label of community affiliation</li></ul></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="org.graphframes.lib.Arguments">Arguments</span>, <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a>, <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Any" class="extype" target="_top">Any</a></div>
         </div></div>
@@ -401,20 +400,20 @@ trivial solutions (all nodes are identified into a single community).</p><p>The 
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="org.graphframes.lib.LabelPropagation#maxSteps" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="maxSteps(value:Int):LabelPropagation.this.type"></a>
-      <a id="maxSteps(Int):LabelPropagation.this.type"></a>
+    </li><li name="org.graphframes.lib.LabelPropagation#maxIter" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="maxIter(value:Int):LabelPropagation.this.type"></a>
+      <a id="maxIter(Int):LabelPropagation.this.type"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">maxSteps</span><span class="params">(<span name="value">value: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.LabelPropagation">LabelPropagation</a>.this.type</span>
+        <span class="name">maxIter</span><span class="params">(<span name="value">value: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.LabelPropagation">LabelPropagation</a>.this.type</span>
       </span>
       </h4>
-      <p class="shortcomment cmt">The number of supersteps of LPA to be performed.</p><div class="fullcomment"><div class="comment cmt"><p>The number of supersteps of LPA to be performed. Because this is a static
-implementation, the algorithm will run for exactly this many supersteps.
+      <p class="shortcomment cmt">The max number of iterations of LPA to be performed.</p><div class="fullcomment"><div class="comment cmt"><p>The max number of iterations of LPA to be performed. Because this is a static
+implementation, the algorithm will run for exactly this many iterations.
 </p></div></div>
     </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a>
@@ -456,15 +455,15 @@ implementation, the algorithm will run for exactly this many supersteps.
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li name="org.graphframes.lib.LabelPropagation#run" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="run():org.graphframes.GraphFrame"></a>
-      <a id="run():GraphFrame"></a>
+      <a id="run():org.apache.spark.sql.DataFrame"></a>
+      <a id="run():DataFrame"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">run</span><span class="params">()</span><span class="result">: <a href="../GraphFrame.html" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a></span>
+        <span class="name">run</span><span class="params">()</span><span class="result">: <span class="extype" name="org.apache.spark.sql.DataFrame">DataFrame</span></span>
       </span>
       </h4>
       

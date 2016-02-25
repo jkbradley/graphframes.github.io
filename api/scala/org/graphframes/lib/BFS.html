@@ -54,10 +54,10 @@ g.bfs(col(<span class="lit">"id"</span>) === <span class="lit">"Joe"</span>, col
 Each edge column (e0, e1, e2) would have fields &quot;src&quot;, &quot;dst&quot;, and &quot;relation&quot;.</p><p>If there are ties, then each of the equal paths will be returned as a separate Row.</p><p>If one or more vertices match both the from and to conditions, then there is a 0-hop path.
 The returned DataFrame will have the &quot;from&quot; and &quot;to&quot; columns (as above); however,
 the &quot;from&quot; and &quot;to&quot; columns will be exactly the same.  There will be one row for each vertex
-in <a href="../GraphFrame.html#vertices:org.apache.spark.sql.DataFrame" class="extmbr" name="org.graphframes.GraphFrame#vertices">GraphFrame.vertices</a> matching both <code>fromExpr</code> and <code>toExpr</code>.</p><p>Parameters:</p><ul><li><code>from</code>  Spark SQL expression specifying valid starting vertices for the BFS.
+in <a href="../GraphFrame.html#vertices:org.apache.spark.sql.DataFrame" class="extmbr" name="org.graphframes.GraphFrame#vertices">GraphFrame.vertices</a> matching both <code>fromExpr</code> and <code>toExpr</code>.</p><p>Parameters:</p><ul><li><code>fromExpr</code>  Spark SQL expression specifying valid starting vertices for the BFS.
                  This condition will be matched against each vertex's id or attributes.
                  To start from a specific vertex, this could be &quot;id = [start vertex id]&quot;.
-                 To start from multiple valid vertices, this can operate on vertex attributes.</li><li><code>to</code>  Spark SQL expression specifying valid target vertices for the BFS.
+                 To start from multiple valid vertices, this can operate on vertex attributes.</li><li><code>toExpr</code>  Spark SQL expression specifying valid target vertices for the BFS.
                This condition will be matched against each vertex's id or attributes.</li><li><code>maxPathLength</code>  Limit on the length of paths.  If no valid paths of length
                       &lt;= maxPathLength are found, then the BFS is terminated.
                       (default = 10)</li><li><code>edgeFilter</code>  Spark SQL expression specifying edges which may be used in the search.
@@ -408,6 +408,32 @@ in <a href="../GraphFrame.html#vertices:org.apache.spark.sql.DataFrame" class="e
                 <span class="name">@inline</span><span class="args">()</span>
               
         </dd></dl></div>
+    </li><li name="org.graphframes.lib.BFS#fromExpr" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="fromExpr(value:String):BFS.this.type"></a>
+      <a id="fromExpr(String):BFS.this.type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">fromExpr</span><span class="params">(<span name="value">value: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.BFS">BFS</a>.this.type</span>
+      </span>
+      </h4>
+      
+    </li><li name="org.graphframes.lib.BFS#fromExpr" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="fromExpr(value:org.apache.spark.sql.Column):BFS.this.type"></a>
+      <a id="fromExpr(Column):BFS.this.type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">fromExpr</span><span class="params">(<span name="value">value: <span class="extype" name="org.apache.spark.sql.Column">Column</span></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.BFS">BFS</a>.this.type</span>
+      </span>
+      </h4>
+      
     </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <a id="getClass():Class[_]"></a>
@@ -525,6 +551,32 @@ in <a href="../GraphFrame.html#vertices:org.apache.spark.sql.DataFrame" class="e
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="org.graphframes.lib.BFS#toExpr" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="toExpr(value:String):BFS.this.type"></a>
+      <a id="toExpr(String):BFS.this.type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toExpr</span><span class="params">(<span name="value">value: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.BFS">BFS</a>.this.type</span>
+      </span>
+      </h4>
+      
+    </li><li name="org.graphframes.lib.BFS#toExpr" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="toExpr(value:org.apache.spark.sql.Column):BFS.this.type"></a>
+      <a id="toExpr(Column):BFS.this.type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toExpr</span><span class="params">(<span name="value">value: <span class="extype" name="org.apache.spark.sql.Column">Column</span></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.BFS">BFS</a>.this.type</span>
+      </span>
+      </h4>
+      
     </li><li name="scala.AnyRef#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="toString():String"></a>
       <a id="toString():String"></a>
