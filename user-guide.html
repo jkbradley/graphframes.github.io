@@ -620,7 +620,7 @@ assigned a component ID.</p>
 <span class="k">val</span> <span class="n">g</span><span class="k">:</span> <span class="kt">GraphFrame</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="nc">Graphs</span><span class="o">.</span><span class="n">friends</span>  <span class="c1">// get example graph</span>
 
 <span class="k">val</span> <span class="n">result</span> <span class="k">=</span> <span class="n">g</span><span class="o">.</span><span class="n">connectedComponents</span><span class="o">.</span><span class="n">run</span><span class="o">()</span>
-<span class="n">result</span><span class="o">.</span><span class="n">vertices</span><span class="o">.</span><span class="n">select</span><span class="o">(</span><span class="s">&quot;id&quot;</span><span class="o">,</span> <span class="s">&quot;component&quot;</span><span class="o">).</span><span class="n">orderBy</span><span class="o">(</span><span class="s">&quot;component&quot;</span><span class="o">).</span><span class="n">show</span><span class="o">()</span></code></pre></figure>
+<span class="n">result</span><span class="o">.</span><span class="n">select</span><span class="o">(</span><span class="s">&quot;id&quot;</span><span class="o">,</span> <span class="s">&quot;component&quot;</span><span class="o">).</span><span class="n">orderBy</span><span class="o">(</span><span class="s">&quot;component&quot;</span><span class="o">).</span><span class="n">show</span><span class="o">()</span></code></pre></figure>
 
   </div>
 
@@ -632,7 +632,7 @@ assigned a component ID.</p>
 <span class="n">g</span> <span class="o">=</span> <span class="n">Graphs</span><span class="p">(</span><span class="n">sqlContext</span><span class="p">)</span><span class="o">.</span><span class="n">friends</span><span class="p">()</span>  <span class="c"># Get example graph</span>
 
 <span class="n">result</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">connectedComponents</span><span class="p">()</span>
-<span class="n">result</span><span class="o">.</span><span class="n">vertices</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s">&quot;id&quot;</span><span class="p">,</span> <span class="s">&quot;component&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">orderBy</span><span class="p">(</span><span class="s">&quot;component&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></code></pre></figure>
+<span class="n">result</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s">&quot;id&quot;</span><span class="p">,</span> <span class="s">&quot;component&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">orderBy</span><span class="p">(</span><span class="s">&quot;component&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></code></pre></figure>
 
   </div>
 
@@ -655,7 +655,7 @@ assigned to the SCC containing that vertex.</p>
 <span class="k">val</span> <span class="n">g</span><span class="k">:</span> <span class="kt">GraphFrame</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="nc">Graphs</span><span class="o">.</span><span class="n">friends</span>  <span class="c1">// get example graph</span>
 
 <span class="k">val</span> <span class="n">result</span> <span class="k">=</span> <span class="n">g</span><span class="o">.</span><span class="n">stronglyConnectedComponents</span><span class="o">.</span><span class="n">maxIter</span><span class="o">(</span><span class="mi">10</span><span class="o">).</span><span class="n">run</span><span class="o">()</span>
-<span class="n">result</span><span class="o">.</span><span class="n">vertices</span><span class="o">.</span><span class="n">select</span><span class="o">(</span><span class="s">&quot;id&quot;</span><span class="o">,</span> <span class="s">&quot;component&quot;</span><span class="o">).</span><span class="n">orderBy</span><span class="o">(</span><span class="s">&quot;component&quot;</span><span class="o">).</span><span class="n">show</span><span class="o">()</span></code></pre></figure>
+<span class="n">result</span><span class="o">.</span><span class="n">select</span><span class="o">(</span><span class="s">&quot;id&quot;</span><span class="o">,</span> <span class="s">&quot;component&quot;</span><span class="o">).</span><span class="n">orderBy</span><span class="o">(</span><span class="s">&quot;component&quot;</span><span class="o">).</span><span class="n">show</span><span class="o">()</span></code></pre></figure>
 
   </div>
 
@@ -667,7 +667,7 @@ assigned to the SCC containing that vertex.</p>
 <span class="n">g</span> <span class="o">=</span> <span class="n">Graphs</span><span class="p">(</span><span class="n">sqlContext</span><span class="p">)</span><span class="o">.</span><span class="n">friends</span><span class="p">()</span>  <span class="c"># Get example graph</span>
 
 <span class="n">result</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">stronglyConnectedComponents</span><span class="p">(</span><span class="n">maxIter</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">result</span><span class="o">.</span><span class="n">vertices</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s">&quot;id&quot;</span><span class="p">,</span> <span class="s">&quot;component&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">orderBy</span><span class="p">(</span><span class="s">&quot;component&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></code></pre></figure>
+<span class="n">result</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s">&quot;id&quot;</span><span class="p">,</span> <span class="s">&quot;component&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">orderBy</span><span class="p">(</span><span class="s">&quot;component&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></code></pre></figure>
 
   </div>
 
@@ -697,7 +697,7 @@ trivial solutions (all nodes are identified into a single community).</p>
 <span class="k">val</span> <span class="n">g</span><span class="k">:</span> <span class="kt">GraphFrame</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="nc">Graphs</span><span class="o">.</span><span class="n">friends</span>  <span class="c1">// get example graph</span>
 
 <span class="k">val</span> <span class="n">result</span> <span class="k">=</span> <span class="n">g</span><span class="o">.</span><span class="n">labelPropagation</span><span class="o">.</span><span class="n">maxIter</span><span class="o">(</span><span class="mi">5</span><span class="o">).</span><span class="n">run</span><span class="o">()</span>
-<span class="n">result</span><span class="o">.</span><span class="n">vertices</span><span class="o">.</span><span class="n">select</span><span class="o">(</span><span class="s">&quot;id&quot;</span><span class="o">,</span> <span class="s">&quot;label&quot;</span><span class="o">).</span><span class="n">show</span><span class="o">()</span></code></pre></figure>
+<span class="n">result</span><span class="o">.</span><span class="n">select</span><span class="o">(</span><span class="s">&quot;id&quot;</span><span class="o">,</span> <span class="s">&quot;label&quot;</span><span class="o">).</span><span class="n">show</span><span class="o">()</span></code></pre></figure>
 
   </div>
 
@@ -709,7 +709,7 @@ trivial solutions (all nodes are identified into a single community).</p>
 <span class="n">g</span> <span class="o">=</span> <span class="n">Graphs</span><span class="p">(</span><span class="n">sqlContext</span><span class="p">)</span><span class="o">.</span><span class="n">friends</span><span class="p">()</span>  <span class="c"># Get example graph</span>
 
 <span class="n">result</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">labelPropagation</span><span class="p">(</span><span class="n">maxIter</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">result</span><span class="o">.</span><span class="n">vertices</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s">&quot;id&quot;</span><span class="p">,</span> <span class="s">&quot;label&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></code></pre></figure>
+<span class="n">result</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s">&quot;id&quot;</span><span class="p">,</span> <span class="s">&quot;label&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></code></pre></figure>
 
   </div>
 
@@ -798,7 +798,7 @@ by vertex ID.</p>
 <span class="k">val</span> <span class="n">g</span><span class="k">:</span> <span class="kt">GraphFrame</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="nc">Graphs</span><span class="o">.</span><span class="n">friends</span>  <span class="c1">// get example graph</span>
 
 <span class="k">val</span> <span class="n">results</span> <span class="k">=</span> <span class="n">g</span><span class="o">.</span><span class="n">shortestPaths</span><span class="o">.</span><span class="n">landmarks</span><span class="o">(</span><span class="nc">Seq</span><span class="o">(</span><span class="s">&quot;a&quot;</span><span class="o">,</span> <span class="s">&quot;d&quot;</span><span class="o">)).</span><span class="n">run</span><span class="o">()</span>
-<span class="n">results</span><span class="o">.</span><span class="n">vertices</span><span class="o">.</span><span class="n">select</span><span class="o">(</span><span class="s">&quot;id&quot;</span><span class="o">,</span> <span class="s">&quot;distances&quot;</span><span class="o">).</span><span class="n">show</span><span class="o">()</span></code></pre></figure>
+<span class="n">results</span><span class="o">.</span><span class="n">select</span><span class="o">(</span><span class="s">&quot;id&quot;</span><span class="o">,</span> <span class="s">&quot;distances&quot;</span><span class="o">).</span><span class="n">show</span><span class="o">()</span></code></pre></figure>
 
   </div>
 
@@ -810,7 +810,7 @@ by vertex ID.</p>
 <span class="n">g</span> <span class="o">=</span> <span class="n">Graphs</span><span class="p">(</span><span class="n">sqlContext</span><span class="p">)</span><span class="o">.</span><span class="n">friends</span><span class="p">()</span>  <span class="c"># Get example graph</span>
 
 <span class="n">results</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">shortestPaths</span><span class="p">(</span><span class="n">landmarks</span><span class="o">=</span><span class="p">[</span><span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="s">&quot;d&quot;</span><span class="p">])</span>
-<span class="n">results</span><span class="o">.</span><span class="n">vertices</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s">&quot;id&quot;</span><span class="p">,</span> <span class="s">&quot;distances&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></code></pre></figure>
+<span class="n">results</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s">&quot;id&quot;</span><span class="p">,</span> <span class="s">&quot;distances&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></code></pre></figure>
 
   </div>
 
@@ -830,7 +830,7 @@ by vertex ID.</p>
 <span class="k">val</span> <span class="n">g</span><span class="k">:</span> <span class="kt">GraphFrame</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="nc">Graphs</span><span class="o">.</span><span class="n">friends</span>  <span class="c1">// get example graph</span>
 
 <span class="k">val</span> <span class="n">results</span> <span class="k">=</span> <span class="n">g</span><span class="o">.</span><span class="n">triangleCount</span><span class="o">.</span><span class="n">run</span><span class="o">()</span>
-<span class="n">results</span><span class="o">.</span><span class="n">vertices</span><span class="o">.</span><span class="n">select</span><span class="o">(</span><span class="s">&quot;id&quot;</span><span class="o">,</span> <span class="s">&quot;count&quot;</span><span class="o">).</span><span class="n">show</span><span class="o">()</span></code></pre></figure>
+<span class="n">results</span><span class="o">.</span><span class="n">select</span><span class="o">(</span><span class="s">&quot;id&quot;</span><span class="o">,</span> <span class="s">&quot;count&quot;</span><span class="o">).</span><span class="n">show</span><span class="o">()</span></code></pre></figure>
 
   </div>
 
@@ -842,7 +842,7 @@ by vertex ID.</p>
 <span class="n">g</span> <span class="o">=</span> <span class="n">Graphs</span><span class="p">(</span><span class="n">sqlContext</span><span class="p">)</span><span class="o">.</span><span class="n">friends</span><span class="p">()</span>  <span class="c"># Get example graph</span>
 
 <span class="n">results</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">triangleCount</span><span class="p">()</span>
-<span class="n">results</span><span class="o">.</span><span class="n">vertices</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s">&quot;id&quot;</span><span class="p">,</span> <span class="s">&quot;count&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></code></pre></figure>
+<span class="n">results</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s">&quot;id&quot;</span><span class="p">,</span> <span class="s">&quot;count&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></code></pre></figure>
 
   </div>
 
