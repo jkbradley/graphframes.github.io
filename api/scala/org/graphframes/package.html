@@ -1,5 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!DOCTYPE html >
 <html>
         <head>
           <title>graphframes - org.graphframes</title>
@@ -9,6 +8,11 @@
           
       <link href="../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
       <link href="../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../lib/template.js"></script>
+      <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
+      
       <script type="text/javascript">
          if(top === self) {
             var url = '../../index.html';
@@ -24,9 +28,13 @@
         </head>
         <body class="value">
       <div id="definition">
-        <img src="../../lib/package_big.png" />
+        <img alt="Package" src="../../lib/package_big.png" />
         <p id="owner"><a href="../package.html" class="extype" name="org">org</a></p>
-        <h1>graphframes</h1>
+        <h1>graphframes</h1><span class="permalink">
+      <a href="../../index.html#org.graphframes.package" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       </div>
 
       <h4 id="signature" class="signature">
@@ -67,10 +75,14 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="GraphFrame.html"><span class="name">GraphFrame</span></a><span class="result"> extends <span class="extype" name="org.apache.spark.Logging">Logging</span> with <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <a href="GraphFrame.html"><span class="name">GraphFrame</span></a><span class="result"> extends <span class="extype" name="org.graphframes.Logging">Logging</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
-      </h4>
-      <p class="comment cmt">A representation of a graph using <code>DataFrame</code>s.</p>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.package@GraphFrameextendsLoggingwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A representation of a graph using <code>DataFrame</code>s.</p>
     </li><li name="org.graphframes.InvalidParseException" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="InvalidParseExceptionextendsException"></a>
       <a id="InvalidParseException:InvalidParseException"></a>
@@ -82,8 +94,12 @@
       <span class="symbol">
         <a href="InvalidParseException.html"><span class="name">InvalidParseException</span></a><span class="result"> extends <span class="extype" name="scala.Exception">Exception</span></span>
       </span>
-      </h4>
-      <p class="comment cmt">Exception thrown when a pattern String for motif finding cannot be parsed.</p>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.package@InvalidParseExceptionextendsException" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Exception thrown when a pattern String for motif finding cannot be parsed.</p>
     </li><li name="org.graphframes.InvalidPatternException" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="InvalidPatternExceptionextendsException"></a>
       <a id="InvalidPatternException:InvalidPatternException"></a>
@@ -95,8 +111,12 @@
       <span class="symbol">
         <a href="InvalidPatternException.html"><span class="name">InvalidPatternException</span></a><span class="result"> extends <span class="extype" name="scala.Exception">Exception</span></span>
       </span>
-      </h4>
-      <p class="comment cmt">Exception thrown when a parsed pattern for motif finding cannot be translated into a DataFrame
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.package@InvalidPatternExceptionextendsException" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Exception thrown when a parsed pattern for motif finding cannot be translated into a DataFrame
 query.</p>
     </li><li name="org.graphframes.NoSuchVertexException" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="NoSuchVertexExceptionextendsException"></a>
@@ -109,8 +129,12 @@ query.</p>
       <span class="symbol">
         <a href="NoSuchVertexException.html"><span class="name">NoSuchVertexException</span></a><span class="result"> extends <span class="extype" name="scala.Exception">Exception</span></span>
       </span>
-      </h4>
-      <p class="comment cmt">Thrown when a GraphFrame algorithm is given a vertex ID which does not exist in the graph.</p>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.package@NoSuchVertexExceptionextendsException" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Thrown when a GraphFrame algorithm is given a vertex ID which does not exist in the graph.</p>
     </li></ol>
             </div>
 
@@ -127,9 +151,13 @@ query.</p>
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="GraphFrame$.html"><span class="name">GraphFrame</span></a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <a href="GraphFrame$.html"><span class="name">GraphFrame</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.package@GraphFrame" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       
     </li><li name="org.graphframes.examples" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="examples"></a>
@@ -142,7 +170,11 @@ query.</p>
       <span class="symbol">
         <a href="examples/package.html"><span class="name">examples</span></a>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.package@examples" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       
     </li><li name="org.graphframes.lib" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="lib"></a>
@@ -155,7 +187,11 @@ query.</p>
       <span class="symbol">
         <a href="lib/package.html"><span class="name">lib</span></a>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.package@lib" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       
     </li></ol>
             </div>
@@ -182,6 +218,7 @@ query.</p>
       <div id="tooltip"></div>
 
       <div id="footer">  </div>
-      <script defer="defer" type="text/javascript" id="jquery-js" src="../../lib/jquery.js"></script><script defer="defer" type="text/javascript" id="jquery-ui-js" src="../../lib/jquery-ui.js"></script><script defer="defer" type="text/javascript" id="tools-tooltip-js" src="../../lib/tools.tooltip.js"></script><script defer="defer" type="text/javascript" id="template-js" src="../../lib/template.js"></script>
+
+
     </body>
       </html>

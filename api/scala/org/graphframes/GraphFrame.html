@@ -1,5 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!DOCTYPE html >
 <html>
         <head>
           <title>GraphFrame - org.graphframes.GraphFrame</title>
@@ -9,6 +8,11 @@
           
       <link href="../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
       <link href="../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../lib/template.js"></script>
+      <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
+      
       <script type="text/javascript">
          if(top === self) {
             var url = '../../index.html';
@@ -24,9 +28,17 @@
         </head>
         <body class="type">
       <div id="definition">
-        <a href="GraphFrame$.html" title="Go to companion"><img src="../../lib/class_to_object_big.png" /></a>
+        <a href="GraphFrame$.html" title="See companion object"><img alt="Class/Object" src="../../lib/class_to_object_big.png" /></a>
         <p id="owner"><a href="../package.html" class="extype" name="org">org</a>.<a href="package.html" class="extype" name="org.graphframes">graphframes</a></p>
-        <h1><a href="GraphFrame$.html" title="Go to companion">GraphFrame</a></h1>
+        <h1><a href="GraphFrame$.html" title="See companion object">GraphFrame</a></h1><h3><span class="morelinks"><div>
+            Related Docs:
+            <a href="GraphFrame$.html" title="See companion object">object GraphFrame</a>
+            | <a href="package.html" class="extype" name="org.graphframes">package graphframes</a>
+          </div></span></h3><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       </div>
 
       <h4 id="signature" class="signature">
@@ -35,14 +47,14 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <span class="name">GraphFrame</span><span class="result"> extends <span class="extype" name="org.apache.spark.Logging">Logging</span> with <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <span class="name">GraphFrame</span><span class="result"> extends <span class="extype" name="org.graphframes.Logging">Logging</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>A representation of a graph using <code>DataFrame</code>s.
 </p></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Serializable" class="extype" target="_top">Serializable</a>, <span class="extype" name="java.io.Serializable">Serializable</span>, <span class="extype" name="org.apache.spark.Logging">Logging</span>, <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a>, <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Any" class="extype" target="_top">Any</a></div>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.Serializable">Serializable</span>, <span class="extype" name="java.io.Serializable">Serializable</span>, <span class="extype" name="org.graphframes.Logging">Logging</span>, <span class="extype" name="com.typesafe.scalalogging.slf4j.LazyLogging">LazyLogging</span>, <span class="extype" name="com.typesafe.scalalogging.Logging">com.typesafe.scalalogging.Logging</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
         
 
@@ -60,12 +72,12 @@
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="org.graphframes.GraphFrame"><span>GraphFrame</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="org.apache.spark.Logging"><span>Logging</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="org.graphframes.GraphFrame"><span>GraphFrame</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="org.graphframes.Logging"><span>Logging</span></li><li class="in" name="com.typesafe.scalalogging.slf4j.LazyLogging"><span>LazyLogging</span></li><li class="in" name="com.typesafe.scalalogging.Logging"><span>Logging</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
                 <span class="filtertype">Implicitly<br />
                 </span>
-                <ol id="implicits"> <li class="in" name="scala.Predef.any2stringadd" data-hidden="true"><span>by any2stringadd</span></li><li class="in" name="scala.Predef.any2stringfmt" data-hidden="true"><span>by any2stringfmt</span></li><li class="in" name="scala.Predef.any2ArrowAssoc" data-hidden="true"><span>by any2ArrowAssoc</span></li><li class="in" name="scala.Predef.any2Ensuring" data-hidden="true"><span>by any2Ensuring</span></li>
+                <ol id="implicits"> <li class="in" name="scala.Predef.any2stringadd" data-hidden="true"><span>by any2stringadd</span></li><li class="in" name="scala.Predef.StringFormat" data-hidden="true"><span>by StringFormat</span></li><li class="in" name="scala.Predef.Ensuring" data-hidden="true"><span>by Ensuring</span></li><li class="in" name="scala.Predef.ArrowAssoc" data-hidden="true"><span>by ArrowAssoc</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -73,7 +85,6 @@
               <li class="hideall out"><span>Hide All</span></li>
               <li class="showall in"><span>Show all</span></li>
             </ol>
-            <a href="http://docs.scala-lang.org/overviews/scaladoc/usage.html#members" target="_blank">Learn more about member selection</a>
           </div>
         <div id="visbl">
             <span class="filtertype">Visibility</span>
@@ -96,7 +107,11 @@
       <span class="symbol">
         <span class="name">GraphFrame</span><span class="params">()</span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@&lt;init&gt;():org.graphframes.GraphFrame" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <p class="shortcomment cmt">Default constructor is provided to support serialization</p><div class="fullcomment"><div class="comment cmt"><p>Default constructor is provided to support serialization</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
     </li></ol>
             </div>
@@ -108,19 +123,6 @@
         <div id="values" class="values members">
               <h3>Value Members</h3>
               <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="!=(x$1:AnyRef):Boolean"></a>
-      <a id="!=(AnyRef):Boolean"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier">final </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="scala.Any#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="!=(x$1:Any):Boolean"></a>
       <a id="!=(Any):Boolean"></a>
       <h4 class="signature">
@@ -129,10 +131,14 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="##():Int"></a>
       <a id="##():Int"></a>
@@ -142,9 +148,13 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Int" class="extype" target="_top">Int</a></span>
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@##():Int" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="scala.Predef.any2stringadd#+" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="+(other:String):String"></a>
@@ -155,15 +165,19 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span title="gt4s: $plus" class="implicit">+</span><span class="params">(<span name="other">other: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+        <span title="gt4s: $plus" class="implicit">+</span><span class="params">(<span name="other">other: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@+(other:String):String" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
             This member is added by an implicit conversion from <a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a> to
-            <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.runtime.StringAdd" class="extype" target="_top">StringAdd</a> performed by method any2stringadd in scala.Predef.
+            <span class="extype" name="scala.Predef.any2stringadd">any2stringadd</span>[<a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a>] performed by method any2stringadd in scala.Predef.
             
-          </dd><dt>Definition Classes</dt><dd>StringAdd</dd></dl></div>
-    </li><li name="scala.Predef.any2ArrowAssoc#-&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+          </dd><dt>Definition Classes</dt><dd>any2stringadd</dd></dl></div>
+    </li><li name="scala.Predef.ArrowAssoc#-&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="-&gt;[B](y:B):(A,B)"></a>
       <a id="-&gt;[B](B):(GraphFrame,B)"></a>
       <h4 class="signature">
@@ -174,29 +188,20 @@
       <span class="symbol">
         <span title="gt4s: $minus$greater" class="implicit">-&gt;</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="y">y: <span class="extype" name="scala.Predef.ArrowAssoc.-&gt;.B">B</span></span>)</span><span class="result">: (<a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a>, <span class="extype" name="scala.Predef.ArrowAssoc.-&gt;.B">B</span>)</span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@-&gt;[B](y:B):(A,B)" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
             This member is added by an implicit conversion from <a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a> to
-            <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a>] performed by method any2ArrowAssoc in scala.Predef.
+            <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a>] performed by method ArrowAssoc in scala.Predef.
             
           </dd><dt>Definition Classes</dt><dd>ArrowAssoc</dd><dt>Annotations</dt><dd>
                 <span class="name">@inline</span><span class="args">()</span>
               
         </dd></dl></div>
     </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="==(x$1:AnyRef):Boolean"></a>
-      <a id="==(AnyRef):Boolean"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier">final </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="scala.Any#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="==(x$1:Any):Boolean"></a>
       <a id="==(Any):Boolean"></a>
       <h4 class="signature">
@@ -205,10 +210,14 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@==(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="org.graphframes.GraphFrame#aggregateMessages" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="aggregateMessages:org.graphframes.lib.AggregateMessages"></a>
       <a id="aggregateMessages:AggregateMessages"></a>
@@ -220,7 +229,11 @@
       <span class="symbol">
         <span class="name">aggregateMessages</span><span class="result">: <a href="lib/AggregateMessages.html" class="extype" name="org.graphframes.lib.AggregateMessages">AggregateMessages</a></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@aggregateMessages:org.graphframes.lib.AggregateMessages" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <p class="shortcomment cmt">This is a primitive for implementing graph algorithms.</p><div class="fullcomment"><div class="comment cmt"><p>This is a primitive for implementing graph algorithms.
 This method aggregates values from the neighboring edges and vertices of each vertex.
 See <a href="lib/AggregateMessages.html" class="extype" name="org.graphframes.lib.AggregateMessages">AggregateMessages</a> for detailed documentation.
@@ -236,7 +249,11 @@ See <a href="lib/AggregateMessages.html" class="extype" name="org.graphframes.li
       <span class="symbol">
         <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
     </li><li name="org.graphframes.GraphFrame#bfs" visbl="pub" data-isabs="false" fullComment="yes" group="stdlib">
       <a id="bfs:org.graphframes.lib.BFS"></a>
@@ -249,9 +266,31 @@ See <a href="lib/AggregateMessages.html" class="extype" name="org.graphframes.li
       <span class="symbol">
         <span class="name">bfs</span><span class="result">: <a href="lib/BFS.html" class="extype" name="org.graphframes.lib.BFS">BFS</a></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@bfs:org.graphframes.lib.BFS" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <p class="shortcomment cmt">Breadth-first search (BFS)</p><div class="fullcomment"><div class="comment cmt"><p>Breadth-first search (BFS)</p><p>Refer to the documentation of <a href="lib/BFS.html" class="extype" name="org.graphframes.lib.BFS">org.graphframes.lib.BFS</a> for the description of the output.
 </p></div></div>
+    </li><li name="org.graphframes.GraphFrame#cache" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="cache():GraphFrame.this.type"></a>
+      <a id="cache():GraphFrame.this.type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">cache</span><span class="params">()</span><span class="result">: <a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a>.this.type</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@cache():GraphFrame.this.type" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Persist the dataframe representation of vertices and edges of the graph with the default
+storage level.</p>
     </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="clone():Object"></a>
       <a id="clone():AnyRef"></a>
@@ -261,9 +300,13 @@ See <a href="lib/AggregateMessages.html" class="extype" name="org.graphframes.li
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">clone</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@clone():Object" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">(<span>
       
@@ -282,7 +325,11 @@ See <a href="lib/AggregateMessages.html" class="extype" name="org.graphframes.li
       <span class="symbol">
         <span class="name">connectedComponents</span><span class="result">: <a href="lib/ConnectedComponents.html" class="extype" name="org.graphframes.lib.ConnectedComponents">ConnectedComponents</a></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@connectedComponents:org.graphframes.lib.ConnectedComponents" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <p class="shortcomment cmt">Connected component algorithm.</p><div class="fullcomment"><div class="comment cmt"><p>Connected component algorithm.</p><p>See <a href="lib/ConnectedComponents.html" class="extype" name="org.graphframes.lib.ConnectedComponents">org.graphframes.lib.ConnectedComponents</a> for more details.
 </p></div></div>
     </li><li name="org.graphframes.GraphFrame#degrees" visbl="pub" data-isabs="false" fullComment="yes" group="degree">
@@ -296,7 +343,11 @@ See <a href="lib/AggregateMessages.html" class="extype" name="org.graphframes.li
       <span class="symbol">
         <span class="name">degrees</span><span class="result">: <span class="extype" name="org.apache.spark.sql.DataFrame">DataFrame</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@degrees:org.apache.spark.sql.DataFrame" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <p class="shortcomment cmt">The degree of each vertex in the graph, returned as a DataFrame with two columns:</p><div class="fullcomment"><div class="comment cmt"><p>The degree of each vertex in the graph, returned as a DataFrame with two columns:</p><ul><li><a href="GraphFrame$.html#ID:String" class="extmbr" name="org.graphframes.GraphFrame#ID">GraphFrame.ID</a> the ID of the vertex</li><li>'degree' (integer) the degree of the vertex
 Note that vertices with 0 edges are not returned in the result.
 </li></ul></div></div>
@@ -309,9 +360,13 @@ Note that vertices with 0 edges are not returned in the result.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">edgeColumnMap</span><span class="result">: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Int" class="extype" target="_top">Int</a>]</span>
+        <span class="name">edgeColumnMap</span><span class="result">: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Int">Int</span>]</span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@edgeColumnMap:Map[String,Int]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <p class="shortcomment cmt">Version of <a href="#edgeColumns:Array[String]" class="extmbr" name="org.graphframes.GraphFrame#edgeColumns">edgeColumns</a> which maps column names to indices in the Rows.</p>
     </li><li name="org.graphframes.GraphFrame#edgeColumns" visbl="pub" data-isabs="false" fullComment="yes" group="conversions">
       <a id="edgeColumns:Array[String]"></a>
@@ -322,9 +377,13 @@ Note that vertices with 0 edges are not returned in the result.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">edgeColumns</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Array" class="extype" target="_top">Array</a>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+        <span class="name">edgeColumns</span><span class="result">: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@edgeColumns:Array[String]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <p class="shortcomment cmt">The vertex names in the <a href="#vertices:org.apache.spark.sql.DataFrame" class="extmbr" name="org.graphframes.GraphFrame#vertices">vertices</a> DataFrame, in order.</p><div class="fullcomment"><div class="comment cmt"><p>The vertex names in the <a href="#vertices:org.apache.spark.sql.DataFrame" class="extmbr" name="org.graphframes.GraphFrame#vertices">vertices</a> DataFrame, in order.</p><p>Helper method for <a href="#toGraphX:org.apache.spark.graphx.Graph[org.apache.spark.sql.Row,org.apache.spark.sql.Row]" class="extmbr" name="org.graphframes.GraphFrame#toGraphX">toGraphX</a> which specifies the schema of edge attributes.
 The edge attributes of the returned <code>edges</code> are given as a <code>Row</code>,
 and this method defines the column ordering in that <code>Row</code>.
@@ -340,13 +399,17 @@ and this method defines the column ordering in that <code>Row</code>.
       <span class="symbol">
         <span class="name">edges</span><span class="result">: <span class="extype" name="org.apache.spark.sql.DataFrame">DataFrame</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@edges:org.apache.spark.sql.DataFrame" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <p class="shortcomment cmt">The dataframe representation of the edges of the graph.</p><div class="fullcomment"><div class="comment cmt"><p>The dataframe representation of the edges of the graph.</p><p>It contains two columns called <a href="GraphFrame$.html#SRC:String" class="extmbr" name="org.graphframes.GraphFrame#SRC">GraphFrame.SRC</a> and <a href="GraphFrame$.html#DST:String" class="extmbr" name="org.graphframes.GraphFrame#DST">GraphFrame.DST</a> that contain
 the ids of the source vertex and the destination vertex of each edge, respectively.
 It may also contain various other columns with user-defined attributes for each edge.</p><p>For symmetric graphs, both pairs src -&gt; dst and dst -&gt; src are present with the same
 attributes for each pair.</p><p>The order of the columns is available in <a href="#edgeColumns:Array[String]" class="extmbr" name="org.graphframes.GraphFrame#edgeColumns">edgeColumns</a>.
 </p></div></div>
-    </li><li name="scala.Predef.any2Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ensuring(cond:A=&gt;Boolean,msg:=&gt;Any):A"></a>
       <a id="ensuring((GraphFrame)⇒Boolean,⇒Any):GraphFrame"></a>
       <h4 class="signature">
@@ -355,15 +418,19 @@ attributes for each pair.</p><p>The order of the columns is available in <a href
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a>) ⇒ <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="msg">msg: ⇒ <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a></span>
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="msg">msg: ⇒ <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@ensuring(cond:A=&gt;Boolean,msg:=&gt;Any):A" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
             This member is added by an implicit conversion from <a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a> to
-            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a>] performed by method any2Ensuring in scala.Predef.
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a>] performed by method Ensuring in scala.Predef.
             
           </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
-    </li><li name="scala.Predef.any2Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ensuring(cond:A=&gt;Boolean):A"></a>
       <a id="ensuring((GraphFrame)⇒Boolean):GraphFrame"></a>
       <h4 class="signature">
@@ -372,15 +439,19 @@ attributes for each pair.</p><p>The order of the columns is available in <a href
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a>) ⇒ <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a></span>
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@ensuring(cond:A=&gt;Boolean):A" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
             This member is added by an implicit conversion from <a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a> to
-            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a>] performed by method any2Ensuring in scala.Predef.
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a>] performed by method Ensuring in scala.Predef.
             
           </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
-    </li><li name="scala.Predef.any2Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ensuring(cond:Boolean,msg:=&gt;Any):A"></a>
       <a id="ensuring(Boolean,⇒Any):GraphFrame"></a>
       <h4 class="signature">
@@ -389,15 +460,19 @@ attributes for each pair.</p><p>The order of the columns is available in <a href
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="msg">msg: ⇒ <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a></span>
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="msg">msg: ⇒ <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@ensuring(cond:Boolean,msg:=&gt;Any):A" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
             This member is added by an implicit conversion from <a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a> to
-            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a>] performed by method any2Ensuring in scala.Predef.
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a>] performed by method Ensuring in scala.Predef.
             
           </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
-    </li><li name="scala.Predef.any2Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ensuring(cond:Boolean):A"></a>
       <a id="ensuring(Boolean):GraphFrame"></a>
       <h4 class="signature">
@@ -406,12 +481,16 @@ attributes for each pair.</p><p>The order of the columns is available in <a href
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a></span>
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@ensuring(cond:Boolean):A" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
             This member is added by an implicit conversion from <a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a> to
-            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a>] performed by method any2Ensuring in scala.Predef.
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a>] performed by method Ensuring in scala.Predef.
             
           </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
     </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
@@ -423,9 +502,13 @@ attributes for each pair.</p><p>The order of the columns is available in <a href
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li name="scala.AnyRef#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="equals(x$1:Any):Boolean"></a>
@@ -436,9 +519,13 @@ attributes for each pair.</p><p>The order of the columns is available in <a href
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@equals(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="finalize():Unit"></a>
@@ -449,9 +536,13 @@ attributes for each pair.</p><p>The order of the columns is available in <a href
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">finalize</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@finalize():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">(<span>
       
@@ -470,12 +561,17 @@ attributes for each pair.</p><p>The order of the columns is available in <a href
       <span class="symbol">
         <span class="name">find</span><span class="params">(<span name="pattern">pattern: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="org.apache.spark.sql.DataFrame">DataFrame</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@find(pattern:String):org.apache.spark.sql.DataFrame" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <p class="shortcomment cmt">Motif finding: Searching the graph for structural patterns</p><div class="fullcomment"><div class="comment cmt"><p>Motif finding: Searching the graph for structural patterns</p><p>Motif finding uses a simple Domain-Specific Language (DSL) for expressing structural queries.
 For example, <code>graph.find(&quot;(a)-[e]-&gt;(b); (b)-[e2]-&gt;(a)&quot;)</code> will search for pairs of vertices
 <code>a,b</code> connected by edges in both directions.  It will return a <code>DataFrame</code> of all such
 structures in the graph, with columns for each of the named elements (vertices or edges)
-in the motif.  In this case, the returned columns will be &quot;a, b, e, e2.&quot;</p><p>DSL for expressing structural patterns:</p><ul><li>The basic unit of a pattern is an edge.
+in the motif.  In this case, the returned columns will be in order of the pattern:
+&quot;a, e, b, e2.&quot;</p><p>DSL for expressing structural patterns:</p><ul><li>The basic unit of a pattern is an edge.
    For example, <code>&quot;(a)-[e]-&gt;(b)&quot;</code> expresses an edge <code>e</code> from vertex <code>a</code> to vertex <code>b</code>.
    Note that vertices are denoted by parentheses <code>(a)</code>, while edges are denoted by
    square brackets <code>[e]</code>.</li><li>A pattern is expressed as a union of edges. Edge patterns can be joined with semicolons.
@@ -492,11 +588,12 @@ in the motif.  In this case, the returned columns will be &quot;a, b, e, e2.&quo
    E.g., <code>&quot;(a)-[]-&gt;(b)&quot;</code> expresses an edge between vertices <code>a,b</code> but does not assign a name
    to the edge.  There will be no column for the anonymous edge in the result <code>DataFrame</code>.
    Similarly, <code>&quot;(a)-[e]-&gt;()&quot;</code> indicates an out-edge of vertex <code>a</code> but does not name
-   the destination vertex.</li></ul><p>More complex queries, such as queries which operate on vertex or edge attributes,
+   the destination vertex.</li><li>An edge can be negated to indicate that the edge should *not* be present in the graph.
+   E.g., <code>&quot;(a)-[]-&gt;(b); !(b)-[]-&gt;(a)&quot;</code> finds edges from <code>a</code> to <code>b</code> for which there is *no*
+   edge from <code>b</code> to <code>a</code>.</li></ul><p>More complex queries, such as queries which operate on vertex or edge attributes,
 can be expressed by applying filters to the result <code>DataFrame</code>.
-</p></div><dl class="paramcmts block"><dt class="param">pattern</dt><dd class="cmt"><p>Pattern specifying a motif to search for.</p></dd><dt>returns</dt><dd class="cmt"><p><code>DataFrame</code> containing all instances of the motif.
-</p></dd></dl></div>
-    </li><li name="scala.Predef.any2stringfmt#formatted" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+</p></div><dl class="paramcmts block"><dt class="param">pattern</dt><dd class="cmt"><p>Pattern specifying a motif to search for.</p></dd><dt>returns</dt><dd class="cmt"><p><code>DataFrame</code> containing all instances of the motif.</p></dd></dl></div>
+    </li><li name="scala.Predef.StringFormat#formatted" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="formatted(fmtstr:String):String"></a>
       <a id="formatted(String):String"></a>
       <h4 class="signature">
@@ -507,10 +604,14 @@ can be expressed by applying filters to the result <code>DataFrame</code>.
       <span class="symbol">
         <span class="implicit">formatted</span><span class="params">(<span name="fmtstr">fmtstr: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@formatted(fmtstr:String):String" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
             This member is added by an implicit conversion from <a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a> to
-            <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.runtime.StringFormat" class="extype" target="_top">StringFormat</a> performed by method any2stringfmt in scala.Predef.
+            <span class="extype" name="scala.Predef.StringFormat">StringFormat</span>[<a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a>] performed by method StringFormat in scala.Predef.
             
           </dd><dt>Definition Classes</dt><dd>StringFormat</dd><dt>Annotations</dt><dd>
                 <span class="name">@inline</span><span class="args">()</span>
@@ -527,7 +628,11 @@ can be expressed by applying filters to the result <code>DataFrame</code>.
       <span class="symbol">
         <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@getClass():Class[_]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="scala.AnyRef#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="hashCode():Int"></a>
@@ -538,9 +643,13 @@ can be expressed by applying filters to the result <code>DataFrame</code>.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Int" class="extype" target="_top">Int</a></span>
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@hashCode():Int" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="org.graphframes.GraphFrame#inDegrees" visbl="pub" data-isabs="false" fullComment="yes" group="degree">
       <a id="inDegrees:org.apache.spark.sql.DataFrame"></a>
@@ -553,7 +662,11 @@ can be expressed by applying filters to the result <code>DataFrame</code>.
       <span class="symbol">
         <span class="name">inDegrees</span><span class="result">: <span class="extype" name="org.apache.spark.sql.DataFrame">DataFrame</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@inDegrees:org.apache.spark.sql.DataFrame" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <p class="shortcomment cmt">The in-degree of each vertex in the graph, returned as a DataFame with two columns:</p><div class="fullcomment"><div class="comment cmt"><p>The in-degree of each vertex in the graph, returned as a DataFame with two columns:</p><ul><li><a href="GraphFrame$.html#ID:String" class="extmbr" name="org.graphframes.GraphFrame#ID">GraphFrame.ID</a> the ID of the vertex
 &quot;- &quot;inDegree&quot; (int) storing the in-degree of the vertex
 Note that vertices with 0 in-edges are not returned in the result.
@@ -567,23 +680,14 @@ Note that vertices with 0 in-edges are not returned in the result.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="org.apache.spark.Logging#isTraceEnabled" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="isTraceEnabled():Boolean"></a>
-      <a id="isTraceEnabled():Boolean"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">isTraceEnabled</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
     </li><li name="org.graphframes.GraphFrame#labelPropagation" visbl="pub" data-isabs="false" fullComment="yes" group="stdlib">
       <a id="labelPropagation:org.graphframes.lib.LabelPropagation"></a>
       <a id="labelPropagation:LabelPropagation"></a>
@@ -595,165 +699,81 @@ Note that vertices with 0 in-edges are not returned in the result.
       <span class="symbol">
         <span class="name">labelPropagation</span><span class="result">: <a href="lib/LabelPropagation.html" class="extype" name="org.graphframes.lib.LabelPropagation">LabelPropagation</a></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@labelPropagation:org.graphframes.lib.LabelPropagation" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <p class="shortcomment cmt">Label propagation algorithm.</p><div class="fullcomment"><div class="comment cmt"><p>Label propagation algorithm.</p><p>See <a href="lib/LabelPropagation.html" class="extype" name="org.graphframes.lib.LabelPropagation">org.graphframes.lib.LabelPropagation</a> for more details.
 </p></div></div>
-    </li><li name="org.apache.spark.Logging#log" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="log:org.slf4j.Logger"></a>
-      <a id="log:Logger"></a>
+    </li><li name="org.graphframes.Logging#logDebug" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="logDebug(s:String):Unit"></a>
+      <a id="logDebug(String):Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">log</span><span class="result">: <span class="extype" name="org.slf4j.Logger">Logger</span></span>
+        <span class="name">logDebug</span><span class="params">(<span name="s">s: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
-    </li><li name="org.apache.spark.Logging#logDebug" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="logDebug(msg:=&gt;String,throwable:Throwable):Unit"></a>
-      <a id="logDebug(⇒String,Throwable):Unit"></a>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@logDebug(s:String):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Logging</dd></dl></div>
+    </li><li name="org.graphframes.Logging#logInfo" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="logInfo(s:String):Unit"></a>
+      <a id="logInfo(String):Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">logDebug</span><span class="params">(<span name="msg">msg: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>, <span name="throwable">throwable: <span class="extype" name="scala.Throwable">Throwable</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">logInfo</span><span class="params">(<span name="s">s: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
-    </li><li name="org.apache.spark.Logging#logDebug" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="logDebug(msg:=&gt;String):Unit"></a>
-      <a id="logDebug(⇒String):Unit"></a>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@logInfo(s:String):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Logging</dd></dl></div>
+    </li><li name="org.graphframes.Logging#logTrace" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="logTrace(s:String):Unit"></a>
+      <a id="logTrace(String):Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">logDebug</span><span class="params">(<span name="msg">msg: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">logTrace</span><span class="params">(<span name="s">s: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
-    </li><li name="org.apache.spark.Logging#logError" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="logError(msg:=&gt;String,throwable:Throwable):Unit"></a>
-      <a id="logError(⇒String,Throwable):Unit"></a>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@logTrace(s:String):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Logging</dd></dl></div>
+    </li><li name="com.typesafe.scalalogging.slf4j.LazyLogging#logger" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="logger:com.typesafe.scalalogging.slf4j.Logger"></a>
+      <a id="logger:Logger"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
-        <span class="kind">def</span>
+        <span class="kind">lazy val</span>
       </span>
       <span class="symbol">
-        <span class="name">logError</span><span class="params">(<span name="msg">msg: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>, <span name="throwable">throwable: <span class="extype" name="scala.Throwable">Throwable</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">logger</span><span class="result">: <span class="extype" name="com.typesafe.scalalogging.slf4j.Logger">Logger</span></span>
       </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
-    </li><li name="org.apache.spark.Logging#logError" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="logError(msg:=&gt;String):Unit"></a>
-      <a id="logError(⇒String):Unit"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">logError</span><span class="params">(<span name="msg">msg: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
-    </li><li name="org.apache.spark.Logging#logInfo" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="logInfo(msg:=&gt;String,throwable:Throwable):Unit"></a>
-      <a id="logInfo(⇒String,Throwable):Unit"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">logInfo</span><span class="params">(<span name="msg">msg: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>, <span name="throwable">throwable: <span class="extype" name="scala.Throwable">Throwable</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
-    </li><li name="org.apache.spark.Logging#logInfo" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="logInfo(msg:=&gt;String):Unit"></a>
-      <a id="logInfo(⇒String):Unit"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">logInfo</span><span class="params">(<span name="msg">msg: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
-    </li><li name="org.apache.spark.Logging#logName" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="logName:String"></a>
-      <a id="logName:String"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">logName</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
-    </li><li name="org.apache.spark.Logging#logTrace" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="logTrace(msg:=&gt;String,throwable:Throwable):Unit"></a>
-      <a id="logTrace(⇒String,Throwable):Unit"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">logTrace</span><span class="params">(<span name="msg">msg: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>, <span name="throwable">throwable: <span class="extype" name="scala.Throwable">Throwable</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
-    </li><li name="org.apache.spark.Logging#logTrace" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="logTrace(msg:=&gt;String):Unit"></a>
-      <a id="logTrace(⇒String):Unit"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">logTrace</span><span class="params">(<span name="msg">msg: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
-    </li><li name="org.apache.spark.Logging#logWarning" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="logWarning(msg:=&gt;String,throwable:Throwable):Unit"></a>
-      <a id="logWarning(⇒String,Throwable):Unit"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">logWarning</span><span class="params">(<span name="msg">msg: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>, <span name="throwable">throwable: <span class="extype" name="scala.Throwable">Throwable</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
-    </li><li name="org.apache.spark.Logging#logWarning" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="logWarning(msg:=&gt;String):Unit"></a>
-      <a id="logWarning(⇒String):Unit"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">logWarning</span><span class="params">(<span name="msg">msg: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@logger:com.typesafe.scalalogging.slf4j.Logger" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>LazyLogging → Logging</dd></dl></div>
     </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a>
       <a id="ne(AnyRef):Boolean"></a>
@@ -763,9 +783,13 @@ Note that vertices with 0 in-edges are not returned in the result.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="notify():Unit"></a>
@@ -776,9 +800,13 @@ Note that vertices with 0 in-edges are not returned in the result.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">notify</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@notify():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li name="scala.AnyRef#notifyAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="notifyAll():Unit"></a>
@@ -789,9 +817,13 @@ Note that vertices with 0 in-edges are not returned in the result.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@notifyAll():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li name="org.graphframes.GraphFrame#outDegrees" visbl="pub" data-isabs="false" fullComment="yes" group="degree">
       <a id="outDegrees:org.apache.spark.sql.DataFrame"></a>
@@ -804,7 +836,11 @@ Note that vertices with 0 in-edges are not returned in the result.
       <span class="symbol">
         <span class="name">outDegrees</span><span class="result">: <span class="extype" name="org.apache.spark.sql.DataFrame">DataFrame</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@outDegrees:org.apache.spark.sql.DataFrame" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <p class="shortcomment cmt">The out-degree of each vertex in the graph, returned as a DataFrame with two columns:</p><div class="fullcomment"><div class="comment cmt"><p>The out-degree of each vertex in the graph, returned as a DataFrame with two columns:</p><ul><li><a href="GraphFrame$.html#ID:String" class="extmbr" name="org.graphframes.GraphFrame#ID">GraphFrame.ID</a> the ID of the vertex</li><li>&quot;outDegree&quot; (integer) storing the out-degree of the vertex
 Note that vertices with 0 out-edges are not returned in the result.
 </li></ul></div></div>
@@ -819,9 +855,51 @@ Note that vertices with 0 out-edges are not returned in the result.
       <span class="symbol">
         <span class="name">pageRank</span><span class="result">: <a href="lib/PageRank.html" class="extype" name="org.graphframes.lib.PageRank">PageRank</a></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@pageRank:org.graphframes.lib.PageRank" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <p class="shortcomment cmt">PageRank algorithm.</p><div class="fullcomment"><div class="comment cmt"><p>PageRank algorithm.</p><p>See <a href="lib/PageRank.html" class="extype" name="org.graphframes.lib.PageRank">org.graphframes.lib.PageRank</a> for more details.
 </p></div></div>
+    </li><li name="org.graphframes.GraphFrame#persist" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="persist(newLevel:org.apache.spark.storage.StorageLevel):GraphFrame.this.type"></a>
+      <a id="persist(StorageLevel):GraphFrame.this.type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">persist</span><span class="params">(<span name="newLevel">newLevel: <span class="extype" name="org.apache.spark.storage.StorageLevel">StorageLevel</span></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a>.this.type</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@persist(newLevel:org.apache.spark.storage.StorageLevel):GraphFrame.this.type" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Persist the dataframe representation of vertices and edges of the graph with the given
+storage level.</p><div class="fullcomment"><div class="comment cmt"><p>Persist the dataframe representation of vertices and edges of the graph with the given
+storage level.</p></div><dl class="paramcmts block"><dt class="param">newLevel</dt><dd class="cmt"><p>One of: <code>MEMORY_ONLY</code>, <code>MEMORY_AND_DISK</code>, <code>MEMORY_ONLY_SER</code>,
+<code>MEMORY_AND_DISK_SER</code>, <code>DISK_ONLY</code>, <code>MEMORY_ONLY_2</code>, <code>MEMORY_AND_DISK_2</code>, etc..</p></dd></dl></div>
+    </li><li name="org.graphframes.GraphFrame#persist" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="persist():GraphFrame.this.type"></a>
+      <a id="persist():GraphFrame.this.type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">persist</span><span class="params">()</span><span class="result">: <a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a>.this.type</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@persist():GraphFrame.this.type" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Persist the dataframe representation of vertices and edges of the graph with the default
+storage level.</p>
     </li><li name="org.graphframes.GraphFrame#shortestPaths" visbl="pub" data-isabs="false" fullComment="yes" group="stdlib">
       <a id="shortestPaths:org.graphframes.lib.ShortestPaths"></a>
       <a id="shortestPaths:ShortestPaths"></a>
@@ -833,7 +911,11 @@ Note that vertices with 0 out-edges are not returned in the result.
       <span class="symbol">
         <span class="name">shortestPaths</span><span class="result">: <a href="lib/ShortestPaths.html" class="extype" name="org.graphframes.lib.ShortestPaths">ShortestPaths</a></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@shortestPaths:org.graphframes.lib.ShortestPaths" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <p class="shortcomment cmt">Shortest paths algorithm.</p><div class="fullcomment"><div class="comment cmt"><p>Shortest paths algorithm.</p><p>See <a href="lib/ShortestPaths.html" class="extype" name="org.graphframes.lib.ShortestPaths">org.graphframes.lib.ShortestPaths</a> for more details.
 </p></div></div>
     </li><li name="org.graphframes.GraphFrame#stronglyConnectedComponents" visbl="pub" data-isabs="false" fullComment="yes" group="stdlib">
@@ -847,7 +929,11 @@ Note that vertices with 0 out-edges are not returned in the result.
       <span class="symbol">
         <span class="name">stronglyConnectedComponents</span><span class="result">: <a href="lib/StronglyConnectedComponents.html" class="extype" name="org.graphframes.lib.StronglyConnectedComponents">StronglyConnectedComponents</a></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@stronglyConnectedComponents:org.graphframes.lib.StronglyConnectedComponents" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <p class="shortcomment cmt">Strongly connected components algorithm.</p><div class="fullcomment"><div class="comment cmt"><p>Strongly connected components algorithm.</p><p>See <a href="lib/StronglyConnectedComponents.html" class="extype" name="org.graphframes.lib.StronglyConnectedComponents">org.graphframes.lib.StronglyConnectedComponents</a> for more details.
 </p></div></div>
     </li><li name="org.graphframes.GraphFrame#svdPlusPlus" visbl="pub" data-isabs="false" fullComment="yes" group="stdlib">
@@ -861,7 +947,11 @@ Note that vertices with 0 out-edges are not returned in the result.
       <span class="symbol">
         <span class="name">svdPlusPlus</span><span class="result">: <a href="lib/SVDPlusPlus.html" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@svdPlusPlus:org.graphframes.lib.SVDPlusPlus" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <p class="shortcomment cmt">SVD++ algorithm.</p><div class="fullcomment"><div class="comment cmt"><p>SVD++ algorithm.</p><p>See <a href="lib/SVDPlusPlus.html" class="extype" name="org.graphframes.lib.SVDPlusPlus">org.graphframes.lib.SVDPlusPlus</a> for more details.
 </p></div></div>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
@@ -875,7 +965,11 @@ Note that vertices with 0 out-edges are not returned in the result.
       <span class="symbol">
         <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li name="org.graphframes.GraphFrame#toGraphX" visbl="pub" data-isabs="false" fullComment="yes" group="conversions">
       <a id="toGraphX:org.apache.spark.graphx.Graph[org.apache.spark.sql.Row,org.apache.spark.sql.Row]"></a>
@@ -888,7 +982,11 @@ Note that vertices with 0 out-edges are not returned in the result.
       <span class="symbol">
         <span class="name">toGraphX</span><span class="result">: <span class="extype" name="org.apache.spark.graphx.Graph">Graph</span>[<span class="extype" name="org.apache.spark.sql.Row">Row</span>, <span class="extype" name="org.apache.spark.sql.Row">Row</span>]</span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@toGraphX:org.apache.spark.graphx.Graph[org.apache.spark.sql.Row,org.apache.spark.sql.Row]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <p class="shortcomment cmt">Converts this <a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a> instance to a GraphX <code>Graph</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Converts this <a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a> instance to a GraphX <code>Graph</code>.
 Vertex and edge attributes are the original rows in <a href="#vertices:org.apache.spark.sql.DataFrame" class="extmbr" name="org.graphframes.GraphFrame#vertices">vertices</a> and <a href="#edges:org.apache.spark.sql.DataFrame" class="extmbr" name="org.graphframes.GraphFrame#edges">edges</a>, respectively.</p><p>Note that vertex (and edge) attributes include vertex IDs (and source, destination IDs)
 in order to support non-Long vertex IDs.  If the vertex IDs are not convertible to Long values,
@@ -907,7 +1005,11 @@ expensive operation).</p><p>The column ordering of the returned <code>Graph</cod
       <span class="symbol">
         <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@toString():String" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a> → AnyRef → Any</dd></dl></div>
     </li><li name="org.graphframes.GraphFrame#triangleCount" visbl="pub" data-isabs="false" fullComment="yes" group="stdlib">
       <a id="triangleCount:org.graphframes.lib.TriangleCount"></a>
@@ -920,7 +1022,11 @@ expensive operation).</p><p>The column ordering of the returned <code>Graph</cod
       <span class="symbol">
         <span class="name">triangleCount</span><span class="result">: <a href="lib/TriangleCount.html" class="extype" name="org.graphframes.lib.TriangleCount">TriangleCount</a></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@triangleCount:org.graphframes.lib.TriangleCount" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <p class="shortcomment cmt">Triangle count algorithm.</p><div class="fullcomment"><div class="comment cmt"><p>Triangle count algorithm.</p><p>See <a href="lib/TriangleCount.html" class="extype" name="org.graphframes.lib.TriangleCount">org.graphframes.lib.TriangleCount</a> for more details.
 </p></div></div>
     </li><li name="org.graphframes.GraphFrame#triplets" visbl="pub" data-isabs="false" fullComment="yes" group="structure">
@@ -934,12 +1040,53 @@ expensive operation).</p><p>The column ordering of the returned <code>Graph</cod
       <span class="symbol">
         <span class="name">triplets</span><span class="result">: <span class="extype" name="org.apache.spark.sql.DataFrame">DataFrame</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@triplets:org.apache.spark.sql.DataFrame" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <p class="shortcomment cmt">Returns triplets: (source vertex)-[edge]-&gt;(destination vertex) for all edges in the graph.</p><div class="fullcomment"><div class="comment cmt"><p>Returns triplets: (source vertex)-[edge]-&gt;(destination vertex) for all edges in the graph.
 The DataFrame returned has 3 columns, with names: <a href="GraphFrame$.html#SRC:String" class="extmbr" name="org.graphframes.GraphFrame#SRC">GraphFrame.SRC</a>, <a href="GraphFrame$.html#EDGE:String" class="extmbr" name="org.graphframes.GraphFrame#EDGE">GraphFrame.EDGE</a>,
 and <a href="GraphFrame$.html#DST:String" class="extmbr" name="org.graphframes.GraphFrame#DST">GraphFrame.DST</a>.  The 2 vertex columns have schema matching <a href="#vertices:org.apache.spark.sql.DataFrame" class="extmbr" name="org.graphframes.GraphFrame#vertices">GraphFrame.vertices</a>,
 and the edge column has a schema matching <a href="#edges:org.apache.spark.sql.DataFrame" class="extmbr" name="org.graphframes.GraphFrame#edges">GraphFrame.edges</a>.
 </p></div></div>
+    </li><li name="org.graphframes.GraphFrame#unpersist" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="unpersist(blocking:Boolean):GraphFrame.this.type"></a>
+      <a id="unpersist(Boolean):GraphFrame.this.type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">unpersist</span><span class="params">(<span name="blocking">blocking: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a>.this.type</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@unpersist(blocking:Boolean):GraphFrame.this.type" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Mark the dataframe representation of vertices and edges of the graph as non-persistent, and
+remove all blocks for it from memory and disk.</p><div class="fullcomment"><div class="comment cmt"><p>Mark the dataframe representation of vertices and edges of the graph as non-persistent, and
+remove all blocks for it from memory and disk.</p></div><dl class="paramcmts block"><dt class="param">blocking</dt><dd class="cmt"><p>Whether to block until all blocks are deleted.</p></dd></dl></div>
+    </li><li name="org.graphframes.GraphFrame#unpersist" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="unpersist():GraphFrame.this.type"></a>
+      <a id="unpersist():GraphFrame.this.type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">unpersist</span><span class="params">()</span><span class="result">: <a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a>.this.type</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@unpersist():GraphFrame.this.type" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Mark the dataframe representation of vertices and edges of the graph as non-persistent, and
+remove all blocks for it from memory and disk.</p>
     </li><li name="org.graphframes.GraphFrame#vertexColumnMap" visbl="pub" data-isabs="false" fullComment="no" group="conversions">
       <a id="vertexColumnMap:Map[String,Int]"></a>
       <a id="vertexColumnMap:Map[String,Int]"></a>
@@ -949,9 +1096,13 @@ and the edge column has a schema matching <a href="#edges:org.apache.spark.sql.D
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">vertexColumnMap</span><span class="result">: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Int" class="extype" target="_top">Int</a>]</span>
+        <span class="name">vertexColumnMap</span><span class="result">: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Int">Int</span>]</span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@vertexColumnMap:Map[String,Int]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <p class="shortcomment cmt">Version of <a href="#vertexColumns:Array[String]" class="extmbr" name="org.graphframes.GraphFrame#vertexColumns">vertexColumns</a> which maps column names to indices in the Rows.</p>
     </li><li name="org.graphframes.GraphFrame#vertexColumns" visbl="pub" data-isabs="false" fullComment="yes" group="conversions">
       <a id="vertexColumns:Array[String]"></a>
@@ -962,9 +1113,13 @@ and the edge column has a schema matching <a href="#edges:org.apache.spark.sql.D
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">vertexColumns</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Array" class="extype" target="_top">Array</a>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+        <span class="name">vertexColumns</span><span class="result">: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@vertexColumns:Array[String]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <p class="shortcomment cmt">The column names in the <a href="#vertices:org.apache.spark.sql.DataFrame" class="extmbr" name="org.graphframes.GraphFrame#vertices">vertices</a> DataFrame, in order.</p><div class="fullcomment"><div class="comment cmt"><p>The column names in the <a href="#vertices:org.apache.spark.sql.DataFrame" class="extmbr" name="org.graphframes.GraphFrame#vertices">vertices</a> DataFrame, in order.</p><p>Helper method for <a href="#toGraphX:org.apache.spark.graphx.Graph[org.apache.spark.sql.Row,org.apache.spark.sql.Row]" class="extmbr" name="org.graphframes.GraphFrame#toGraphX">toGraphX</a> which specifies the schema of vertex attributes.
 The vertex attributes of the returned <code>Graph</code> are given as a <code>Row</code>,
 and this method defines the column ordering in that <code>Row</code>.
@@ -980,7 +1135,11 @@ and this method defines the column ordering in that <code>Row</code>.
       <span class="symbol">
         <span class="name">vertices</span><span class="result">: <span class="extype" name="org.apache.spark.sql.DataFrame">DataFrame</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@vertices:org.apache.spark.sql.DataFrame" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <p class="shortcomment cmt">The dataframe representation of the vertices of the graph.</p><div class="fullcomment"><div class="comment cmt"><p>The dataframe representation of the vertices of the graph.</p><p>It contains a column called <a href="GraphFrame$.html#ID:String" class="extmbr" name="org.graphframes.GraphFrame#ID">GraphFrame.ID</a> with the id of the vertex,
 and various other user-defined attributes with other attributes.</p><p>The order of the columns is available in <a href="#vertexColumns:Array[String]" class="extmbr" name="org.graphframes.GraphFrame#vertexColumns">vertexColumns</a>.
 </p></div></div>
@@ -993,9 +1152,13 @@ and various other user-defined attributes with other attributes.</p><p>The order
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">wait</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@wait():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">(<span>
       
@@ -1012,9 +1175,13 @@ and various other user-defined attributes with other attributes.</p><p>The order
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Long" class="extype" target="_top">Long</a></span>, <span name="arg1">arg1: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>, <span name="arg1">arg1: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">(<span>
       
@@ -1031,9 +1198,13 @@ and various other user-defined attributes with other attributes.</p><p>The order
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Long" class="extype" target="_top">Long</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@wait(x$1:Long):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">(<span>
       
@@ -1041,7 +1212,7 @@ and various other user-defined attributes with other attributes.</p><p>The order
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="scala.Predef.any2ArrowAssoc#→" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="scala.Predef.ArrowAssoc#→" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="→[B](y:B):(A,B)"></a>
       <a id="→[B](B):(GraphFrame,B)"></a>
       <h4 class="signature">
@@ -1052,127 +1223,55 @@ and various other user-defined attributes with other attributes.</p><p>The order
       <span class="symbol">
         <span title="gt4s: $u2192" class="implicit">→</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="y">y: <span class="extype" name="scala.Predef.ArrowAssoc.→.B">B</span></span>)</span><span class="result">: (<a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a>, <span class="extype" name="scala.Predef.ArrowAssoc.→.B">B</span>)</span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.graphframes.GraphFrame@→[B](y:B):(A,B)" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
             This member is added by an implicit conversion from <a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a> to
-            <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a>] performed by method any2ArrowAssoc in scala.Predef.
+            <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a>] performed by method ArrowAssoc in scala.Predef.
             
           </dd><dt>Definition Classes</dt><dd>ArrowAssoc</dd></dl></div>
     </li></ol>
             </div>
 
-        <div id="values" class="values members">
-              <h3>Shadowed Implicit Value Members</h3>
-              <ol><li name="scala.Predef.any2stringadd#self" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="self:Any"></a>
-      <a id="self:Any"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="implicit shadowed">self</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Any" class="extype" target="_top">Any</a></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
-            This member is added by an implicit conversion from <a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a> to
-            <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.runtime.StringAdd" class="extype" target="_top">StringAdd</a> performed by method any2stringadd in scala.Predef.
-            
-          </dd><dt class="implicit">Shadowing</dt><dd>This implicitly inherited member is ambiguous. One or more implicitly inherited members have similar signatures, so calling this member may produce an ambiguous implicit conversion compiler error.<br />To access this member you can use a <a href="http://stackoverflow.com/questions/2087250/what-is-the-purpose-of-type-ascription-in-scala" target="_blank">type ascription</a>:<br /><div class="cmt"><pre>(graphFrame: StringAdd).self</pre></div></dd><dt>Definition Classes</dt><dd>StringAdd</dd></dl></div>
-    </li><li name="scala.Predef.any2stringfmt#self" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="self:Any"></a>
-      <a id="self:Any"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="implicit shadowed">self</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Any" class="extype" target="_top">Any</a></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
-            This member is added by an implicit conversion from <a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a> to
-            <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.runtime.StringFormat" class="extype" target="_top">StringFormat</a> performed by method any2stringfmt in scala.Predef.
-            
-          </dd><dt class="implicit">Shadowing</dt><dd>This implicitly inherited member is ambiguous. One or more implicitly inherited members have similar signatures, so calling this member may produce an ambiguous implicit conversion compiler error.<br />To access this member you can use a <a href="http://stackoverflow.com/questions/2087250/what-is-the-purpose-of-type-ascription-in-scala" target="_blank">type ascription</a>:<br /><div class="cmt"><pre>(graphFrame: StringFormat).self</pre></div></dd><dt>Definition Classes</dt><dd>StringFormat</dd></dl></div>
-    </li></ol>
-            </div>
+        
 
-        <div id="values" class="values members">
-              <h3>Deprecated Value Members</h3>
-              <ol><li name="scala.Predef.any2ArrowAssoc#x" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="x:A"></a>
-      <a id="x:GraphFrame"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="implicit shadowed deprecated" title="Deprecated: (Since version 2.10.0) Use leftOfArrow instead">x</span><span class="result">: <a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
-            This member is added by an implicit conversion from <a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a> to
-            <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a>] performed by method any2ArrowAssoc in scala.Predef.
-            
-          </dd><dt class="implicit">Shadowing</dt><dd>This implicitly inherited member is ambiguous. One or more implicitly inherited members have similar signatures, so calling this member may produce an ambiguous implicit conversion compiler error.<br />To access this member you can use a <a href="http://stackoverflow.com/questions/2087250/what-is-the-purpose-of-type-ascription-in-scala" target="_blank">type ascription</a>:<br /><div class="cmt"><pre>(graphFrame: ArrowAssoc[GraphFrame]).x</pre></div></dd><dt>Definition Classes</dt><dd>ArrowAssoc</dd><dt>Annotations</dt><dd>
-                <span class="name">@deprecated</span>
-              
-        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.10.0)</i> Use <code><u>leftOfArrow<code> instead</code></u></code></p></dd></dl></div>
-    </li><li name="scala.Predef.any2Ensuring#x" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="x:A"></a>
-      <a id="x:GraphFrame"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="implicit shadowed deprecated" title="Deprecated: (Since version 2.10.0) Use resultOfEnsuring instead">x</span><span class="result">: <a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
-            This member is added by an implicit conversion from <a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a> to
-            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a>] performed by method any2Ensuring in scala.Predef.
-            
-          </dd><dt class="implicit">Shadowing</dt><dd>This implicitly inherited member is ambiguous. One or more implicitly inherited members have similar signatures, so calling this member may produce an ambiguous implicit conversion compiler error.<br />To access this member you can use a <a href="http://stackoverflow.com/questions/2087250/what-is-the-purpose-of-type-ascription-in-scala" target="_blank">type ascription</a>:<br /><div class="cmt"><pre>(graphFrame: Ensuring[GraphFrame]).x</pre></div></dd><dt>Definition Classes</dt><dd>Ensuring</dd><dt>Annotations</dt><dd>
-                <span class="name">@deprecated</span>
-              
-        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.10.0)</i> Use <code><u>resultOfEnsuring<code> instead</code></u></code></p></dd></dl></div>
-    </li></ol>
-            </div>
+        
         </div>
 
         <div id="inheritedMembers">
         <div class="parent" name="scala.Serializable">
-              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></h3>
+              <h3>Inherited from <span class="extype" name="scala.Serializable">Serializable</span></h3>
             </div><div class="parent" name="java.io.Serializable">
               <h3>Inherited from <span class="extype" name="java.io.Serializable">Serializable</span></h3>
-            </div><div class="parent" name="org.apache.spark.Logging">
-              <h3>Inherited from <span class="extype" name="org.apache.spark.Logging">Logging</span></h3>
+            </div><div class="parent" name="org.graphframes.Logging">
+              <h3>Inherited from <span class="extype" name="org.graphframes.Logging">Logging</span></h3>
+            </div><div class="parent" name="com.typesafe.scalalogging.slf4j.LazyLogging">
+              <h3>Inherited from <span class="extype" name="com.typesafe.scalalogging.slf4j.LazyLogging">LazyLogging</span></h3>
+            </div><div class="parent" name="com.typesafe.scalalogging.Logging">
+              <h3>Inherited from <span class="extype" name="com.typesafe.scalalogging.Logging">com.typesafe.scalalogging.Logging</span></h3>
             </div><div class="parent" name="scala.AnyRef">
-              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></h3>
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
             </div><div class="parent" name="scala.Any">
-              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Any" class="extype" target="_top">Any</a></h3>
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
             </div>
         <div class="conversion" name="scala.Predef.any2stringadd">
               <h3>Inherited by implicit conversion any2stringadd from
-                <a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a> to <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.runtime.StringAdd" class="extype" target="_top">StringAdd</a>
+                <a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a> to <span class="extype" name="scala.Predef.any2stringadd">any2stringadd</span>[<a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a>]
               </h3>
-            </div><div class="conversion" name="scala.Predef.any2stringfmt">
-              <h3>Inherited by implicit conversion any2stringfmt from
-                <a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a> to <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.runtime.StringFormat" class="extype" target="_top">StringFormat</a>
+            </div><div class="conversion" name="scala.Predef.StringFormat">
+              <h3>Inherited by implicit conversion StringFormat from
+                <a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a> to <span class="extype" name="scala.Predef.StringFormat">StringFormat</span>[<a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a>]
               </h3>
-            </div><div class="conversion" name="scala.Predef.any2ArrowAssoc">
-              <h3>Inherited by implicit conversion any2ArrowAssoc from
-                <a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a> to <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a>]
-              </h3>
-            </div><div class="conversion" name="scala.Predef.any2Ensuring">
-              <h3>Inherited by implicit conversion any2Ensuring from
+            </div><div class="conversion" name="scala.Predef.Ensuring">
+              <h3>Inherited by implicit conversion Ensuring from
                 <a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a> to <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a>]
+              </h3>
+            </div><div class="conversion" name="scala.Predef.ArrowAssoc">
+              <h3>Inherited by implicit conversion ArrowAssoc from
+                <a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a> to <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a>]
               </h3>
             </div>
         </div>
@@ -1204,6 +1303,7 @@ and various other user-defined attributes with other attributes.</p><p>The order
       <div id="tooltip"></div>
 
       <div id="footer">  </div>
-      <script defer="defer" type="text/javascript" id="jquery-js" src="../../lib/jquery.js"></script><script defer="defer" type="text/javascript" id="jquery-ui-js" src="../../lib/jquery-ui.js"></script><script defer="defer" type="text/javascript" id="tools-tooltip-js" src="../../lib/tools.tooltip.js"></script><script defer="defer" type="text/javascript" id="template-js" src="../../lib/template.js"></script>
+
+
     </body>
       </html>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>graphframes package &mdash; pygraphframes 0.1.0 documentation</title>
+    <title>graphframes package &mdash; pygraphframes 0.2.0 documentation</title>
     
     <link rel="stylesheet" href="static/nature.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.1.0',
+        VERSION:     '0.2.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="static/underscore.js"></script>
     <script type="text/javascript" src="static/doctools.js"></script>
     <script type="text/javascript" src="static/pygraphframes.js"></script>
-    <link rel="top" title="pygraphframes 0.1.0 documentation" href="index.html" />
+    <link rel="top" title="pygraphframes 0.2.0 documentation" href="index.html" />
     <link rel="next" title="graphframes.examples package" href="graphframes.examples.html" />
     <link rel="prev" title="Welcome to the GraphFrames Python API docs!" href="index.html" /> 
   </head>
@@ -46,7 +46,7 @@
           <a href="index.html" title="Welcome to the GraphFrames Python API docs!"
              accesskey="P">previous</a> |</li>
     
-        <li><a href="index.html">pygraphframes 0.1.0 documentation</a> &raquo;</li>
+        <li><a href="index.html">pygraphframes 0.2.0 documentation</a> &raquo;</li>
  
       </ul>
     </div>  
@@ -111,6 +111,13 @@ vertex IDs and destination vertex IDs of edges, respectively.</li>
 </dd></dl>
 
 <dl class="method">
+<dt id="graphframes.GraphFrame.cache">
+<tt class="descname">cache</tt><big>(</big><big>)</big><a class="headerlink" href="#graphframes.GraphFrame.cache" title="Permalink to this definition">¶</a></dt>
+<dd><p>Persist the dataframe representation of vertices and edges of the graph with the default
+storage level.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="graphframes.GraphFrame.connectedComponents">
 <tt class="descname">connectedComponents</tt><big>(</big><big>)</big><a class="headerlink" href="#graphframes.GraphFrame.connectedComponents" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes the connected components of the graph.</p>
@@ -119,7 +126,7 @@ vertex IDs and destination vertex IDs of edges, respectively.</li>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">GraphFrame with new vertices column &#8220;component&#8221;</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">DataFrame with new vertices column &#8220;component&#8221;</td>
 </tr>
 </tbody>
 </table>
@@ -205,7 +212,7 @@ respectively.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>maxIter</strong> &#8211; the number of iterations to be performed</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">GraphFrame with new vertices column &#8220;label&#8221;</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">DataFrame with new vertices column &#8220;label&#8221;</td>
 </tr>
 </tbody>
 </table>
@@ -261,6 +268,13 @@ This may not be set if the <cite>numIter</cite> parameter is set.</li>
 </dd></dl>
 
 <dl class="method">
+<dt id="graphframes.GraphFrame.persist">
+<tt class="descname">persist</tt><big>(</big><em>storageLevel=StorageLevel(False</em>, <em>True</em>, <em>False</em>, <em>False</em>, <em>1)</em><big>)</big><a class="headerlink" href="#graphframes.GraphFrame.persist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Persist the dataframe representation of vertices and edges of the graph with the given
+storage level.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="graphframes.GraphFrame.shortestPaths">
 <tt class="descname">shortestPaths</tt><big>(</big><em>landmarks</em><big>)</big><a class="headerlink" href="#graphframes.GraphFrame.shortestPaths" title="Permalink to this definition">¶</a></dt>
 <dd><p>Runs the shortest path algorithm from a set of landmark vertices in the graph.</p>
@@ -271,7 +285,7 @@ This may not be set if the <cite>numIter</cite> parameter is set.</li>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>landmarks</strong> &#8211; a set of one or more landmarks</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">GraphFrame with new vertices column &#8220;distances&#8221;</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">DataFrame with new vertices column &#8220;distances&#8221;</td>
 </tr>
 </tbody>
 </table>
@@ -288,7 +302,7 @@ This may not be set if the <cite>numIter</cite> parameter is set.</li>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>maxIter</strong> &#8211; the number of iterations to run</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">GraphFrame with new vertex column &#8220;component&#8221;</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">DataFrame with new vertex column &#8220;component&#8221;</td>
 </tr>
 </tbody>
 </table>
@@ -303,7 +317,7 @@ This may not be set if the <cite>numIter</cite> parameter is set.</li>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">GraphFrame with new vertex columns storing learned model.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">DataFrame with new vertex columns storing learned model.</td>
 </tr>
 </tbody>
 </table>
@@ -318,10 +332,40 @@ This may not be set if the <cite>numIter</cite> parameter is set.</li>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">GraphFrame with new vertex column &#8220;count&#8221;</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">DataFrame with new vertex column &#8220;count&#8221;</td>
 </tr>
 </tbody>
 </table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="graphframes.GraphFrame.triplets">
+<tt class="descname">triplets</tt><a class="headerlink" href="#graphframes.GraphFrame.triplets" title="Permalink to this definition">¶</a></dt>
+<dd><p>The triplets (source vertex)-[edge]-&gt;(destination vertex) for all edges in the graph.</p>
+<dl class="docutils">
+<dt>Returned as a <tt class="xref py py-class docutils literal"><span class="pre">DataFrame</span></tt> with three columns:</dt>
+<dd><ul class="first last simple">
+<li>&#8220;src&#8221;: source vertex with schema matching &#8216;vertices&#8217;</li>
+<li>&#8220;edge&#8221;: edge with schema matching &#8216;edges&#8217;</li>
+<li>&#8216;dst&#8217;: destination vertex with schema matching &#8216;vertices&#8217;</li>
+</ul>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">DataFrame with columns &#8216;src&#8217;, &#8216;edge&#8217;, and &#8216;dst&#8217;</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphframes.GraphFrame.unpersist">
+<tt class="descname">unpersist</tt><big>(</big><em>blocking=False</em><big>)</big><a class="headerlink" href="#graphframes.GraphFrame.unpersist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mark the dataframe representation of vertices and edges of the graph as non-persistent,
+and remove all blocks for it from memory and disk.</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -395,12 +439,12 @@ for vertex IDs.</p>
           <a href="index.html" title="Welcome to the GraphFrames Python API docs!"
              >previous</a> |</li>
     
-        <li><a href="index.html">pygraphframes 0.1.0 documentation</a> &raquo;</li>
+        <li><a href="index.html">pygraphframes 0.2.0 documentation</a> &raquo;</li>
  
       </ul>
     </div>
     <div class="footer">
-        &copy; Copyright 2016, Author.
+        &copy; Copyright 2016, Timothy Hunter and Joseph Bradley.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
     </div>
   </body>

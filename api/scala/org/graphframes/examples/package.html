@@ -1,5 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!DOCTYPE html >
 <html>
         <head>
           <title>examples - org.graphframes.examples</title>
@@ -9,6 +8,11 @@
           
       <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
       <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      
       <script type="text/javascript">
          if(top === self) {
             var url = '../../../index.html';
@@ -24,9 +28,13 @@
         </head>
         <body class="value">
       <div id="definition">
-        <img src="../../../lib/package_big.png" />
+        <img alt="Package" src="../../../lib/package_big.png" />
         <p id="owner"><a href="../../package.html" class="extype" name="org">org</a>.<a href="../package.html" class="extype" name="org.graphframes">graphframes</a></p>
-        <h1>examples</h1>
+        <h1>examples</h1><span class="permalink">
+      <a href="../../../index.html#org.graphframes.examples.package" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       </div>
 
       <h4 id="signature" class="signature">
@@ -67,9 +75,13 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="Graphs.html"><span class="name">Graphs</span></a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>
+        <a href="Graphs.html"><span class="name">Graphs</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.examples.package@GraphsextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       
     </li></ol>
             </div>
@@ -78,7 +90,7 @@
 
         <div id="values" class="values members">
               <h3>Value Members</h3>
-              <ol><li name="org.graphframes.examples.BeliefPropagation" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+              <ol><li name="org.graphframes.examples.BeliefPropagation" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="BeliefPropagation"></a>
       <a id="BeliefPropagation:BeliefPropagation"></a>
       <h4 class="signature">
@@ -89,8 +101,27 @@
       <span class="symbol">
         <a href="BeliefPropagation$.html"><span class="name">BeliefPropagation</span></a>
       </span>
-      </h4>
-      <p class="comment cmt">Example code for Belief Propagation (BP)</p>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.examples.package@BeliefPropagation" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Example code for Belief Propagation (BP)</p><div class="fullcomment"><div class="comment cmt"><p>Example code for Belief Propagation (BP)</p><p>This provides a template for building customized BP algorithms for different types of
+graphical models.</p><p>This example:</p><ul><li>Ising model on a grid</li><li>Parallel Belief Propagation using colored fields</li></ul><p>Ising models are probabilistic graphical models over binary variables x<sub>i</sub>.
+Each binary variable x<sub>i</sub> corresponds to one vertex, and it may take values -1 or +1.
+The probability distribution P(X) (over all x<sub>i</sub>) is parameterized by vertex factors a<sub>i</sub>
+and edge factors b<sub>ij</sub>:</p><pre>P(X) = (<span class="num">1</span>/Z) * exp[ \sum_i a_i x_i + \sum_{ij} b_{ij} x_i x_j ]</pre><p>where Z is the normalization constant (partition function).
+See <a href="https://en.wikipedia.org/wiki/Ising_model" target="_blank">Wikipedia</a> for more information on Ising models.</p><p>Belief Propagation (BP) provides marginal probabilities of the values of the variables x<sub>i</sub>,
+i.e., P(x<sub>i</sub>) for each i.  This allows a user to understand likely values of variables.
+See <a href="https://en.wikipedia.org/wiki/Belief_propagation" target="_blank">Wikipedia</a> for more information on BP.</p><p>We use a batch synchronous BP algorithm, where batches of vertices are updated synchronously.
+We follow the mean field update algorithm in Slide 13 of the
+<a href="http://www.eecs.berkeley.edu/~wainwrig/Talks/A_GraphModel_Tutorial" target="_blank">talk slides</a> from:
+ Wainwright. &quot;Graphical models, message-passing algorithms, and convex optimization.&quot;</p><p>The batches are chosen according to a coloring.  For background on graph colorings for inference,
+see for example:
+ Gonzalez et al. &quot;Parallel Gibbs Sampling: From Colored Fields to Thin Junction Trees.&quot;
+ AISTATS, 2011.</p><p>The BP algorithm works by:</p><ul><li>Coloring the graph by assigning a color to each vertex such that no neighboring vertices
+   share the same color.</li><li>In each step of BP, update all vertices of a single color.  Alternate colors.
+</li></ul></div></div>
     </li><li name="org.graphframes.examples.Graphs" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="Graphs"></a>
       <a id="Graphs:Graphs"></a>
@@ -102,8 +133,12 @@
       <span class="symbol">
         <a href="Graphs$.html"><span class="name">Graphs</span></a><span class="result"> extends <a href="Graphs.html" class="extype" name="org.graphframes.examples.Graphs">Graphs</a></span>
       </span>
-      </h4>
-      <p class="comment cmt">Example GraphFrames for testing the API</p>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.examples.package@Graphs" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Example GraphFrames for testing the API</p>
     </li></ol>
             </div>
 
@@ -129,6 +164,7 @@
       <div id="tooltip"></div>
 
       <div id="footer">  </div>
-      <script defer="defer" type="text/javascript" id="jquery-js" src="../../../lib/jquery.js"></script><script defer="defer" type="text/javascript" id="jquery-ui-js" src="../../../lib/jquery-ui.js"></script><script defer="defer" type="text/javascript" id="tools-tooltip-js" src="../../../lib/tools.tooltip.js"></script><script defer="defer" type="text/javascript" id="template-js" src="../../../lib/template.js"></script>
+
+
     </body>
       </html>

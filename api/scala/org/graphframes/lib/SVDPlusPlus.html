@@ -1,5 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!DOCTYPE html >
 <html>
         <head>
           <title>SVDPlusPlus - org.graphframes.lib.SVDPlusPlus</title>
@@ -9,6 +8,11 @@
           
       <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
       <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      
       <script type="text/javascript">
          if(top === self) {
             var url = '../../../index.html';
@@ -24,9 +28,17 @@
         </head>
         <body class="type">
       <div id="definition">
-        <a href="SVDPlusPlus$.html" title="Go to companion"><img src="../../../lib/class_to_object_big.png" /></a>
+        <a href="SVDPlusPlus$.html" title="See companion object"><img alt="Class/Object" src="../../../lib/class_to_object_big.png" /></a>
         <p id="owner"><a href="../../package.html" class="extype" name="org">org</a>.<a href="../package.html" class="extype" name="org.graphframes">graphframes</a>.<a href="package.html" class="extype" name="org.graphframes.lib">lib</a></p>
-        <h1><a href="SVDPlusPlus$.html" title="Go to companion">SVDPlusPlus</a></h1>
+        <h1><a href="SVDPlusPlus$.html" title="See companion object">SVDPlusPlus</a></h1><h3><span class="morelinks"><div>
+            Related Docs:
+            <a href="SVDPlusPlus$.html" title="See companion object">object SVDPlusPlus</a>
+            | <a href="package.html" class="extype" name="org.graphframes.lib">package lib</a>
+          </div></span></h3><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.SVDPlusPlus" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       </div>
 
       <h4 id="signature" class="signature">
@@ -46,7 +58,7 @@ in the future.</p><p>The prediction rule is r<sub>ui</sub> = u + b<sub>u</sub> +
 See the details on page 6 of the article.</p><p>Configuration parameters: see the description of each parameter in the article.</p><p>Returns a DataFrame with vertex attributes containing the trained model.  See the object
 (static) members for the names of the output columns.</p></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><span class="extype" name="org.graphframes.lib.Arguments">Arguments</span>, <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a>, <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Any" class="extype" target="_top">Any</a></div>
+          <div class="superTypes hiddenContent"><span class="extype" name="org.graphframes.lib.Arguments">Arguments</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
         
 
@@ -69,7 +81,7 @@ See the details on page 6 of the article.</p><p>Configuration parameters: see th
               </div><div id="ancestors">
                 <span class="filtertype">Implicitly<br />
                 </span>
-                <ol id="implicits"> <li class="in" name="scala.Predef.any2stringadd" data-hidden="true"><span>by any2stringadd</span></li><li class="in" name="scala.Predef.any2stringfmt" data-hidden="true"><span>by any2stringfmt</span></li><li class="in" name="scala.Predef.any2ArrowAssoc" data-hidden="true"><span>by any2ArrowAssoc</span></li><li class="in" name="scala.Predef.any2Ensuring" data-hidden="true"><span>by any2Ensuring</span></li>
+                <ol id="implicits"> <li class="in" name="scala.Predef.any2stringadd" data-hidden="true"><span>by any2stringadd</span></li><li class="in" name="scala.Predef.StringFormat" data-hidden="true"><span>by StringFormat</span></li><li class="in" name="scala.Predef.Ensuring" data-hidden="true"><span>by Ensuring</span></li><li class="in" name="scala.Predef.ArrowAssoc" data-hidden="true"><span>by ArrowAssoc</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -77,7 +89,6 @@ See the details on page 6 of the article.</p><p>Configuration parameters: see th
               <li class="hideall out"><span>Hide All</span></li>
               <li class="showall in"><span>Show all</span></li>
             </ol>
-            <a href="http://docs.scala-lang.org/overviews/scaladoc/usage.html#members" target="_blank">Learn more about member selection</a>
           </div>
         <div id="visbl">
             <span class="filtertype">Visibility</span>
@@ -96,19 +107,6 @@ See the details on page 6 of the article.</p><p>Configuration parameters: see th
         <div id="values" class="values members">
               <h3>Value Members</h3>
               <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="!=(x$1:AnyRef):Boolean"></a>
-      <a id="!=(AnyRef):Boolean"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier">final </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="scala.Any#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="!=(x$1:Any):Boolean"></a>
       <a id="!=(Any):Boolean"></a>
       <h4 class="signature">
@@ -117,10 +115,14 @@ See the details on page 6 of the article.</p><p>Configuration parameters: see th
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.SVDPlusPlus@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="##():Int"></a>
       <a id="##():Int"></a>
@@ -130,9 +132,13 @@ See the details on page 6 of the article.</p><p>Configuration parameters: see th
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Int" class="extype" target="_top">Int</a></span>
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.SVDPlusPlus@##():Int" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="scala.Predef.any2stringadd#+" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="+(other:String):String"></a>
@@ -143,15 +149,19 @@ See the details on page 6 of the article.</p><p>Configuration parameters: see th
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span title="gt4s: $plus" class="implicit">+</span><span class="params">(<span name="other">other: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+        <span title="gt4s: $plus" class="implicit">+</span><span class="params">(<span name="other">other: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.SVDPlusPlus@+(other:String):String" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
             This member is added by an implicit conversion from <a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a> to
-            <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.runtime.StringAdd" class="extype" target="_top">StringAdd</a> performed by method any2stringadd in scala.Predef.
+            <span class="extype" name="scala.Predef.any2stringadd">any2stringadd</span>[<a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a>] performed by method any2stringadd in scala.Predef.
             
-          </dd><dt>Definition Classes</dt><dd>StringAdd</dd></dl></div>
-    </li><li name="scala.Predef.any2ArrowAssoc#-&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+          </dd><dt>Definition Classes</dt><dd>any2stringadd</dd></dl></div>
+    </li><li name="scala.Predef.ArrowAssoc#-&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="-&gt;[B](y:B):(A,B)"></a>
       <a id="-&gt;[B](B):(SVDPlusPlus,B)"></a>
       <h4 class="signature">
@@ -162,29 +172,20 @@ See the details on page 6 of the article.</p><p>Configuration parameters: see th
       <span class="symbol">
         <span title="gt4s: $minus$greater" class="implicit">-&gt;</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="y">y: <span class="extype" name="scala.Predef.ArrowAssoc.-&gt;.B">B</span></span>)</span><span class="result">: (<a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a>, <span class="extype" name="scala.Predef.ArrowAssoc.-&gt;.B">B</span>)</span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.SVDPlusPlus@-&gt;[B](y:B):(A,B)" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
             This member is added by an implicit conversion from <a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a> to
-            <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a>] performed by method any2ArrowAssoc in scala.Predef.
+            <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a>] performed by method ArrowAssoc in scala.Predef.
             
           </dd><dt>Definition Classes</dt><dd>ArrowAssoc</dd><dt>Annotations</dt><dd>
                 <span class="name">@inline</span><span class="args">()</span>
               
         </dd></dl></div>
     </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="==(x$1:AnyRef):Boolean"></a>
-      <a id="==(AnyRef):Boolean"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier">final </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="scala.Any#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="==(x$1:Any):Boolean"></a>
       <a id="==(Any):Boolean"></a>
       <h4 class="signature">
@@ -193,10 +194,14 @@ See the details on page 6 of the article.</p><p>Configuration parameters: see th
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.SVDPlusPlus@==(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <a id="asInstanceOf[T0]:T0"></a>
@@ -208,7 +213,11 @@ See the details on page 6 of the article.</p><p>Configuration parameters: see th
       <span class="symbol">
         <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.SVDPlusPlus@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
     </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="clone():Object"></a>
@@ -219,9 +228,13 @@ See the details on page 6 of the article.</p><p>Configuration parameters: see th
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">clone</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.SVDPlusPlus@clone():Object" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">(<span>
       
@@ -229,7 +242,7 @@ See the details on page 6 of the article.</p><p>Configuration parameters: see th
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="scala.Predef.any2Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ensuring(cond:A=&gt;Boolean,msg:=&gt;Any):A"></a>
       <a id="ensuring((SVDPlusPlus)⇒Boolean,⇒Any):SVDPlusPlus"></a>
       <h4 class="signature">
@@ -238,15 +251,19 @@ See the details on page 6 of the article.</p><p>Configuration parameters: see th
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a>) ⇒ <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="msg">msg: ⇒ <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a></span>
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="msg">msg: ⇒ <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.SVDPlusPlus@ensuring(cond:A=&gt;Boolean,msg:=&gt;Any):A" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
             This member is added by an implicit conversion from <a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a> to
-            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a>] performed by method any2Ensuring in scala.Predef.
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a>] performed by method Ensuring in scala.Predef.
             
           </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
-    </li><li name="scala.Predef.any2Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ensuring(cond:A=&gt;Boolean):A"></a>
       <a id="ensuring((SVDPlusPlus)⇒Boolean):SVDPlusPlus"></a>
       <h4 class="signature">
@@ -255,15 +272,19 @@ See the details on page 6 of the article.</p><p>Configuration parameters: see th
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a>) ⇒ <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a></span>
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.SVDPlusPlus@ensuring(cond:A=&gt;Boolean):A" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
             This member is added by an implicit conversion from <a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a> to
-            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a>] performed by method any2Ensuring in scala.Predef.
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a>] performed by method Ensuring in scala.Predef.
             
           </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
-    </li><li name="scala.Predef.any2Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ensuring(cond:Boolean,msg:=&gt;Any):A"></a>
       <a id="ensuring(Boolean,⇒Any):SVDPlusPlus"></a>
       <h4 class="signature">
@@ -272,15 +293,19 @@ See the details on page 6 of the article.</p><p>Configuration parameters: see th
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="msg">msg: ⇒ <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a></span>
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="msg">msg: ⇒ <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.SVDPlusPlus@ensuring(cond:Boolean,msg:=&gt;Any):A" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
             This member is added by an implicit conversion from <a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a> to
-            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a>] performed by method any2Ensuring in scala.Predef.
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a>] performed by method Ensuring in scala.Predef.
             
           </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
-    </li><li name="scala.Predef.any2Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ensuring(cond:Boolean):A"></a>
       <a id="ensuring(Boolean):SVDPlusPlus"></a>
       <h4 class="signature">
@@ -289,12 +314,16 @@ See the details on page 6 of the article.</p><p>Configuration parameters: see th
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a></span>
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.SVDPlusPlus@ensuring(cond:Boolean):A" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
             This member is added by an implicit conversion from <a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a> to
-            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a>] performed by method any2Ensuring in scala.Predef.
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a>] performed by method Ensuring in scala.Predef.
             
           </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
     </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
@@ -306,9 +335,13 @@ See the details on page 6 of the article.</p><p>Configuration parameters: see th
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.SVDPlusPlus@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li name="scala.AnyRef#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="equals(x$1:Any):Boolean"></a>
@@ -319,9 +352,13 @@ See the details on page 6 of the article.</p><p>Configuration parameters: see th
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.SVDPlusPlus@equals(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="finalize():Unit"></a>
@@ -332,9 +369,13 @@ See the details on page 6 of the article.</p><p>Configuration parameters: see th
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">finalize</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.SVDPlusPlus@finalize():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">(<span>
       
@@ -342,7 +383,7 @@ See the details on page 6 of the article.</p><p>Configuration parameters: see th
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="scala.Predef.any2stringfmt#formatted" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="scala.Predef.StringFormat#formatted" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="formatted(fmtstr:String):String"></a>
       <a id="formatted(String):String"></a>
       <h4 class="signature">
@@ -353,10 +394,14 @@ See the details on page 6 of the article.</p><p>Configuration parameters: see th
       <span class="symbol">
         <span class="implicit">formatted</span><span class="params">(<span name="fmtstr">fmtstr: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.SVDPlusPlus@formatted(fmtstr:String):String" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
             This member is added by an implicit conversion from <a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a> to
-            <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.runtime.StringFormat" class="extype" target="_top">StringFormat</a> performed by method any2stringfmt in scala.Predef.
+            <span class="extype" name="scala.Predef.StringFormat">StringFormat</span>[<a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a>] performed by method StringFormat in scala.Predef.
             
           </dd><dt>Definition Classes</dt><dd>StringFormat</dd><dt>Annotations</dt><dd>
                 <span class="name">@inline</span><span class="args">()</span>
@@ -371,9 +416,13 @@ See the details on page 6 of the article.</p><p>Configuration parameters: see th
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">gamma1</span><span class="params">(<span name="value">value: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Double" class="extype" target="_top">Double</a></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a>.this.type</span>
+        <span class="name">gamma1</span><span class="params">(<span name="value">value: <span class="extype" name="scala.Double">Double</span></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a>.this.type</span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.SVDPlusPlus@gamma1(value:Double):SVDPlusPlus.this.type" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       
     </li><li name="org.graphframes.lib.SVDPlusPlus#gamma2" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="gamma2(value:Double):SVDPlusPlus.this.type"></a>
@@ -384,9 +433,13 @@ See the details on page 6 of the article.</p><p>Configuration parameters: see th
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">gamma2</span><span class="params">(<span name="value">value: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Double" class="extype" target="_top">Double</a></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a>.this.type</span>
+        <span class="name">gamma2</span><span class="params">(<span name="value">value: <span class="extype" name="scala.Double">Double</span></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a>.this.type</span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.SVDPlusPlus@gamma2(value:Double):SVDPlusPlus.this.type" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       
     </li><li name="org.graphframes.lib.SVDPlusPlus#gamma6" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="gamma6(value:Double):SVDPlusPlus.this.type"></a>
@@ -397,9 +450,13 @@ See the details on page 6 of the article.</p><p>Configuration parameters: see th
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">gamma6</span><span class="params">(<span name="value">value: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Double" class="extype" target="_top">Double</a></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a>.this.type</span>
+        <span class="name">gamma6</span><span class="params">(<span name="value">value: <span class="extype" name="scala.Double">Double</span></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a>.this.type</span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.SVDPlusPlus@gamma6(value:Double):SVDPlusPlus.this.type" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       
     </li><li name="org.graphframes.lib.SVDPlusPlus#gamma7" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="gamma7(value:Double):SVDPlusPlus.this.type"></a>
@@ -410,9 +467,13 @@ See the details on page 6 of the article.</p><p>Configuration parameters: see th
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">gamma7</span><span class="params">(<span name="value">value: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Double" class="extype" target="_top">Double</a></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a>.this.type</span>
+        <span class="name">gamma7</span><span class="params">(<span name="value">value: <span class="extype" name="scala.Double">Double</span></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a>.this.type</span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.SVDPlusPlus@gamma7(value:Double):SVDPlusPlus.this.type" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       
     </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
@@ -425,7 +486,11 @@ See the details on page 6 of the article.</p><p>Configuration parameters: see th
       <span class="symbol">
         <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.SVDPlusPlus@getClass():Class[_]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="scala.AnyRef#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="hashCode():Int"></a>
@@ -436,9 +501,13 @@ See the details on page 6 of the article.</p><p>Configuration parameters: see th
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Int" class="extype" target="_top">Int</a></span>
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.SVDPlusPlus@hashCode():Int" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="isInstanceOf[T0]:Boolean"></a>
@@ -449,9 +518,13 @@ See the details on page 6 of the article.</p><p>Configuration parameters: see th
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.SVDPlusPlus@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
     </li><li name="org.graphframes.lib.SVDPlusPlus#loss" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="loss:Double"></a>
@@ -462,9 +535,13 @@ See the details on page 6 of the article.</p><p>Configuration parameters: see th
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">loss</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Double" class="extype" target="_top">Double</a></span>
+        <span class="name">loss</span><span class="result">: <span class="extype" name="scala.Double">Double</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.SVDPlusPlus@loss:Double" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       
     </li><li name="org.graphframes.lib.SVDPlusPlus#maxIter" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="maxIter(value:Int):SVDPlusPlus.this.type"></a>
@@ -475,9 +552,13 @@ See the details on page 6 of the article.</p><p>Configuration parameters: see th
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">maxIter</span><span class="params">(<span name="value">value: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a>.this.type</span>
+        <span class="name">maxIter</span><span class="params">(<span name="value">value: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a>.this.type</span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.SVDPlusPlus@maxIter(value:Int):SVDPlusPlus.this.type" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       
     </li><li name="org.graphframes.lib.SVDPlusPlus#maxValue" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="maxValue(value:Double):SVDPlusPlus.this.type"></a>
@@ -488,9 +569,13 @@ See the details on page 6 of the article.</p><p>Configuration parameters: see th
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">maxValue</span><span class="params">(<span name="value">value: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Double" class="extype" target="_top">Double</a></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a>.this.type</span>
+        <span class="name">maxValue</span><span class="params">(<span name="value">value: <span class="extype" name="scala.Double">Double</span></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a>.this.type</span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.SVDPlusPlus@maxValue(value:Double):SVDPlusPlus.this.type" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       
     </li><li name="org.graphframes.lib.SVDPlusPlus#minValue" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="minValue(value:Double):SVDPlusPlus.this.type"></a>
@@ -501,9 +586,13 @@ See the details on page 6 of the article.</p><p>Configuration parameters: see th
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">minValue</span><span class="params">(<span name="value">value: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Double" class="extype" target="_top">Double</a></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a>.this.type</span>
+        <span class="name">minValue</span><span class="params">(<span name="value">value: <span class="extype" name="scala.Double">Double</span></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a>.this.type</span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.SVDPlusPlus@minValue(value:Double):SVDPlusPlus.this.type" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       
     </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a>
@@ -514,9 +603,13 @@ See the details on page 6 of the article.</p><p>Configuration parameters: see th
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.SVDPlusPlus@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="notify():Unit"></a>
@@ -527,9 +620,13 @@ See the details on page 6 of the article.</p><p>Configuration parameters: see th
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">notify</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.SVDPlusPlus@notify():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li name="scala.AnyRef#notifyAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="notifyAll():Unit"></a>
@@ -540,9 +637,13 @@ See the details on page 6 of the article.</p><p>Configuration parameters: see th
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.SVDPlusPlus@notifyAll():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li name="org.graphframes.lib.SVDPlusPlus#rank" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="rank(value:Int):SVDPlusPlus.this.type"></a>
@@ -553,9 +654,13 @@ See the details on page 6 of the article.</p><p>Configuration parameters: see th
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">rank</span><span class="params">(<span name="value">value: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a>.this.type</span>
+        <span class="name">rank</span><span class="params">(<span name="value">value: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a>.this.type</span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.SVDPlusPlus@rank(value:Int):SVDPlusPlus.this.type" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       
     </li><li name="org.graphframes.lib.SVDPlusPlus#run" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="run():org.apache.spark.sql.DataFrame"></a>
@@ -568,7 +673,11 @@ See the details on page 6 of the article.</p><p>Configuration parameters: see th
       <span class="symbol">
         <span class="name">run</span><span class="params">()</span><span class="result">: <span class="extype" name="org.apache.spark.sql.DataFrame">DataFrame</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.SVDPlusPlus@run():org.apache.spark.sql.DataFrame" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
@@ -581,7 +690,11 @@ See the details on page 6 of the article.</p><p>Configuration parameters: see th
       <span class="symbol">
         <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.SVDPlusPlus@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li name="scala.AnyRef#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="toString():String"></a>
@@ -594,7 +707,11 @@ See the details on page 6 of the article.</p><p>Configuration parameters: see th
       <span class="symbol">
         <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.SVDPlusPlus@toString():String" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
@@ -605,9 +722,13 @@ See the details on page 6 of the article.</p><p>Configuration parameters: see th
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">wait</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.SVDPlusPlus@wait():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">(<span>
       
@@ -624,9 +745,13 @@ See the details on page 6 of the article.</p><p>Configuration parameters: see th
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Long" class="extype" target="_top">Long</a></span>, <span name="arg1">arg1: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>, <span name="arg1">arg1: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.SVDPlusPlus@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">(<span>
       
@@ -643,9 +768,13 @@ See the details on page 6 of the article.</p><p>Configuration parameters: see th
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Long" class="extype" target="_top">Long</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.SVDPlusPlus@wait(x$1:Long):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">(<span>
       
@@ -653,7 +782,7 @@ See the details on page 6 of the article.</p><p>Configuration parameters: see th
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="scala.Predef.any2ArrowAssoc#→" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="scala.Predef.ArrowAssoc#→" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="→[B](y:B):(A,B)"></a>
       <a id="→[B](B):(SVDPlusPlus,B)"></a>
       <h4 class="signature">
@@ -664,123 +793,47 @@ See the details on page 6 of the article.</p><p>Configuration parameters: see th
       <span class="symbol">
         <span title="gt4s: $u2192" class="implicit">→</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="y">y: <span class="extype" name="scala.Predef.ArrowAssoc.→.B">B</span></span>)</span><span class="result">: (<a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a>, <span class="extype" name="scala.Predef.ArrowAssoc.→.B">B</span>)</span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.SVDPlusPlus@→[B](y:B):(A,B)" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
             This member is added by an implicit conversion from <a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a> to
-            <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a>] performed by method any2ArrowAssoc in scala.Predef.
+            <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a>] performed by method ArrowAssoc in scala.Predef.
             
           </dd><dt>Definition Classes</dt><dd>ArrowAssoc</dd></dl></div>
     </li></ol>
             </div>
 
-        <div id="values" class="values members">
-              <h3>Shadowed Implicit Value Members</h3>
-              <ol><li name="scala.Predef.any2stringadd#self" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="self:Any"></a>
-      <a id="self:Any"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="implicit shadowed">self</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Any" class="extype" target="_top">Any</a></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
-            This member is added by an implicit conversion from <a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a> to
-            <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.runtime.StringAdd" class="extype" target="_top">StringAdd</a> performed by method any2stringadd in scala.Predef.
-            
-          </dd><dt class="implicit">Shadowing</dt><dd>This implicitly inherited member is ambiguous. One or more implicitly inherited members have similar signatures, so calling this member may produce an ambiguous implicit conversion compiler error.<br />To access this member you can use a <a href="http://stackoverflow.com/questions/2087250/what-is-the-purpose-of-type-ascription-in-scala" target="_blank">type ascription</a>:<br /><div class="cmt"><pre>(sVDPlusPlus: StringAdd).self</pre></div></dd><dt>Definition Classes</dt><dd>StringAdd</dd></dl></div>
-    </li><li name="scala.Predef.any2stringfmt#self" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="self:Any"></a>
-      <a id="self:Any"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="implicit shadowed">self</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Any" class="extype" target="_top">Any</a></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
-            This member is added by an implicit conversion from <a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a> to
-            <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.runtime.StringFormat" class="extype" target="_top">StringFormat</a> performed by method any2stringfmt in scala.Predef.
-            
-          </dd><dt class="implicit">Shadowing</dt><dd>This implicitly inherited member is ambiguous. One or more implicitly inherited members have similar signatures, so calling this member may produce an ambiguous implicit conversion compiler error.<br />To access this member you can use a <a href="http://stackoverflow.com/questions/2087250/what-is-the-purpose-of-type-ascription-in-scala" target="_blank">type ascription</a>:<br /><div class="cmt"><pre>(sVDPlusPlus: StringFormat).self</pre></div></dd><dt>Definition Classes</dt><dd>StringFormat</dd></dl></div>
-    </li></ol>
-            </div>
+        
 
-        <div id="values" class="values members">
-              <h3>Deprecated Value Members</h3>
-              <ol><li name="scala.Predef.any2ArrowAssoc#x" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="x:A"></a>
-      <a id="x:SVDPlusPlus"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="implicit shadowed deprecated" title="Deprecated: (Since version 2.10.0) Use leftOfArrow instead">x</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
-            This member is added by an implicit conversion from <a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a> to
-            <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a>] performed by method any2ArrowAssoc in scala.Predef.
-            
-          </dd><dt class="implicit">Shadowing</dt><dd>This implicitly inherited member is ambiguous. One or more implicitly inherited members have similar signatures, so calling this member may produce an ambiguous implicit conversion compiler error.<br />To access this member you can use a <a href="http://stackoverflow.com/questions/2087250/what-is-the-purpose-of-type-ascription-in-scala" target="_blank">type ascription</a>:<br /><div class="cmt"><pre>(sVDPlusPlus: ArrowAssoc[SVDPlusPlus]).x</pre></div></dd><dt>Definition Classes</dt><dd>ArrowAssoc</dd><dt>Annotations</dt><dd>
-                <span class="name">@deprecated</span>
-              
-        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.10.0)</i> Use <code><u>leftOfArrow<code> instead</code></u></code></p></dd></dl></div>
-    </li><li name="scala.Predef.any2Ensuring#x" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="x:A"></a>
-      <a id="x:SVDPlusPlus"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="implicit shadowed deprecated" title="Deprecated: (Since version 2.10.0) Use resultOfEnsuring instead">x</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
-            This member is added by an implicit conversion from <a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a> to
-            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a>] performed by method any2Ensuring in scala.Predef.
-            
-          </dd><dt class="implicit">Shadowing</dt><dd>This implicitly inherited member is ambiguous. One or more implicitly inherited members have similar signatures, so calling this member may produce an ambiguous implicit conversion compiler error.<br />To access this member you can use a <a href="http://stackoverflow.com/questions/2087250/what-is-the-purpose-of-type-ascription-in-scala" target="_blank">type ascription</a>:<br /><div class="cmt"><pre>(sVDPlusPlus: Ensuring[SVDPlusPlus]).x</pre></div></dd><dt>Definition Classes</dt><dd>Ensuring</dd><dt>Annotations</dt><dd>
-                <span class="name">@deprecated</span>
-              
-        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.10.0)</i> Use <code><u>resultOfEnsuring<code> instead</code></u></code></p></dd></dl></div>
-    </li></ol>
-            </div>
+        
         </div>
 
         <div id="inheritedMembers">
         <div class="parent" name="org.graphframes.lib.Arguments">
               <h3>Inherited from <span class="extype" name="org.graphframes.lib.Arguments">Arguments</span></h3>
             </div><div class="parent" name="scala.AnyRef">
-              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></h3>
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
             </div><div class="parent" name="scala.Any">
-              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Any" class="extype" target="_top">Any</a></h3>
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
             </div>
         <div class="conversion" name="scala.Predef.any2stringadd">
               <h3>Inherited by implicit conversion any2stringadd from
-                <a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a> to <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.runtime.StringAdd" class="extype" target="_top">StringAdd</a>
+                <a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a> to <span class="extype" name="scala.Predef.any2stringadd">any2stringadd</span>[<a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a>]
               </h3>
-            </div><div class="conversion" name="scala.Predef.any2stringfmt">
-              <h3>Inherited by implicit conversion any2stringfmt from
-                <a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a> to <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.runtime.StringFormat" class="extype" target="_top">StringFormat</a>
+            </div><div class="conversion" name="scala.Predef.StringFormat">
+              <h3>Inherited by implicit conversion StringFormat from
+                <a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a> to <span class="extype" name="scala.Predef.StringFormat">StringFormat</span>[<a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a>]
               </h3>
-            </div><div class="conversion" name="scala.Predef.any2ArrowAssoc">
-              <h3>Inherited by implicit conversion any2ArrowAssoc from
-                <a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a> to <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a>]
-              </h3>
-            </div><div class="conversion" name="scala.Predef.any2Ensuring">
-              <h3>Inherited by implicit conversion any2Ensuring from
+            </div><div class="conversion" name="scala.Predef.Ensuring">
+              <h3>Inherited by implicit conversion Ensuring from
                 <a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a> to <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a>]
+              </h3>
+            </div><div class="conversion" name="scala.Predef.ArrowAssoc">
+              <h3>Inherited by implicit conversion ArrowAssoc from
+                <a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a> to <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="" class="extype" name="org.graphframes.lib.SVDPlusPlus">SVDPlusPlus</a>]
               </h3>
             </div>
         </div>
@@ -797,6 +850,7 @@ See the details on page 6 of the article.</p><p>Configuration parameters: see th
       <div id="tooltip"></div>
 
       <div id="footer">  </div>
-      <script defer="defer" type="text/javascript" id="jquery-js" src="../../../lib/jquery.js"></script><script defer="defer" type="text/javascript" id="jquery-ui-js" src="../../../lib/jquery-ui.js"></script><script defer="defer" type="text/javascript" id="tools-tooltip-js" src="../../../lib/tools.tooltip.js"></script><script defer="defer" type="text/javascript" id="template-js" src="../../../lib/template.js"></script>
+
+
     </body>
       </html>

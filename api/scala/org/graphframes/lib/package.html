@@ -1,5 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!DOCTYPE html >
 <html>
         <head>
           <title>lib - org.graphframes.lib</title>
@@ -9,6 +8,11 @@
           
       <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
       <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      
       <script type="text/javascript">
          if(top === self) {
             var url = '../../../index.html';
@@ -24,9 +28,13 @@
         </head>
         <body class="value">
       <div id="definition">
-        <img src="../../../lib/package_big.png" />
+        <img alt="Package" src="../../../lib/package_big.png" />
         <p id="owner"><a href="../../package.html" class="extype" name="org">org</a>.<a href="../package.html" class="extype" name="org.graphframes">graphframes</a></p>
-        <h1>lib</h1>
+        <h1>lib</h1><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.package" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       </div>
 
       <h4 id="signature" class="signature">
@@ -58,7 +66,7 @@
 
         <div id="types" class="types members">
               <h3>Type Members</h3>
-              <ol><li name="org.graphframes.lib.AggregateMessages" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+              <ol><li name="org.graphframes.lib.AggregateMessages" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="AggregateMessagesextendsArgumentswithSerializable"></a>
       <a id="AggregateMessages:AggregateMessages"></a>
       <h4 class="signature">
@@ -67,11 +75,29 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="AggregateMessages.html"><span class="name">AggregateMessages</span></a><span class="result"> extends <span class="extype" name="org.graphframes.lib.Arguments">Arguments</span> with <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <a href="AggregateMessages.html"><span class="name">AggregateMessages</span></a><span class="result"> extends <span class="extype" name="org.graphframes.lib.Arguments">Arguments</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
-      </h4>
-      <p class="comment cmt">This is a primitive for implementing graph algorithms.</p>
-    </li><li name="org.graphframes.lib.BFS" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.package@AggregateMessagesextendsArgumentswithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This is a primitive for implementing graph algorithms.</p><div class="fullcomment"><div class="comment cmt"><p>This is a primitive for implementing graph algorithms.
+This method aggregates messages from the neighboring edges and vertices of each vertex.</p><p>For each triplet (source vertex, edge, destination vertex) in <a href="../GraphFrame.html#triplets:org.apache.spark.sql.DataFrame" class="extmbr" name="org.graphframes.GraphFrame#triplets">GraphFrame.triplets</a>,
+this can send a message to the source and/or destination vertices.</p><ul><li><code>AggregateMessages.sendToSrc()</code> sends a message to the source vertex of each
+   triplet</li><li><code>AggregateMessages.sendToDst()</code> sends a message to the destination vertex of each
+   triplet</li><li><code>AggregateMessages.agg</code> specifies an aggregation function for aggregating the
+   messages sent to each vertex.  It also runs the aggregation, computing a DataFrame
+   with one row for each vertex which receives &gt; 0 messages.  The DataFrame has 2 columns:<ul><li>vertex column ID (named <a href="../GraphFrame$.html#ID:String" class="extmbr" name="org.graphframes.GraphFrame#ID">GraphFrame.ID</a>)</li><li>aggregate from messages sent to vertex (with the name given to the <code>Column</code> specified
+      in <code>AggregateMessages.agg()</code>)</li></ul></li></ul><p>When specifying the messages and aggregation function, the user may reference columns using:</p><ul><li><a href="AggregateMessages$.html#src:org.apache.spark.sql.Column" class="extmbr" name="org.graphframes.lib.AggregateMessages#src">AggregateMessages.src</a>: column for source vertex of edge</li><li><a href="AggregateMessages$.html#edge:org.apache.spark.sql.Column" class="extmbr" name="org.graphframes.lib.AggregateMessages#edge">AggregateMessages.edge</a>: column for edge</li><li><a href="AggregateMessages$.html#dst:org.apache.spark.sql.Column" class="extmbr" name="org.graphframes.lib.AggregateMessages#dst">AggregateMessages.dst</a>: column for destination vertex of edge</li><li><a href="AggregateMessages$.html#msg:org.apache.spark.sql.Column" class="extmbr" name="org.graphframes.lib.AggregateMessages#msg">AggregateMessages.msg</a>: message sent to vertex (for aggregation function)</li></ul><p>Note: If you use this operation to write an iterative algorithm, you may want to use
+<a href="AggregateMessages$.html#getCachedDataFrame(df:org.apache.spark.sql.DataFrame):org.apache.spark.sql.DataFrame" class="extmbr" name="org.graphframes.lib.AggregateMessages#getCachedDataFrame">getCachedDataFrame()</a> as a workaround for caching
+issues.
+</p></div><dl class="attributes block"> <div class="block">Example:
+               <ol><li class="cmt"><p>We can use this function to compute the in-degree of each vertex</p><pre><span class="kw">val</span> g: GraphFrame = Graph.textFile(<span class="lit">"twittergraph"</span>)
+<span class="kw">val</span> inDeg: DataFrame =
+  g.aggregateMessages().sendToDst(lit(<span class="num">1</span>)).agg(sum(AggregateMessagesBuilder.msg))</pre></li></ol>
+            </div></dl></div>
+    </li><li name="org.graphframes.lib.BFS" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="BFSextendsArgumentswithSerializable"></a>
       <a id="BFS:BFS"></a>
       <h4 class="signature">
@@ -80,11 +106,40 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="BFS.html"><span class="name">BFS</span></a><span class="result"> extends <span class="extype" name="org.graphframes.lib.Arguments">Arguments</span> with <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <a href="BFS.html"><span class="name">BFS</span></a><span class="result"> extends <span class="extype" name="org.graphframes.lib.Arguments">Arguments</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
-      </h4>
-      <p class="comment cmt">Breadth-first search (BFS)</p>
-    </li><li name="org.graphframes.lib.ConnectedComponents" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.package@BFSextendsArgumentswithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Breadth-first search (BFS)</p><div class="fullcomment"><div class="comment cmt"><p>Breadth-first search (BFS)</p><p>This method returns a DataFrame of valid shortest paths from vertices matching <code>fromExpr</code>
+to vertices matching <code>toExpr</code>.  If multiple paths are valid and have the same length,
+the DataFrame will return one Row for each path.  If no paths are valid, the DataFrame will
+be empty.
+Note: &quot;Shortest&quot; means globally shortest path.  I.e., if the shortest path between two vertices
+matching <code>fromExpr</code> and <code>toExpr</code> is length 5 (edges) but no path is shorter than 5, then all
+paths returned by BFS will have length 5.</p><p>The returned DataFrame will have the following columns:</p><ul><li><code>from</code> start vertex of path</li><li><code>e[i]</code> edge i in the path, indexed from 0</li><li><code>v[i]</code> intermediate vertex i in the path, indexed from 1</li><li><code>to</code> end vertex of path
+Each of these columns is a StructType whose fields are the same as the columns of
+<a href="../GraphFrame.html#vertices:org.apache.spark.sql.DataFrame" class="extmbr" name="org.graphframes.GraphFrame#vertices">GraphFrame.vertices</a> or <a href="../GraphFrame.html#edges:org.apache.spark.sql.DataFrame" class="extmbr" name="org.graphframes.GraphFrame#edges">GraphFrame.edges</a>.</li></ul><p>For example, suppose we have a graph g.  Say the vertices DataFrame of g has columns &quot;id&quot; and
+&quot;job&quot;, and the edges DataFrame of g has columns &quot;src&quot;, &quot;dst&quot;, and &quot;relation&quot;.</p><pre><span class="cmt">// Search from vertex "Joe" to find the closet vertices with attribute job = CEO.</span>
+g.bfs(col(<span class="lit">"id"</span>) === <span class="lit">"Joe"</span>, col(<span class="lit">"job"</span>) === <span class="lit">"CEO"</span>).run()</pre><p>If we found a path of 3 edges, each row would have columns:</p><pre>from | e0 | v1 | e1 | v2 | e2 | to</pre><p>In the above row, each vertex column (from, v1, v2, to) would have fields &quot;id&quot; and &quot;job&quot;
+(just like g.vertices).
+Each edge column (e0, e1, e2) would have fields &quot;src&quot;, &quot;dst&quot;, and &quot;relation&quot;.</p><p>If there are ties, then each of the equal paths will be returned as a separate Row.</p><p>If one or more vertices match both the from and to conditions, then there is a 0-hop path.
+The returned DataFrame will have the &quot;from&quot; and &quot;to&quot; columns (as above); however,
+the &quot;from&quot; and &quot;to&quot; columns will be exactly the same.  There will be one row for each vertex
+in <a href="../GraphFrame.html#vertices:org.apache.spark.sql.DataFrame" class="extmbr" name="org.graphframes.GraphFrame#vertices">GraphFrame.vertices</a> matching both <code>fromExpr</code> and <code>toExpr</code>.</p><p>Parameters:</p><ul><li><code>fromExpr</code>  Spark SQL expression specifying valid starting vertices for the BFS.
+                 This condition will be matched against each vertex's id or attributes.
+                 To start from a specific vertex, this could be &quot;id = [start vertex id]&quot;.
+                 To start from multiple valid vertices, this can operate on vertex attributes.</li><li><code>toExpr</code>  Spark SQL expression specifying valid target vertices for the BFS.
+               This condition will be matched against each vertex's id or attributes.</li><li><code>maxPathLength</code>  Limit on the length of paths.  If no valid paths of length
+                      &lt;= maxPathLength are found, then the BFS is terminated.
+                      (default = 10)</li><li><code>edgeFilter</code>  Spark SQL expression specifying edges which may be used in the search.
+                   This allows the user to disallow crossing certain edges.  Such filters
+                   can be applied post-hoc after BFS, run specifying the filter here is more
+                   efficient.</li></ul><p>Returns:</p><ul><li>DataFrame of valid shortest paths found in the BFS
+</li></ul></div></div>
+    </li><li name="org.graphframes.lib.ConnectedComponents" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ConnectedComponentsextendsArguments"></a>
       <a id="ConnectedComponents:ConnectedComponents"></a>
       <h4 class="signature">
@@ -95,9 +150,15 @@
       <span class="symbol">
         <a href="ConnectedComponents.html"><span class="name">ConnectedComponents</span></a><span class="result"> extends <span class="extype" name="org.graphframes.lib.Arguments">Arguments</span></span>
       </span>
-      </h4>
-      <p class="comment cmt">Connected components algorithm.</p>
-    </li><li name="org.graphframes.lib.LabelPropagation" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.package@ConnectedComponentsextendsArguments" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Connected components algorithm.</p><div class="fullcomment"><div class="comment cmt"><p>Connected components algorithm.</p><p>Computes the connected component membership of each vertex and returns a DataFrame of vertex
+information with each vertex assigned a component ID.</p><p>The resulting DataFrame contains all the vertex information and one additional column:</p><ul><li>component (<code>LongType</code>): unique ID for this component</li></ul><p>The resulting edges DataFrame is the same as the original edges DataFrame.
+</p></div></div>
+    </li><li name="org.graphframes.lib.LabelPropagation" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="LabelPropagationextendsArguments"></a>
       <a id="LabelPropagation:LabelPropagation"></a>
       <h4 class="signature">
@@ -108,9 +169,18 @@
       <span class="symbol">
         <a href="LabelPropagation.html"><span class="name">LabelPropagation</span></a><span class="result"> extends <span class="extype" name="org.graphframes.lib.Arguments">Arguments</span></span>
       </span>
-      </h4>
-      <p class="comment cmt">Run static Label Propagation for detecting communities in networks.</p>
-    </li><li name="org.graphframes.lib.PageRank" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.package@LabelPropagationextendsArguments" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Run static Label Propagation for detecting communities in networks.</p><div class="fullcomment"><div class="comment cmt"><p>Run static Label Propagation for detecting communities in networks.</p><p>Each node in the network is initially assigned to its own community. At every iteration, nodes
+send their community affiliation to all neighbors and update their state to the mode community
+affiliation of incoming messages.</p><p>LPA is a standard community detection algorithm for graphs. It is very inexpensive
+computationally, although (1) convergence is not guaranteed and (2) one can end up with
+trivial solutions (all nodes are identified into a single community).</p><p>The resulting DataFrame contains all the original vertex information and one additional column:</p><ul><li>label (<code>LongType</code>): label of community affiliation
+</li></ul></div></div>
+    </li><li name="org.graphframes.lib.PageRank" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="PageRankextendsArguments"></a>
       <a id="PageRank:PageRank"></a>
       <h4 class="signature">
@@ -121,9 +191,33 @@
       <span class="symbol">
         <a href="PageRank.html"><span class="name">PageRank</span></a><span class="result"> extends <span class="extype" name="org.graphframes.lib.Arguments">Arguments</span></span>
       </span>
-      </h4>
-      <p class="comment cmt">PageRank algorithm implementation.</p>
-    </li><li name="org.graphframes.lib.SVDPlusPlus" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.package@PageRankextendsArguments" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">PageRank algorithm implementation.</p><div class="fullcomment"><div class="comment cmt"><p>PageRank algorithm implementation. There are two implementations of PageRank.</p><p>The first implementation uses the standalone <a href="../GraphFrame.html" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a> interface and runs PageRank
+for a fixed number of iterations.  This can be run by setting <code>maxIter</code>.</p><pre><span class="kw">var</span> PR = <span class="std">Array</span>.fill(n)( <span class="num">1.0</span> )
+<span class="kw">val</span> oldPR = <span class="std">Array</span>.fill(n)( <span class="num">1.0</span> )
+<span class="kw">for</span>( iter <span class="kw">&lt;-</span> <span class="num">0</span> until maxIter ) {
+  swap(oldPR, PR)
+  <span class="kw">for</span>( i <span class="kw">&lt;-</span> <span class="num">0</span> until n ) {
+    PR[i] = alpha + (<span class="num">1</span> - alpha) * inNbrs[i].map(j <span class="kw">=&gt;</span> oldPR[j] / outDeg[j]).sum
+  }
+}</pre><p>The second implementation uses the <code>org.apache.spark.graphx.Pregel</code> interface and runs PageRank
+until convergence.  This can be run by setting <code>tol</code>.</p><pre><span class="kw">var</span> PR = <span class="std">Array</span>.fill(n)( <span class="num">1.0</span> )
+<span class="kw">val</span> oldPR = <span class="std">Array</span>.fill(n)( <span class="num">0.0</span> )
+<span class="kw">while</span>( max(abs(PR - oldPr)) &gt; tol ) {
+  swap(oldPR, PR)
+  <span class="kw">for</span>( i <span class="kw">&lt;-</span> <span class="num">0</span> until n <span class="kw">if</span> abs(PR[i] - oldPR[i]) &gt; tol ) {
+    PR[i] = alpha + (<span class="num">1</span> - \alpha) * inNbrs[i].map(j <span class="kw">=&gt;</span> oldPR[j] / outDeg[j]).sum
+  }
+}</pre><p><code>alpha</code> is the random reset probability (typically 0.15), <code>inNbrs[i]</code> is the set of
+neighbors which link to <code>i</code> and <code>outDeg[j]</code> is the out degree of vertex <code>j</code>.</p><p>Note that this is not the &quot;normalized&quot; PageRank and as a consequence pages that have no
+inlinks will have a PageRank of alpha. In particular, the pageranks may have some values
+greater than 1.</p><p>The resulting vertices DataFrame contains one additional column:</p><ul><li>pagerank (<code>DoubleType</code>): the pagerank of this vertex</li></ul><p>The resulting edges DataFrame contains one additional column:</p><ul><li>weight (<code>DoubleType</code>): the normalized weight of this edge after running PageRank
+</li></ul></div></div>
+    </li><li name="org.graphframes.lib.SVDPlusPlus" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="SVDPlusPlusextendsArguments"></a>
       <a id="SVDPlusPlus:SVDPlusPlus"></a>
       <h4 class="signature">
@@ -134,11 +228,20 @@
       <span class="symbol">
         <a href="SVDPlusPlus.html"><span class="name">SVDPlusPlus</span></a><span class="result"> extends <span class="extype" name="org.graphframes.lib.Arguments">Arguments</span></span>
       </span>
-      </h4>
-      <p class="comment cmt">Implement SVD++ based on &quot;Factorization Meets the Neighborhood:
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.package@SVDPlusPlusextendsArguments" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Implement SVD++ based on &quot;Factorization Meets the Neighborhood:
 a Multifaceted Collaborative Filtering Model&quot;,
-available at <a href="https://movie-datamining.googlecode.com/svn/trunk/kdd08koren.pdf" target="_blank">https://movie-datamining.googlecode.com/svn/trunk/kdd08koren.pdf</a>.</p>
-    </li><li name="org.graphframes.lib.ShortestPaths" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+available at <a href="https://movie-datamining.googlecode.com/svn/trunk/kdd08koren.pdf" target="_blank">https://movie-datamining.googlecode.com/svn/trunk/kdd08koren.pdf</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Implement SVD++ based on &quot;Factorization Meets the Neighborhood:
+a Multifaceted Collaborative Filtering Model&quot;,
+available at <a href="https://movie-datamining.googlecode.com/svn/trunk/kdd08koren.pdf" target="_blank">https://movie-datamining.googlecode.com/svn/trunk/kdd08koren.pdf</a>.</p><p>Note: The status of this algorithm is EXPERIMENTAL. Its API and implementation may be changed
+in the future.</p><p>The prediction rule is r<sub>ui</sub> = u + b<sub>u</sub> + b<sub>i</sub> + q<sub>i</sub>*(p<sub>u</sub> + |N(u)|<sup><sup>-0.5</sup></sup>*sum(y)).
+See the details on page 6 of the article.</p><p>Configuration parameters: see the description of each parameter in the article.</p><p>Returns a DataFrame with vertex attributes containing the trained model.  See the object
+(static) members for the names of the output columns.</p></div></div>
+    </li><li name="org.graphframes.lib.ShortestPaths" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ShortestPathsextendsArguments"></a>
       <a id="ShortestPaths:ShortestPaths"></a>
       <h4 class="signature">
@@ -149,9 +252,17 @@ available at <a href="https://movie-datamining.googlecode.com/svn/trunk/kdd08kor
       <span class="symbol">
         <a href="ShortestPaths.html"><span class="name">ShortestPaths</span></a><span class="result"> extends <span class="extype" name="org.graphframes.lib.Arguments">Arguments</span></span>
       </span>
-      </h4>
-      <p class="comment cmt">Computes shortest paths to the given set of landmark vertices.</p>
-    </li><li name="org.graphframes.lib.StronglyConnectedComponents" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.package@ShortestPathsextendsArguments" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Computes shortest paths from every vertex to the given set of landmark vertices.</p><div class="fullcomment"><div class="comment cmt"><p>Computes shortest paths from every vertex to the given set of landmark vertices.
+Note that this takes edge direction into account.</p><p>The returned DataFrame contains all the original vertex information as well as one additional
+column:</p><ul><li>distances (<code>MapType[vertex ID type, IntegerType]</code>): For each vertex v, a map containing
+   the shortest-path distance to each reachable landmark vertex.
+</li></ul></div></div>
+    </li><li name="org.graphframes.lib.StronglyConnectedComponents" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="StronglyConnectedComponentsextendsArguments"></a>
       <a id="StronglyConnectedComponents:StronglyConnectedComponents"></a>
       <h4 class="signature">
@@ -162,10 +273,16 @@ available at <a href="https://movie-datamining.googlecode.com/svn/trunk/kdd08kor
       <span class="symbol">
         <a href="StronglyConnectedComponents.html"><span class="name">StronglyConnectedComponents</span></a><span class="result"> extends <span class="extype" name="org.graphframes.lib.Arguments">Arguments</span></span>
       </span>
-      </h4>
-      <p class="comment cmt">Compute the strongly connected component (SCC) of each vertex and return a DataFrame with each
-vertex assigned to the SCC containing that vertex.</p>
-    </li><li name="org.graphframes.lib.TriangleCount" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.package@StronglyConnectedComponentsextendsArguments" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Compute the strongly connected component (SCC) of each vertex and return a DataFrame with each
+vertex assigned to the SCC containing that vertex.</p><div class="fullcomment"><div class="comment cmt"><p>Compute the strongly connected component (SCC) of each vertex and return a DataFrame with each
+vertex assigned to the SCC containing that vertex.</p><p>The resulting DataFrame contains all the original vertex information and one additional column:</p><ul><li>component (<code>LongType</code>): unique ID for this component
+</li></ul></div></div>
+    </li><li name="org.graphframes.lib.TriangleCount" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="TriangleCountextendsArguments"></a>
       <a id="TriangleCount:TriangleCount"></a>
       <h4 class="signature">
@@ -176,8 +293,16 @@ vertex assigned to the SCC containing that vertex.</p>
       <span class="symbol">
         <a href="TriangleCount.html"><span class="name">TriangleCount</span></a><span class="result"> extends <span class="extype" name="org.graphframes.lib.Arguments">Arguments</span></span>
       </span>
-      </h4>
-      <p class="comment cmt">Computes the number of triangles passing through each vertex.</p>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.package@TriangleCountextendsArguments" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Computes the number of triangles passing through each vertex.</p><div class="fullcomment"><div class="comment cmt"><p>Computes the number of triangles passing through each vertex.</p><p>This algorithm ignores edge direction; i.e., all edges are treated as undirected.
+In a multigraph, duplicate edges will be counted only once.</p><p>Note that this provides the same algorithm as GraphX, but GraphX assumes the user provides
+a graph in the correct format.  In Spark 2.0, GraphX can automatically canonicalize
+the graph to put it in this format.</p><p>The returned DataFrame contains all the original vertex information and one additional column:</p><ul><li>count (<code>LongType</code>): the count of triangles
+</li></ul></div></div>
     </li></ol>
             </div>
 
@@ -194,9 +319,13 @@ vertex assigned to the SCC containing that vertex.</p>
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="AggregateMessages$.html"><span class="name">AggregateMessages</span></a><span class="result"> extends <span class="extype" name="org.apache.spark.Logging">Logging</span> with <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <a href="AggregateMessages$.html"><span class="name">AggregateMessages</span></a><span class="result"> extends <span class="extype" name="org.graphframes.Logging">Logging</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.package@AggregateMessages" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       
     </li><li name="org.graphframes.lib.SVDPlusPlus" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="SVDPlusPlus"></a>
@@ -209,7 +338,11 @@ vertex assigned to the SCC containing that vertex.</p>
       <span class="symbol">
         <a href="SVDPlusPlus$.html"><span class="name">SVDPlusPlus</span></a>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.package@SVDPlusPlus" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       
     </li></ol>
             </div>
@@ -236,6 +369,7 @@ vertex assigned to the SCC containing that vertex.</p>
       <div id="tooltip"></div>
 
       <div id="footer">  </div>
-      <script defer="defer" type="text/javascript" id="jquery-js" src="../../../lib/jquery.js"></script><script defer="defer" type="text/javascript" id="jquery-ui-js" src="../../../lib/jquery-ui.js"></script><script defer="defer" type="text/javascript" id="tools-tooltip-js" src="../../../lib/tools.tooltip.js"></script><script defer="defer" type="text/javascript" id="template-js" src="../../../lib/template.js"></script>
+
+
     </body>
       </html>

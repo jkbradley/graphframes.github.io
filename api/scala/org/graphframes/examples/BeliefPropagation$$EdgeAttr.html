@@ -1,5 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!DOCTYPE html >
 <html>
         <head>
           <title>EdgeAttr - org.graphframes.examples.BeliefPropagation.EdgeAttr</title>
@@ -9,6 +8,11 @@
           
       <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
       <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      
       <script type="text/javascript">
          if(top === self) {
             var url = '../../../index.html';
@@ -24,9 +28,15 @@
         </head>
         <body class="type">
       <div id="definition">
-        <img src="../../../lib/class_big.png" />
+        <img alt="Class" src="../../../lib/class_big.png" />
         <p id="owner"><a href="../../package.html" class="extype" name="org">org</a>.<a href="../package.html" class="extype" name="org.graphframes">graphframes</a>.<a href="package.html" class="extype" name="org.graphframes.examples">examples</a>.<a href="BeliefPropagation$.html" class="extype" name="org.graphframes.examples.BeliefPropagation">BeliefPropagation</a></p>
-        <h1>EdgeAttr</h1>
+        <h1>EdgeAttr</h1><h3><span class="morelinks"><div>Related Doc:
+            <a href="BeliefPropagation$.html" class="extype" name="org.graphframes.examples.BeliefPropagation">package BeliefPropagation</a>
+          </div></span></h3><span class="permalink">
+      <a href="../../../index.html#org.graphframes.examples.BeliefPropagation$$EdgeAttr" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       </div>
 
       <h4 id="signature" class="signature">
@@ -35,13 +45,13 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">EdgeAttr</span><span class="params">(<span name="b">b: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Double" class="extype" target="_top">Double</a></span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <span class="name">EdgeAttr</span><span class="params">(<span name="b">b: <span class="extype" name="scala.Double">Double</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       
           <div id="comment" class="fullcommenttop"><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Serializable" class="extype" target="_top">Serializable</a>, <span class="extype" name="java.io.Serializable">Serializable</span>, <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Product" class="extype" target="_top">Product</a>, <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Equals" class="extype" target="_top">Equals</a>, <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a>, <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Any" class="extype" target="_top">Any</a></div>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.Serializable">Serializable</span>, <span class="extype" name="java.io.Serializable">Serializable</span>, <span class="extype" name="scala.Product">Product</span>, <span class="extype" name="scala.Equals">Equals</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
         
 
@@ -64,7 +74,7 @@
               </div><div id="ancestors">
                 <span class="filtertype">Implicitly<br />
                 </span>
-                <ol id="implicits"> <li class="in" name="scala.Predef.any2stringadd" data-hidden="true"><span>by any2stringadd</span></li><li class="in" name="scala.Predef.any2stringfmt" data-hidden="true"><span>by any2stringfmt</span></li><li class="in" name="scala.Predef.any2ArrowAssoc" data-hidden="true"><span>by any2ArrowAssoc</span></li><li class="in" name="scala.Predef.any2Ensuring" data-hidden="true"><span>by any2Ensuring</span></li>
+                <ol id="implicits"> <li class="in" name="scala.Predef.any2stringadd" data-hidden="true"><span>by any2stringadd</span></li><li class="in" name="scala.Predef.StringFormat" data-hidden="true"><span>by StringFormat</span></li><li class="in" name="scala.Predef.Ensuring" data-hidden="true"><span>by Ensuring</span></li><li class="in" name="scala.Predef.ArrowAssoc" data-hidden="true"><span>by ArrowAssoc</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -72,7 +82,6 @@
               <li class="hideall out"><span>Hide All</span></li>
               <li class="showall in"><span>Show all</span></li>
             </ol>
-            <a href="http://docs.scala-lang.org/overviews/scaladoc/usage.html#members" target="_blank">Learn more about member selection</a>
           </div>
         <div id="visbl">
             <span class="filtertype">Visibility</span>
@@ -93,9 +102,13 @@
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">EdgeAttr</span><span class="params">(<span name="b">b: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Double" class="extype" target="_top">Double</a></span>)</span>
+        <span class="name">EdgeAttr</span><span class="params">(<span name="b">b: <span class="extype" name="scala.Double">Double</span></span>)</span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.examples.BeliefPropagation$$EdgeAttr@&lt;init&gt;(b:Double):org.graphframes.examples.BeliefPropagation.EdgeAttr" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       
     </li></ol>
             </div>
@@ -107,19 +120,6 @@
         <div id="values" class="values members">
               <h3>Value Members</h3>
               <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="!=(x$1:AnyRef):Boolean"></a>
-      <a id="!=(AnyRef):Boolean"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier">final </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="scala.Any#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="!=(x$1:Any):Boolean"></a>
       <a id="!=(Any):Boolean"></a>
       <h4 class="signature">
@@ -128,10 +128,14 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.examples.BeliefPropagation$$EdgeAttr@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="##():Int"></a>
       <a id="##():Int"></a>
@@ -141,9 +145,13 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Int" class="extype" target="_top">Int</a></span>
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.examples.BeliefPropagation$$EdgeAttr@##():Int" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="scala.Predef.any2stringadd#+" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="+(other:String):String"></a>
@@ -154,15 +162,19 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span title="gt4s: $plus" class="implicit">+</span><span class="params">(<span name="other">other: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+        <span title="gt4s: $plus" class="implicit">+</span><span class="params">(<span name="other">other: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.examples.BeliefPropagation$$EdgeAttr@+(other:String):String" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
             This member is added by an implicit conversion from <a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a> to
-            <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.runtime.StringAdd" class="extype" target="_top">StringAdd</a> performed by method any2stringadd in scala.Predef.
+            <span class="extype" name="scala.Predef.any2stringadd">any2stringadd</span>[<a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a>] performed by method any2stringadd in scala.Predef.
             
-          </dd><dt>Definition Classes</dt><dd>StringAdd</dd></dl></div>
-    </li><li name="scala.Predef.any2ArrowAssoc#-&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+          </dd><dt>Definition Classes</dt><dd>any2stringadd</dd></dl></div>
+    </li><li name="scala.Predef.ArrowAssoc#-&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="-&gt;[B](y:B):(A,B)"></a>
       <a id="-&gt;[B](B):(EdgeAttr,B)"></a>
       <h4 class="signature">
@@ -173,29 +185,20 @@
       <span class="symbol">
         <span title="gt4s: $minus$greater" class="implicit">-&gt;</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="y">y: <span class="extype" name="scala.Predef.ArrowAssoc.-&gt;.B">B</span></span>)</span><span class="result">: (<a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a>, <span class="extype" name="scala.Predef.ArrowAssoc.-&gt;.B">B</span>)</span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.examples.BeliefPropagation$$EdgeAttr@-&gt;[B](y:B):(A,B)" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
             This member is added by an implicit conversion from <a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a> to
-            <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a>] performed by method any2ArrowAssoc in scala.Predef.
+            <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a>] performed by method ArrowAssoc in scala.Predef.
             
           </dd><dt>Definition Classes</dt><dd>ArrowAssoc</dd><dt>Annotations</dt><dd>
                 <span class="name">@inline</span><span class="args">()</span>
               
         </dd></dl></div>
     </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="==(x$1:AnyRef):Boolean"></a>
-      <a id="==(AnyRef):Boolean"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier">final </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="scala.Any#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="==(x$1:Any):Boolean"></a>
       <a id="==(Any):Boolean"></a>
       <h4 class="signature">
@@ -204,10 +207,14 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.examples.BeliefPropagation$$EdgeAttr@==(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <a id="asInstanceOf[T0]:T0"></a>
@@ -219,7 +226,11 @@
       <span class="symbol">
         <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.examples.BeliefPropagation$$EdgeAttr@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
     </li><li name="org.graphframes.examples.BeliefPropagation.EdgeAttr#b" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="b:Double"></a>
@@ -230,9 +241,13 @@
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">b</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Double" class="extype" target="_top">Double</a></span>
+        <span class="name">b</span><span class="result">: <span class="extype" name="scala.Double">Double</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.examples.BeliefPropagation$$EdgeAttr@b:Double" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       
     </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="clone():Object"></a>
@@ -243,9 +258,13 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">clone</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.examples.BeliefPropagation$$EdgeAttr@clone():Object" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">(<span>
       
@@ -253,7 +272,7 @@
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="scala.Predef.any2Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ensuring(cond:A=&gt;Boolean,msg:=&gt;Any):A"></a>
       <a id="ensuring((EdgeAttr)⇒Boolean,⇒Any):EdgeAttr"></a>
       <h4 class="signature">
@@ -262,15 +281,19 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a>) ⇒ <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="msg">msg: ⇒ <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a></span>
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="msg">msg: ⇒ <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.examples.BeliefPropagation$$EdgeAttr@ensuring(cond:A=&gt;Boolean,msg:=&gt;Any):A" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
             This member is added by an implicit conversion from <a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a> to
-            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a>] performed by method any2Ensuring in scala.Predef.
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a>] performed by method Ensuring in scala.Predef.
             
           </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
-    </li><li name="scala.Predef.any2Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ensuring(cond:A=&gt;Boolean):A"></a>
       <a id="ensuring((EdgeAttr)⇒Boolean):EdgeAttr"></a>
       <h4 class="signature">
@@ -279,15 +302,19 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a>) ⇒ <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a></span>
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.examples.BeliefPropagation$$EdgeAttr@ensuring(cond:A=&gt;Boolean):A" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
             This member is added by an implicit conversion from <a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a> to
-            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a>] performed by method any2Ensuring in scala.Predef.
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a>] performed by method Ensuring in scala.Predef.
             
           </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
-    </li><li name="scala.Predef.any2Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ensuring(cond:Boolean,msg:=&gt;Any):A"></a>
       <a id="ensuring(Boolean,⇒Any):EdgeAttr"></a>
       <h4 class="signature">
@@ -296,15 +323,19 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="msg">msg: ⇒ <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a></span>
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="msg">msg: ⇒ <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.examples.BeliefPropagation$$EdgeAttr@ensuring(cond:Boolean,msg:=&gt;Any):A" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
             This member is added by an implicit conversion from <a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a> to
-            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a>] performed by method any2Ensuring in scala.Predef.
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a>] performed by method Ensuring in scala.Predef.
             
           </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
-    </li><li name="scala.Predef.any2Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ensuring(cond:Boolean):A"></a>
       <a id="ensuring(Boolean):EdgeAttr"></a>
       <h4 class="signature">
@@ -313,12 +344,16 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a></span>
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.examples.BeliefPropagation$$EdgeAttr@ensuring(cond:Boolean):A" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
             This member is added by an implicit conversion from <a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a> to
-            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a>] performed by method any2Ensuring in scala.Predef.
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a>] performed by method Ensuring in scala.Predef.
             
           </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
     </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
@@ -330,9 +365,13 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.examples.BeliefPropagation$$EdgeAttr@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="finalize():Unit"></a>
@@ -343,9 +382,13 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">finalize</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.examples.BeliefPropagation$$EdgeAttr@finalize():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">(<span>
       
@@ -353,7 +396,7 @@
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="scala.Predef.any2stringfmt#formatted" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="scala.Predef.StringFormat#formatted" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="formatted(fmtstr:String):String"></a>
       <a id="formatted(String):String"></a>
       <h4 class="signature">
@@ -364,10 +407,14 @@
       <span class="symbol">
         <span class="implicit">formatted</span><span class="params">(<span name="fmtstr">fmtstr: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.examples.BeliefPropagation$$EdgeAttr@formatted(fmtstr:String):String" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
             This member is added by an implicit conversion from <a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a> to
-            <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.runtime.StringFormat" class="extype" target="_top">StringFormat</a> performed by method any2stringfmt in scala.Predef.
+            <span class="extype" name="scala.Predef.StringFormat">StringFormat</span>[<a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a>] performed by method StringFormat in scala.Predef.
             
           </dd><dt>Definition Classes</dt><dd>StringFormat</dd><dt>Annotations</dt><dd>
                 <span class="name">@inline</span><span class="args">()</span>
@@ -384,7 +431,11 @@
       <span class="symbol">
         <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.examples.BeliefPropagation$$EdgeAttr@getClass():Class[_]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="isInstanceOf[T0]:Boolean"></a>
@@ -395,9 +446,13 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.examples.BeliefPropagation$$EdgeAttr@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
     </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a>
@@ -408,9 +463,13 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.examples.BeliefPropagation$$EdgeAttr@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="notify():Unit"></a>
@@ -421,9 +480,13 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">notify</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.examples.BeliefPropagation$$EdgeAttr@notify():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li name="scala.AnyRef#notifyAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="notifyAll():Unit"></a>
@@ -434,9 +497,13 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.examples.BeliefPropagation$$EdgeAttr@notifyAll():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
@@ -449,7 +516,11 @@
       <span class="symbol">
         <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.examples.BeliefPropagation$$EdgeAttr@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
@@ -460,9 +531,13 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">wait</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.examples.BeliefPropagation$$EdgeAttr@wait():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">(<span>
       
@@ -479,9 +554,13 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Long" class="extype" target="_top">Long</a></span>, <span name="arg1">arg1: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>, <span name="arg1">arg1: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.examples.BeliefPropagation$$EdgeAttr@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">(<span>
       
@@ -498,9 +577,13 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Long" class="extype" target="_top">Long</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.examples.BeliefPropagation$$EdgeAttr@wait(x$1:Long):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">(<span>
       
@@ -508,7 +591,7 @@
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="scala.Predef.any2ArrowAssoc#→" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="scala.Predef.ArrowAssoc#→" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="→[B](y:B):(A,B)"></a>
       <a id="→[B](B):(EdgeAttr,B)"></a>
       <h4 class="signature">
@@ -519,129 +602,53 @@
       <span class="symbol">
         <span title="gt4s: $u2192" class="implicit">→</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="y">y: <span class="extype" name="scala.Predef.ArrowAssoc.→.B">B</span></span>)</span><span class="result">: (<a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a>, <span class="extype" name="scala.Predef.ArrowAssoc.→.B">B</span>)</span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.examples.BeliefPropagation$$EdgeAttr@→[B](y:B):(A,B)" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
             This member is added by an implicit conversion from <a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a> to
-            <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a>] performed by method any2ArrowAssoc in scala.Predef.
+            <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a>] performed by method ArrowAssoc in scala.Predef.
             
           </dd><dt>Definition Classes</dt><dd>ArrowAssoc</dd></dl></div>
     </li></ol>
             </div>
 
-        <div id="values" class="values members">
-              <h3>Shadowed Implicit Value Members</h3>
-              <ol><li name="scala.Predef.any2stringadd#self" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="self:Any"></a>
-      <a id="self:Any"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="implicit shadowed">self</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Any" class="extype" target="_top">Any</a></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
-            This member is added by an implicit conversion from <a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a> to
-            <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.runtime.StringAdd" class="extype" target="_top">StringAdd</a> performed by method any2stringadd in scala.Predef.
-            
-          </dd><dt class="implicit">Shadowing</dt><dd>This implicitly inherited member is ambiguous. One or more implicitly inherited members have similar signatures, so calling this member may produce an ambiguous implicit conversion compiler error.<br />To access this member you can use a <a href="http://stackoverflow.com/questions/2087250/what-is-the-purpose-of-type-ascription-in-scala" target="_blank">type ascription</a>:<br /><div class="cmt"><pre>(edgeAttr: StringAdd).self</pre></div></dd><dt>Definition Classes</dt><dd>StringAdd</dd></dl></div>
-    </li><li name="scala.Predef.any2stringfmt#self" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="self:Any"></a>
-      <a id="self:Any"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="implicit shadowed">self</span><span class="result">: <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Any" class="extype" target="_top">Any</a></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
-            This member is added by an implicit conversion from <a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a> to
-            <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.runtime.StringFormat" class="extype" target="_top">StringFormat</a> performed by method any2stringfmt in scala.Predef.
-            
-          </dd><dt class="implicit">Shadowing</dt><dd>This implicitly inherited member is ambiguous. One or more implicitly inherited members have similar signatures, so calling this member may produce an ambiguous implicit conversion compiler error.<br />To access this member you can use a <a href="http://stackoverflow.com/questions/2087250/what-is-the-purpose-of-type-ascription-in-scala" target="_blank">type ascription</a>:<br /><div class="cmt"><pre>(edgeAttr: StringFormat).self</pre></div></dd><dt>Definition Classes</dt><dd>StringFormat</dd></dl></div>
-    </li></ol>
-            </div>
+        
 
-        <div id="values" class="values members">
-              <h3>Deprecated Value Members</h3>
-              <ol><li name="scala.Predef.any2ArrowAssoc#x" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="x:A"></a>
-      <a id="x:EdgeAttr"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="implicit shadowed deprecated" title="Deprecated: (Since version 2.10.0) Use leftOfArrow instead">x</span><span class="result">: <a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
-            This member is added by an implicit conversion from <a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a> to
-            <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a>] performed by method any2ArrowAssoc in scala.Predef.
-            
-          </dd><dt class="implicit">Shadowing</dt><dd>This implicitly inherited member is ambiguous. One or more implicitly inherited members have similar signatures, so calling this member may produce an ambiguous implicit conversion compiler error.<br />To access this member you can use a <a href="http://stackoverflow.com/questions/2087250/what-is-the-purpose-of-type-ascription-in-scala" target="_blank">type ascription</a>:<br /><div class="cmt"><pre>(edgeAttr: ArrowAssoc[EdgeAttr]).x</pre></div></dd><dt>Definition Classes</dt><dd>ArrowAssoc</dd><dt>Annotations</dt><dd>
-                <span class="name">@deprecated</span>
-              
-        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.10.0)</i> Use <code><u>leftOfArrow<code> instead</code></u></code></p></dd></dl></div>
-    </li><li name="scala.Predef.any2Ensuring#x" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="x:A"></a>
-      <a id="x:EdgeAttr"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="implicit shadowed deprecated" title="Deprecated: (Since version 2.10.0) Use resultOfEnsuring instead">x</span><span class="result">: <a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
-            This member is added by an implicit conversion from <a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a> to
-            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a>] performed by method any2Ensuring in scala.Predef.
-            
-          </dd><dt class="implicit">Shadowing</dt><dd>This implicitly inherited member is ambiguous. One or more implicitly inherited members have similar signatures, so calling this member may produce an ambiguous implicit conversion compiler error.<br />To access this member you can use a <a href="http://stackoverflow.com/questions/2087250/what-is-the-purpose-of-type-ascription-in-scala" target="_blank">type ascription</a>:<br /><div class="cmt"><pre>(edgeAttr: Ensuring[EdgeAttr]).x</pre></div></dd><dt>Definition Classes</dt><dd>Ensuring</dd><dt>Annotations</dt><dd>
-                <span class="name">@deprecated</span>
-              
-        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 2.10.0)</i> Use <code><u>resultOfEnsuring<code> instead</code></u></code></p></dd></dl></div>
-    </li></ol>
-            </div>
+        
         </div>
 
         <div id="inheritedMembers">
         <div class="parent" name="scala.Serializable">
-              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></h3>
+              <h3>Inherited from <span class="extype" name="scala.Serializable">Serializable</span></h3>
             </div><div class="parent" name="java.io.Serializable">
               <h3>Inherited from <span class="extype" name="java.io.Serializable">Serializable</span></h3>
             </div><div class="parent" name="scala.Product">
-              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Product" class="extype" target="_top">Product</a></h3>
+              <h3>Inherited from <span class="extype" name="scala.Product">Product</span></h3>
             </div><div class="parent" name="scala.Equals">
-              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Equals" class="extype" target="_top">Equals</a></h3>
+              <h3>Inherited from <span class="extype" name="scala.Equals">Equals</span></h3>
             </div><div class="parent" name="scala.AnyRef">
-              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></h3>
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
             </div><div class="parent" name="scala.Any">
-              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.Any" class="extype" target="_top">Any</a></h3>
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
             </div>
         <div class="conversion" name="scala.Predef.any2stringadd">
               <h3>Inherited by implicit conversion any2stringadd from
-                <a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a> to <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.runtime.StringAdd" class="extype" target="_top">StringAdd</a>
+                <a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a> to <span class="extype" name="scala.Predef.any2stringadd">any2stringadd</span>[<a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a>]
               </h3>
-            </div><div class="conversion" name="scala.Predef.any2stringfmt">
-              <h3>Inherited by implicit conversion any2stringfmt from
-                <a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a> to <a href="http://www.scala-lang.org/api/2.10.5/index.html#scala.runtime.StringFormat" class="extype" target="_top">StringFormat</a>
+            </div><div class="conversion" name="scala.Predef.StringFormat">
+              <h3>Inherited by implicit conversion StringFormat from
+                <a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a> to <span class="extype" name="scala.Predef.StringFormat">StringFormat</span>[<a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a>]
               </h3>
-            </div><div class="conversion" name="scala.Predef.any2ArrowAssoc">
-              <h3>Inherited by implicit conversion any2ArrowAssoc from
-                <a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a> to <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a>]
-              </h3>
-            </div><div class="conversion" name="scala.Predef.any2Ensuring">
-              <h3>Inherited by implicit conversion any2Ensuring from
+            </div><div class="conversion" name="scala.Predef.Ensuring">
+              <h3>Inherited by implicit conversion Ensuring from
                 <a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a> to <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a>]
+              </h3>
+            </div><div class="conversion" name="scala.Predef.ArrowAssoc">
+              <h3>Inherited by implicit conversion ArrowAssoc from
+                <a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a> to <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="" class="extype" name="org.graphframes.examples.BeliefPropagation.EdgeAttr">EdgeAttr</a>]
               </h3>
             </div>
         </div>
@@ -658,6 +665,7 @@
       <div id="tooltip"></div>
 
       <div id="footer">  </div>
-      <script defer="defer" type="text/javascript" id="jquery-js" src="../../../lib/jquery.js"></script><script defer="defer" type="text/javascript" id="jquery-ui-js" src="../../../lib/jquery-ui.js"></script><script defer="defer" type="text/javascript" id="tools-tooltip-js" src="../../../lib/tools.tooltip.js"></script><script defer="defer" type="text/javascript" id="template-js" src="../../../lib/template.js"></script>
+
+
     </body>
       </html>
