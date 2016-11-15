@@ -6,9 +6,9 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Quick-Start Guide - GraphFrames 0.2 Documentation</title>
+        <title>Quick-Start Guide - GraphFrames 0.3 Documentation</title>
         
-          <meta name="description" content="GraphFrames 0.2 guide for getting started quickly">
+          <meta name="description" content="GraphFrames 0.3 guide for getting started quickly">
         
 
         
@@ -42,7 +42,7 @@
             <div class="navbar-inner">
                 <div class="container">
                     <div class="brand"><a href="index.html">
-                      GraphFrames</a><span class="version">0.2</span>
+                      GraphFrames</a><span class="version">0.3</span>
                     </div>
                     <ul class="nav">
                         <li><a href="index.html">Overview</a></li>
@@ -63,7 +63,7 @@
                             </ul>
                         </li>
                     </ul>
-                    <!--<p class="navbar-text pull-right"><span class="version-text">v0.2</span></p>-->
+                    <!--<p class="navbar-text pull-right"><span class="version-text">v0.3</span></p>-->
                 </div>
             </div>
         </div>
@@ -78,43 +78,43 @@ After you work through this guide, move on to the <a href="user-guide.html">User
 to learn more about the many queries and algorithms supported by GraphFrames.</p>
 
 <ul id="markdown-toc">
-  <li><a href="#getting-started-with-spark-and-spark-packages" id="markdown-toc-getting-started-with-spark-and-spark-packages">Getting started with Spark and Spark packages</a></li>
+  <li><a href="#getting-started-with-apache-spark-and-spark-packages" id="markdown-toc-getting-started-with-apache-spark-and-spark-packages">Getting started with Apache Spark and Spark packages</a></li>
   <li><a href="#start-using-graphframes" id="markdown-toc-start-using-graphframes">Start using GraphFrames</a></li>
 </ul>
 
-<h1 id="getting-started-with-spark-and-spark-packages">Getting started with Spark and Spark packages</h1>
+<h1 id="getting-started-with-apache-spark-and-spark-packages">Getting started with Apache Spark and Spark packages</h1>
 
-<p>If you are new to using Spark, refer to the
-<a href="http://spark.apache.org/docs/latest/index.html">Spark Documentation</a> and its
+<p>If you are new to using Apache Spark, refer to the
+<a href="http://spark.apache.org/docs/latest/index.html">Apache Spark Documentation</a> and its
 <a href="http://spark.apache.org/docs/latest/quick-start.html">Quick-Start Guide</a> for more information.</p>
 
-<p>If you are new to using <a href="http://spark-packages.org/">Spark packages</a>, you can find more information
+<p>If you are new to using <a href="http://spark-packages.org/package/graphframes/graphframes">Spark packages</a>, you can find more information
 in the <a href="http://spark.apache.org/docs/latest/programming-guide.html#using-the-shell">Spark User Guide on using the interactive shell</a>.
 You just need to make sure your Spark shell session has the package as a dependency.</p>
 
-<p>The following example shows how to run the Spark shell with the GraphFrames package.</p>
+<p>The following example shows how to run the Spark shell with the GraphFrames package.
+We use the <code>--packages</code> argument to download the graphframes package and any dependencies automatically.</p>
 
 <div class="codetabs">
 
 <div data-lang="scala">
 
-    <p>If you have GraphFrames available as a JAR <code>graphframes.jar</code>, you can add the JAR to the shell
-classpath:</p>
-
-    <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>./bin/spark-shell --master <span class="nb">local</span><span class="o">[</span>4<span class="o">]</span> --jars graphframes.jar</code></pre></figure>
+    <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>./bin/spark-shell --packages graphframes:graphframes:0.2.0-spark2.0-s_2.11</code></pre></figure>
 
   </div>
 
 <div data-lang="python">
 
-    <p>If you have GraphFrames available as a JAR <code>graphframes.jar</code>, you can make GraphFrames available
-by passing the JAR to the pyspark shell script as follows:</p>
-
-    <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>./bin/pyspark --master <span class="nb">local</span><span class="o">[</span>4<span class="o">]</span> --py-files graphframes.jar --jars graphframes.jar</code></pre></figure>
+    <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>./bin/pyspark --packages graphframes:graphframes:0.2.0-spark2.0-s_2.11</code></pre></figure>
 
   </div>
 
 </div>
+
+<p>The above examples of running the Spark shell with GraphFrames use a specific version of the GraphFrames
+package.  To use a different version, just change the last part of the <code>--packages</code> argument;
+for example, to run with version <code>0.1.0-spark1.6</code>, pass the argument
+<code>--packages graphframes:graphframes:0.1.0-spark1.6</code>.</p>
 
 <h1 id="start-using-graphframes">Start using GraphFrames</h1>
 
