@@ -28,10 +28,12 @@
         </head>
         <body class="type">
       <div id="definition">
-        <img alt="Class" src="../../../lib/class_big.png" />
+        <a href="ConnectedComponents$.html" title="See companion object"><img alt="Class/Object" src="../../../lib/class_to_object_big.png" /></a>
         <p id="owner"><a href="../../package.html" class="extype" name="org">org</a>.<a href="../package.html" class="extype" name="org.graphframes">graphframes</a>.<a href="package.html" class="extype" name="org.graphframes.lib">lib</a></p>
-        <h1>ConnectedComponents</h1><h3><span class="morelinks"><div>Related Doc:
-            <a href="package.html" class="extype" name="org.graphframes.lib">package lib</a>
+        <h1><a href="ConnectedComponents$.html" title="See companion object">ConnectedComponents</a></h1><h3><span class="morelinks"><div>
+            Related Docs:
+            <a href="ConnectedComponents$.html" title="See companion object">object ConnectedComponents</a>
+            | <a href="package.html" class="extype" name="org.graphframes.lib">package lib</a>
           </div></span></h3><span class="permalink">
       <a href="../../../index.html#org.graphframes.lib.ConnectedComponents" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
@@ -45,15 +47,15 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <span class="name">ConnectedComponents</span><span class="result"> extends <span class="extype" name="org.graphframes.lib.Arguments">Arguments</span></span>
+        <span class="name">ConnectedComponents</span><span class="result"> extends <span class="extype" name="org.graphframes.lib.Arguments">Arguments</span> with <span class="extype" name="org.graphframes.Logging">Logging</span></span>
       </span>
       </h4>
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Connected components algorithm.</p><p>Computes the connected component membership of each vertex and returns a DataFrame of vertex
-information with each vertex assigned a component ID.</p><p>The resulting DataFrame contains all the vertex information and one additional column:</p><ul><li>component (<code>LongType</code>): unique ID for this component</li></ul><p>The resulting edges DataFrame is the same as the original edges DataFrame.
-</p></div><div class="toggleContainer block">
+information with each vertex assigned a component ID.</p><p>The resulting DataFrame contains all the vertex information and one additional column:</p><ul><li>component (<code>LongType</code>): unique ID for this component
+</li></ul></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><span class="extype" name="org.graphframes.lib.Arguments">Arguments</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><span class="extype" name="org.graphframes.Logging">Logging</span>, <span class="extype" name="com.typesafe.scalalogging.slf4j.LazyLogging">LazyLogging</span>, <span class="extype" name="com.typesafe.scalalogging.Logging">com.typesafe.scalalogging.Logging</span>, <span class="extype" name="org.graphframes.lib.Arguments">Arguments</span>, <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a>, <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Any" class="extype" target="_top">Any</a></div>
         </div></div>
         
 
@@ -64,14 +66,14 @@ information with each vertex assigned a component ID.</p><p>The resulting DataFr
               <ol>
                 
                 <li class="alpha in"><span>Alphabetic</span></li>
-                <li class="inherit out"><span>By inheritance</span></li>
+                <li class="inherit out"><span>By Inheritance</span></li>
               </ol>
             </div>
         <div id="ancestors">
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="org.graphframes.lib.ConnectedComponents"><span>ConnectedComponents</span></li><li class="in" name="org.graphframes.lib.Arguments"><span>Arguments</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="org.graphframes.lib.ConnectedComponents"><span>ConnectedComponents</span></li><li class="in" name="org.graphframes.Logging"><span>Logging</span></li><li class="in" name="com.typesafe.scalalogging.slf4j.LazyLogging"><span>LazyLogging</span></li><li class="in" name="com.typesafe.scalalogging.Logging"><span>Logging</span></li><li class="in" name="org.graphframes.lib.Arguments"><span>Arguments</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
                 <span class="filtertype">Implicitly<br />
@@ -82,7 +84,7 @@ information with each vertex assigned a component ID.</p><p>The resulting DataFr
             <span class="filtertype"></span>
             <ol>
               <li class="hideall out"><span>Hide All</span></li>
-              <li class="showall in"><span>Show all</span></li>
+              <li class="showall in"><span>Show All</span></li>
             </ol>
           </div>
         <div id="visbl">
@@ -110,7 +112,7 @@ information with each vertex assigned a component ID.</p><p>The resulting DataFr
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#org.graphframes.lib.ConnectedComponents@!=(x$1:Any):Boolean" title="Permalink" target="_top">
@@ -127,7 +129,7 @@ information with each vertex assigned a component ID.</p><p>The resulting DataFr
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#org.graphframes.lib.ConnectedComponents@##():Int" title="Permalink" target="_top">
@@ -189,7 +191,7 @@ information with each vertex assigned a component ID.</p><p>The resulting DataFr
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#org.graphframes.lib.ConnectedComponents@==(x$1:Any):Boolean" title="Permalink" target="_top">
@@ -223,7 +225,7 @@ information with each vertex assigned a component ID.</p><p>The resulting DataFr
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">clone</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#org.graphframes.lib.ConnectedComponents@clone():Object" title="Permalink" target="_top">
@@ -246,7 +248,7 @@ information with each vertex assigned a component ID.</p><p>The resulting DataFr
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="" class="extype" name="org.graphframes.lib.ConnectedComponents">ConnectedComponents</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="msg">msg: ⇒ <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.ConnectedComponents">ConnectedComponents</a></span>
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="" class="extype" name="org.graphframes.lib.ConnectedComponents">ConnectedComponents</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="msg">msg: ⇒ <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.ConnectedComponents">ConnectedComponents</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#org.graphframes.lib.ConnectedComponents@ensuring(cond:A=&gt;Boolean,msg:=&gt;Any):A" title="Permalink" target="_top">
@@ -267,7 +269,7 @@ information with each vertex assigned a component ID.</p><p>The resulting DataFr
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="" class="extype" name="org.graphframes.lib.ConnectedComponents">ConnectedComponents</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.ConnectedComponents">ConnectedComponents</a></span>
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="" class="extype" name="org.graphframes.lib.ConnectedComponents">ConnectedComponents</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.ConnectedComponents">ConnectedComponents</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#org.graphframes.lib.ConnectedComponents@ensuring(cond:A=&gt;Boolean):A" title="Permalink" target="_top">
@@ -288,7 +290,7 @@ information with each vertex assigned a component ID.</p><p>The resulting DataFr
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="msg">msg: ⇒ <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.ConnectedComponents">ConnectedComponents</a></span>
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="msg">msg: ⇒ <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.ConnectedComponents">ConnectedComponents</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#org.graphframes.lib.ConnectedComponents@ensuring(cond:Boolean,msg:=&gt;Any):A" title="Permalink" target="_top">
@@ -309,7 +311,7 @@ information with each vertex assigned a component ID.</p><p>The resulting DataFr
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.ConnectedComponents">ConnectedComponents</a></span>
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.ConnectedComponents">ConnectedComponents</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#org.graphframes.lib.ConnectedComponents@ensuring(cond:Boolean):A" title="Permalink" target="_top">
@@ -330,7 +332,7 @@ information with each vertex assigned a component ID.</p><p>The resulting DataFr
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#org.graphframes.lib.ConnectedComponents@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
@@ -347,7 +349,7 @@ information with each vertex assigned a component ID.</p><p>The resulting DataFr
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#org.graphframes.lib.ConnectedComponents@equals(x$1:Any):Boolean" title="Permalink" target="_top">
@@ -364,7 +366,7 @@ information with each vertex assigned a component ID.</p><p>The resulting DataFr
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#org.graphframes.lib.ConnectedComponents@finalize():Unit" title="Permalink" target="_top">
@@ -402,6 +404,57 @@ information with each vertex assigned a component ID.</p><p>The resulting DataFr
                 <span class="name">@inline</span><span class="args">()</span>
               
         </dd></dl></div>
+    </li><li name="org.graphframes.lib.ConnectedComponents#getAlgorithm" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getAlgorithm:String"></a>
+      <a id="getAlgorithm:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getAlgorithm</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.ConnectedComponents@getAlgorithm:String" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Gets the connected component algorithm to use.</p><div class="fullcomment"><div class="comment cmt"><p>Gets the connected component algorithm to use.</p></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="#setAlgorithm(value:String):ConnectedComponents.this.type" class="extmbr" name="org.graphframes.lib.ConnectedComponents#setAlgorithm">org.graphframes.lib.ConnectedComponents.setAlgorithm</a>.</p></span></dd></dl></div>
+    </li><li name="org.graphframes.lib.ConnectedComponents#getBroadcastThreshold" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getBroadcastThreshold:Int"></a>
+      <a id="getBroadcastThreshold:Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getBroadcastThreshold</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.ConnectedComponents@getBroadcastThreshold:Int" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Gets broadcast threshold in propagating component assignment.</p><div class="fullcomment"><div class="comment cmt"><p>Gets broadcast threshold in propagating component assignment.</p></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="#setBroadcastThreshold(value:Int):ConnectedComponents.this.type" class="extmbr" name="org.graphframes.lib.ConnectedComponents#setBroadcastThreshold">org.graphframes.lib.ConnectedComponents.setBroadcastThreshold</a></p></span></dd></dl></div>
+    </li><li name="org.graphframes.lib.ConnectedComponents#getCheckpointInterval" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getCheckpointInterval:Int"></a>
+      <a id="getCheckpointInterval:Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getCheckpointInterval</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.ConnectedComponents@getCheckpointInterval:Int" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Gets checkpoint interval.</p><div class="fullcomment"><div class="comment cmt"><p>Gets checkpoint interval.</p></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="#setCheckpointInterval(value:Int):ConnectedComponents.this.type" class="extmbr" name="org.graphframes.lib.ConnectedComponents#setCheckpointInterval">org.graphframes.lib.ConnectedComponents.setCheckpointInterval</a></p></span></dd></dl></div>
     </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <a id="getClass():Class[_]"></a>
@@ -428,7 +481,7 @@ information with each vertex assigned a component ID.</p><p>The resulting DataFr
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#org.graphframes.lib.ConnectedComponents@hashCode():Int" title="Permalink" target="_top">
@@ -445,7 +498,7 @@ information with each vertex assigned a component ID.</p><p>The resulting DataFr
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#org.graphframes.lib.ConnectedComponents@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
@@ -453,6 +506,74 @@ information with each vertex assigned a component ID.</p><p>The resulting DataFr
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="org.graphframes.Logging#logDebug" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="logDebug(s:String):Unit"></a>
+      <a id="logDebug(String):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">logDebug</span><span class="params">(<span name="s">s: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.ConnectedComponents@logDebug(s:String):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
+    </li><li name="org.graphframes.Logging#logInfo" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="logInfo(s:String):Unit"></a>
+      <a id="logInfo(String):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">logInfo</span><span class="params">(<span name="s">s: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.ConnectedComponents@logInfo(s:String):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
+    </li><li name="org.graphframes.Logging#logTrace" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="logTrace(s:String):Unit"></a>
+      <a id="logTrace(String):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">logTrace</span><span class="params">(<span name="s">s: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.ConnectedComponents@logTrace(s:String):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
+    </li><li name="com.typesafe.scalalogging.slf4j.LazyLogging#logger" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="logger:com.typesafe.scalalogging.slf4j.Logger"></a>
+      <a id="logger:Logger"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">logger</span><span class="result">: <span class="extype" name="com.typesafe.scalalogging.slf4j.Logger">Logger</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.ConnectedComponents@logger:com.typesafe.scalalogging.slf4j.Logger" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>LazyLogging → Logging</dd></dl></div>
     </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a>
       <a id="ne(AnyRef):Boolean"></a>
@@ -462,7 +583,7 @@ information with each vertex assigned a component ID.</p><p>The resulting DataFr
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#org.graphframes.lib.ConnectedComponents@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
@@ -479,7 +600,7 @@ information with each vertex assigned a component ID.</p><p>The resulting DataFr
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">notify</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#org.graphframes.lib.ConnectedComponents@notify():Unit" title="Permalink" target="_top">
@@ -496,7 +617,7 @@ information with each vertex assigned a component ID.</p><p>The resulting DataFr
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#org.graphframes.lib.ConnectedComponents@notifyAll():Unit" title="Permalink" target="_top">
@@ -521,6 +642,77 @@ information with each vertex assigned a component ID.</p><p>The resulting DataFr
       </a>
     </span>
       <p class="shortcomment cmt">Runs the algorithm.</p>
+    </li><li name="org.graphframes.lib.ConnectedComponents#setAlgorithm" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="setAlgorithm(value:String):ConnectedComponents.this.type"></a>
+      <a id="setAlgorithm(String):ConnectedComponents.this.type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">setAlgorithm</span><span class="params">(<span name="value">value: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.ConnectedComponents">ConnectedComponents</a>.this.type</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.ConnectedComponents@setAlgorithm(value:String):ConnectedComponents.this.type" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Sets the connected components algorithm to use (default: &quot;graphframes&quot;).</p><div class="fullcomment"><div class="comment cmt"><p>Sets the connected components algorithm to use (default: &quot;graphframes&quot;).
+Supported algorithms are:</p><ul><li>&quot;graphframes&quot;: Uses alternating large star and small star iterations proposed in
+    <a href="http://dx.doi.org/10.1145/2670979.2670997" target="_blank">Connected Components in MapReduce and Beyond</a>
+    with skewed join optimization.</li><li>&quot;graphx&quot;: Converts the graph to a GraphX graph and then uses the connected components
+    implementation in GraphX.</li></ul></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="ConnectedComponents$.html#supportedAlgorithms:Array[String]" class="extmbr" name="org.graphframes.lib.ConnectedComponents#supportedAlgorithms">org.graphframes.lib.ConnectedComponents.supportedAlgorithms</a></p></span></dd></dl></div>
+    </li><li name="org.graphframes.lib.ConnectedComponents#setBroadcastThreshold" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="setBroadcastThreshold(value:Int):ConnectedComponents.this.type"></a>
+      <a id="setBroadcastThreshold(Int):ConnectedComponents.this.type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">setBroadcastThreshold</span><span class="params">(<span name="value">value: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.ConnectedComponents">ConnectedComponents</a>.this.type</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.ConnectedComponents@setBroadcastThreshold(value:Int):ConnectedComponents.this.type" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Sets broadcast threshold in propagating component assignments (default: 1000000).</p><div class="fullcomment"><div class="comment cmt"><p>Sets broadcast threshold in propagating component assignments (default: 1000000).
+If a node degree is greater than this threshold at some iteration, its component assignment
+will be collected and then broadcasted back to propagate the assignment to its neighbors.
+Otherwise, the assignment propagation is done by a normal Spark join.
+This parameter is only used when the algorithm is set to &quot;graphframes&quot;.
+</p></div></div>
+    </li><li name="org.graphframes.lib.ConnectedComponents#setCheckpointInterval" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="setCheckpointInterval(value:Int):ConnectedComponents.this.type"></a>
+      <a id="setCheckpointInterval(Int):ConnectedComponents.this.type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">setCheckpointInterval</span><span class="params">(<span name="value">value: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.ConnectedComponents">ConnectedComponents</a>.this.type</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.ConnectedComponents@setCheckpointInterval(value:Int):ConnectedComponents.this.type" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Sets checkpoint interval in terms of number of iterations (default: 2).</p><div class="fullcomment"><div class="comment cmt"><p>Sets checkpoint interval in terms of number of iterations (default: 2).
+Checkpointing regularly helps recover from failures, clean shuffle files, shorten the
+lineage of the computation graph, and reduce the complexity of plan optimization.
+As of Spark 2.0, the complexity of plan optimization would grow exponentially without
+checkpointing.
+Hence disabling or setting longer-than-default checkpoint intervals are not recommended.
+Checkpoint data is saved under <code>org.apache.spark.SparkContext.getCheckpointDir</code> with
+prefix &quot;connected-components&quot;.
+If the checkpoint directory is not set, this throws a <code>java.io.IOException</code>.
+Set a nonpositive value to disable checkpointing.
+This parameter is only used when the algorithm is set to &quot;graphframes&quot;.
+Its default value might change in the future.</p></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><code>org.apache.spark.SparkContext.setCheckpointDir</code> in Spark API doc</p></span></dd></dl></div>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
       <a id="synchronized[T0](⇒T0):T0"></a>
@@ -564,7 +756,7 @@ information with each vertex assigned a component ID.</p><p>The resulting DataFr
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">wait</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#org.graphframes.lib.ConnectedComponents@wait():Unit" title="Permalink" target="_top">
@@ -587,7 +779,7 @@ information with each vertex assigned a component ID.</p><p>The resulting DataFr
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>, <span name="arg1">arg1: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Long" class="extype" target="_top">Long</a></span>, <span name="arg1">arg1: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#org.graphframes.lib.ConnectedComponents@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
@@ -610,7 +802,7 @@ information with each vertex assigned a component ID.</p><p>The resulting DataFr
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Long" class="extype" target="_top">Long</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#org.graphframes.lib.ConnectedComponents@wait(x$1:Long):Unit" title="Permalink" target="_top">
@@ -654,12 +846,18 @@ information with each vertex assigned a component ID.</p><p>The resulting DataFr
         </div>
 
         <div id="inheritedMembers">
-        <div class="parent" name="org.graphframes.lib.Arguments">
+        <div class="parent" name="org.graphframes.Logging">
+              <h3>Inherited from <span class="extype" name="org.graphframes.Logging">Logging</span></h3>
+            </div><div class="parent" name="com.typesafe.scalalogging.slf4j.LazyLogging">
+              <h3>Inherited from <span class="extype" name="com.typesafe.scalalogging.slf4j.LazyLogging">LazyLogging</span></h3>
+            </div><div class="parent" name="com.typesafe.scalalogging.Logging">
+              <h3>Inherited from <span class="extype" name="com.typesafe.scalalogging.Logging">com.typesafe.scalalogging.Logging</span></h3>
+            </div><div class="parent" name="org.graphframes.lib.Arguments">
               <h3>Inherited from <span class="extype" name="org.graphframes.lib.Arguments">Arguments</span></h3>
             </div><div class="parent" name="scala.AnyRef">
-              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></h3>
             </div><div class="parent" name="scala.Any">
-              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Any" class="extype" target="_top">Any</a></h3>
             </div>
         <div class="conversion" name="scala.Predef.any2stringadd">
               <h3>Inherited by implicit conversion any2stringadd from
