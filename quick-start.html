@@ -6,9 +6,9 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Quick-Start Guide - GraphFrames 0.3 Documentation</title>
+        <title>Quick-Start Guide - GraphFrames 0.4.0 Documentation</title>
         
-          <meta name="description" content="GraphFrames 0.3 guide for getting started quickly">
+          <meta name="description" content="GraphFrames 0.4.0 guide for getting started quickly">
         
 
         
@@ -29,6 +29,19 @@
         <link rel="stylesheet" href="css/pygments-default.css">
 
         
+        <!-- Google analytics script -->
+        <script type="text/javascript">
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-32518208-2']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+        </script>
+        
 
     </head>
     <body>
@@ -42,7 +55,7 @@
             <div class="navbar-inner">
                 <div class="container">
                     <div class="brand"><a href="index.html">
-                      GraphFrames</a><span class="version">0.3</span>
+                      GraphFrames</a><span class="version">0.4.0</span>
                     </div>
                     <ul class="nav">
                         <li><a href="index.html">Overview</a></li>
@@ -63,7 +76,7 @@
                             </ul>
                         </li>
                     </ul>
-                    <!--<p class="navbar-text pull-right"><span class="version-text">v0.3</span></p>-->
+                    <!--<p class="navbar-text pull-right"><span class="version-text">v0.4.0</span></p>-->
                 </div>
             </div>
         </div>
@@ -78,8 +91,8 @@ After you work through this guide, move on to the <a href="user-guide.html">User
 to learn more about the many queries and algorithms supported by GraphFrames.</p>
 
 <ul id="markdown-toc">
-  <li><a href="#getting-started-with-apache-spark-and-spark-packages" id="markdown-toc-getting-started-with-apache-spark-and-spark-packages">Getting started with Apache Spark and Spark packages</a></li>
-  <li><a href="#start-using-graphframes" id="markdown-toc-start-using-graphframes">Start using GraphFrames</a></li>
+  <li><a href="#getting-started-with-apache-spark-and-spark-packages">Getting started with Apache Spark and Spark packages</a></li>
+  <li><a href="#start-using-graphframes">Start using GraphFrames</a></li>
 </ul>
 
 <h1 id="getting-started-with-apache-spark-and-spark-packages">Getting started with Apache Spark and Spark packages</h1>
@@ -99,13 +112,13 @@ We use the <code>--packages</code> argument to download the graphframes package 
 
 <div data-lang="scala">
 
-    <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>./bin/spark-shell --packages graphframes:graphframes:0.2.0-spark2.0-s_2.11</code></pre></figure>
+    <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>./bin/spark-shell --packages graphframes:graphframes:0.4.0-spark2.0-s_2.11</code></pre></figure>
 
   </div>
 
 <div data-lang="python">
 
-    <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>./bin/pyspark --packages graphframes:graphframes:0.2.0-spark2.0-s_2.11</code></pre></figure>
+    <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>./bin/pyspark --packages graphframes:graphframes:0.4.0-spark2.0-s_2.11</code></pre></figure>
 
   </div>
 

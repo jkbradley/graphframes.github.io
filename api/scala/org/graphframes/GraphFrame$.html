@@ -62,7 +62,7 @@
         <div id="order">
               <span class="filtertype">Ordering</span>
               <ol>
-                
+                <li class="group out"><span>Grouped</span></li>
                 <li class="alpha in"><span>Alphabetic</span></li>
                 <li class="inherit out"><span>By Inheritance</span></li>
               </ol>
@@ -338,7 +338,7 @@ this is a column of edges with schema matching <a href="GraphFrame.html#edges:or
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="org.graphframes.GraphFrame#fromEdges" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="org.graphframes.GraphFrame#fromEdges" visbl="pub" data-isabs="false" fullComment="yes" group="conversions">
       <a id="fromEdges(e:org.apache.spark.sql.DataFrame):org.graphframes.GraphFrame"></a>
       <a id="fromEdges(DataFrame):GraphFrame"></a>
       <h4 class="signature">
@@ -358,7 +358,7 @@ this is a column of edges with schema matching <a href="GraphFrame.html#edges:or
 The resulting <a href="GraphFrame.html" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a> will have <a href="GraphFrame.html#vertices:org.apache.spark.sql.DataFrame" class="extmbr" name="org.graphframes.GraphFrame#vertices">GraphFrame.vertices</a> with a single &quot;id&quot; column.</p><p>Note: The <a href="GraphFrame.html#vertices:org.apache.spark.sql.DataFrame" class="extmbr" name="org.graphframes.GraphFrame#vertices">GraphFrame.vertices</a> DataFrame will be persisted at level
       <code>StorageLevel.MEMORY_AND_DISK</code>.</p></div><dl class="paramcmts block"><dt class="param">e</dt><dd class="cmt"><p>Edge DataFrame.  This must include columns &quot;src&quot; and &quot;dst&quot; containing source and
           destination vertex IDs.  All other columns are treated as edge attributes.</p></dd><dt>returns</dt><dd class="cmt"><p>New <a href="GraphFrame.html" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a> instance</p></dd></dl></div>
-    </li><li name="org.graphframes.GraphFrame#fromGraphX" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="org.graphframes.GraphFrame#fromGraphX" visbl="pub" data-isabs="false" fullComment="yes" group="conversions">
       <a id="fromGraphX[V,E](originalGraph:org.graphframes.GraphFrame,graph:org.apache.spark.graphx.Graph[V,E],vertexNames:Seq[String],edgeNames:Seq[String])(implicitevidence$4:reflect.runtime.universe.TypeTag[V],implicitevidence$5:reflect.runtime.universe.TypeTag[E]):org.graphframes.GraphFrame"></a>
       <a id="fromGraphX[V,E](GraphFrame,Graph[V,E],Seq[String],Seq[String])(scala.reflect.api.JavaUniverse.TypeTag[V],scala.reflect.api.JavaUniverse.TypeTag[E]):GraphFrame"></a>
       <h4 class="signature">
@@ -395,7 +395,7 @@ with new <a href="GraphFrame.html#vertices:org.apache.spark.sql.DataFrame" class
                     If there is a singleton attribute, this should have a single column name.
                     If the attribute is a <code>Product</code> type, this should be a list of names
                     matching the order of the attribute elements.</p></dd><dt>returns</dt><dd class="cmt"><p>original graph augmented with vertex and column attributes from the GraphX graph</p></dd></dl></div>
-    </li><li name="org.graphframes.GraphFrame#fromGraphX" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="org.graphframes.GraphFrame#fromGraphX" visbl="pub" data-isabs="false" fullComment="yes" group="conversions">
       <a id="fromGraphX[VD,ED](graph:org.apache.spark.graphx.Graph[VD,ED])(implicitevidence$2:reflect.runtime.universe.TypeTag[VD],implicitevidence$3:reflect.runtime.universe.TypeTag[ED]):org.graphframes.GraphFrame"></a>
       <a id="fromGraphX[VD,ED](Graph[VD,ED])(scala.reflect.api.JavaUniverse.TypeTag[VD],scala.reflect.api.JavaUniverse.TypeTag[ED]):GraphFrame"></a>
       <h4 class="signature">
@@ -716,7 +716,10 @@ and to &quot;src&quot; and &quot;dst&quot; for the edge DataFrame.
         </div>
 
         <div id="groupedMembers">
-        <div class="group" name="Ungrouped">
+        <div class="group" name="conversions">
+              <h3>conversions</h3>
+              
+            </div><div class="group" name="Ungrouped">
               <h3>Ungrouped</h3>
               
             </div>
