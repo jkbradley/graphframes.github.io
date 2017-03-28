@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>graphframes.graphframe &#8212; pygraphframes 0.2.0 documentation</title>
+    <title>graphframes.graphframe &mdash; pygraphframes 0.4.0 documentation</title>
     
     <link rel="stylesheet" href="../../static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../../static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '0.2.0',
+        VERSION:     '0.4.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../static/underscore.js"></script>
     <script type="text/javascript" src="../../static/doctools.js"></script>
     <script type="text/javascript" src="../../static/pygraphframes.js"></script>
-    <link rel="top" title="pygraphframes 0.2.0 documentation" href="../../index.html" />
+    <link rel="top" title="pygraphframes 0.4.0 documentation" href="../../index.html" />
     <link rel="up" title="Module code" href="../index.html" /> 
   </head>
   <body role="document">
@@ -39,9 +39,9 @@
           <a href="../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
     
-        <li class="nav-item nav-item-0"><a href="../../index.html">pygraphframes 0.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">pygraphframes 0.4.0 documentation</a> &raquo;</li>
 
-          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Module code</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Module code</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -68,9 +68,9 @@
 <span class="c1"># limitations under the License.</span>
 <span class="c1">#</span>
 
-<span class="kn">from</span> <span class="nn">pyspark</span> <span class="k">import</span> <span class="n">SparkContext</span>
-<span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="k">import</span> <span class="n">DataFrame</span><span class="p">,</span> <span class="n">SQLContext</span>
-<span class="kn">from</span> <span class="nn">pyspark.storagelevel</span> <span class="k">import</span> <span class="n">StorageLevel</span>
+<span class="kn">from</span> <span class="nn">pyspark</span> <span class="kn">import</span> <span class="n">SparkContext</span>
+<span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="kn">import</span> <span class="n">DataFrame</span><span class="p">,</span> <span class="n">SQLContext</span>
+<span class="kn">from</span> <span class="nn">pyspark.storagelevel</span> <span class="kn">import</span> <span class="n">StorageLevel</span>
 
 <span class="k">def</span> <span class="nf">_from_java_gf</span><span class="p">(</span><span class="n">jgf</span><span class="p">,</span> <span class="n">sqlContext</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -165,7 +165,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_jvm_graph</span><span class="o">.</span><span class="n">persist</span><span class="p">(</span><span class="n">javaStorageLevel</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
-<div class="viewcode-block" id="GraphFrame.unpersist"><a class="viewcode-back" href="../../graphframes.html#graphframes.GraphFrame.unpersist">[docs]</a>    <span class="k">def</span> <span class="nf">unpersist</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">blocking</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="GraphFrame.unpersist"><a class="viewcode-back" href="../../graphframes.html#graphframes.GraphFrame.unpersist">[docs]</a>    <span class="k">def</span> <span class="nf">unpersist</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">blocking</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Mark the dataframe representation of vertices and edges of the graph as non-persistent,</span>
 <span class="sd">        and remove all blocks for it from memory and disk.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -241,7 +241,7 @@
         <span class="n">jdf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jvm_graph</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">pattern</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">DataFrame</span><span class="p">(</span><span class="n">jdf</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sqlContext</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="GraphFrame.bfs"><a class="viewcode-back" href="../../graphframes.html#graphframes.GraphFrame.bfs">[docs]</a>    <span class="k">def</span> <span class="nf">bfs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fromExpr</span><span class="p">,</span> <span class="n">toExpr</span><span class="p">,</span> <span class="n">edgeFilter</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">maxPathLength</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+<div class="viewcode-block" id="GraphFrame.bfs"><a class="viewcode-back" href="../../graphframes.html#graphframes.GraphFrame.bfs">[docs]</a>    <span class="k">def</span> <span class="nf">bfs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fromExpr</span><span class="p">,</span> <span class="n">toExpr</span><span class="p">,</span> <span class="n">edgeFilter</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">maxPathLength</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Breadth-first search (BFS).</span>
 
@@ -253,7 +253,7 @@
             <span class="o">.</span><span class="n">fromExpr</span><span class="p">(</span><span class="n">fromExpr</span><span class="p">)</span>\
             <span class="o">.</span><span class="n">toExpr</span><span class="p">(</span><span class="n">toExpr</span><span class="p">)</span>\
             <span class="o">.</span><span class="n">maxPathLength</span><span class="p">(</span><span class="n">maxPathLength</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">edgeFilter</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">edgeFilter</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
             <span class="n">builder</span><span class="o">.</span><span class="n">edgeFilter</span><span class="p">(</span><span class="n">edgeFilter</span><span class="p">)</span>
         <span class="n">jdf</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">DataFrame</span><span class="p">(</span><span class="n">jdf</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sqlContext</span><span class="p">)</span></div>
@@ -294,8 +294,8 @@
         <span class="n">jdf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jvm_graph</span><span class="o">.</span><span class="n">labelPropagation</span><span class="p">()</span><span class="o">.</span><span class="n">maxIter</span><span class="p">(</span><span class="n">maxIter</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">DataFrame</span><span class="p">(</span><span class="n">jdf</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sqlContext</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="GraphFrame.pageRank"><a class="viewcode-back" href="../../graphframes.html#graphframes.GraphFrame.pageRank">[docs]</a>    <span class="k">def</span> <span class="nf">pageRank</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">resetProbability</span> <span class="o">=</span> <span class="mf">0.15</span><span class="p">,</span> <span class="n">sourceId</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">maxIter</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-                 <span class="n">tol</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="GraphFrame.pageRank"><a class="viewcode-back" href="../../graphframes.html#graphframes.GraphFrame.pageRank">[docs]</a>    <span class="k">def</span> <span class="nf">pageRank</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">resetProbability</span> <span class="o">=</span> <span class="mf">0.15</span><span class="p">,</span> <span class="n">sourceId</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">maxIter</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+                 <span class="n">tol</span> <span class="o">=</span> <span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Runs the PageRank algorithm on the graph.</span>
 <span class="sd">        Note: Exactly one of fixed_num_iter or tolerance must be set.</span>
@@ -311,13 +311,13 @@
 <span class="sd">        :return:  GraphFrame with new vertices column &quot;pagerank&quot; and new edges column &quot;weight&quot;</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">builder</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jvm_graph</span><span class="o">.</span><span class="n">pageRank</span><span class="p">()</span><span class="o">.</span><span class="n">resetProbability</span><span class="p">(</span><span class="n">resetProbability</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">sourceId</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">sourceId</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
             <span class="n">builder</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="n">sourceId</span><span class="p">(</span><span class="n">sourceId</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">maxIter</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">maxIter</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
             <span class="n">builder</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="n">maxIter</span><span class="p">(</span><span class="n">maxIter</span><span class="p">)</span>
-            <span class="k">assert</span> <span class="n">tol</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;Exactly one of maxIter or tol should be set.&quot;</span>
+            <span class="k">assert</span> <span class="n">tol</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">,</span> <span class="s2">&quot;Exactly one of maxIter or tol should be set.&quot;</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">assert</span> <span class="n">tol</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;Exactly one of maxIter or tol should be set.&quot;</span>
+            <span class="k">assert</span> <span class="n">tol</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">,</span> <span class="s2">&quot;Exactly one of maxIter or tol should be set.&quot;</span>
             <span class="n">builder</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="n">tol</span><span class="p">(</span><span class="n">tol</span><span class="p">)</span>
         <span class="n">jgf</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">_from_java_gf</span><span class="p">(</span><span class="n">jgf</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sqlContext</span><span class="p">)</span></div>
@@ -386,7 +386,7 @@
         <span class="n">globs</span><span class="o">=</span><span class="n">globs</span><span class="p">,</span> <span class="n">optionflags</span><span class="o">=</span><span class="n">doctest</span><span class="o">.</span><span class="n">ELLIPSIS</span> <span class="o">|</span> <span class="n">doctest</span><span class="o">.</span><span class="n">NORMALIZE_WHITESPACE</span><span class="p">)</span>
     <span class="n">globs</span><span class="p">[</span><span class="s1">&#39;sc&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">failure_count</span><span class="p">:</span>
-        <span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="nb">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 
 
 <span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
@@ -401,8 +401,8 @@
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
@@ -422,14 +422,14 @@
           <a href="../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
     
-        <li class="nav-item nav-item-0"><a href="../../index.html">pygraphframes 0.2.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">pygraphframes 0.4.0 documentation</a> &raquo;</li>
 
-          <li class="nav-item nav-item-1"><a href="../index.html" >Module code</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../index.html" >Module code</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2016, Timothy Hunter and Joseph Bradley.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+        &copy; Copyright 2016, Timothy Hunter and Joseph Bradley.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

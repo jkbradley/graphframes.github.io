@@ -6,9 +6,9 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>User Guide - GraphFrames 0.3 Documentation</title>
+        <title>User Guide - GraphFrames 0.4.0 Documentation</title>
         
-          <meta name="description" content="GraphFrames 0.3 user guide">
+          <meta name="description" content="GraphFrames 0.4.0 user guide">
         
 
         
@@ -42,7 +42,7 @@
             <div class="navbar-inner">
                 <div class="container">
                     <div class="brand"><a href="index.html">
-                      GraphFrames</a><span class="version">0.3</span>
+                      GraphFrames</a><span class="version">0.4.0</span>
                     </div>
                     <ul class="nav">
                         <li><a href="index.html">Overview</a></li>
@@ -63,7 +63,7 @@
                             </ul>
                         </li>
                     </ul>
-                    <!--<p class="navbar-text pull-right"><span class="version-text">v0.3</span></p>-->
+                    <!--<p class="navbar-text pull-right"><span class="version-text">v0.4.0</span></p>-->
                 </div>
             </div>
         </div>
@@ -77,28 +77,28 @@
 general graph algorithms.  This includes code examples in Scala and Python.</p>
 
 <ul id="markdown-toc">
-  <li><a href="#creating-graphframes" id="markdown-toc-creating-graphframes">Creating GraphFrames</a></li>
-  <li><a href="#basic-graph-and-dataframe-queries" id="markdown-toc-basic-graph-and-dataframe-queries">Basic graph and DataFrame queries</a></li>
-  <li><a href="#motif-finding" id="markdown-toc-motif-finding">Motif finding</a></li>
-  <li><a href="#subgraphs" id="markdown-toc-subgraphs">Subgraphs</a></li>
-  <li><a href="#graph-algorithms" id="markdown-toc-graph-algorithms">Graph algorithms</a>    <ul>
-      <li><a href="#breadth-first-search-bfs" id="markdown-toc-breadth-first-search-bfs">Breadth-first search (BFS)</a></li>
-      <li><a href="#connected-components" id="markdown-toc-connected-components">Connected components</a>        <ul>
-          <li><a href="#strongly-connected-components" id="markdown-toc-strongly-connected-components">Strongly connected components</a></li>
+  <li><a href="#creating-graphframes">Creating GraphFrames</a></li>
+  <li><a href="#basic-graph-and-dataframe-queries">Basic graph and DataFrame queries</a></li>
+  <li><a href="#motif-finding">Motif finding</a></li>
+  <li><a href="#subgraphs">Subgraphs</a></li>
+  <li><a href="#graph-algorithms">Graph algorithms</a>    <ul>
+      <li><a href="#breadth-first-search-bfs">Breadth-first search (BFS)</a></li>
+      <li><a href="#connected-components">Connected components</a>        <ul>
+          <li><a href="#strongly-connected-components">Strongly connected components</a></li>
         </ul>
       </li>
-      <li><a href="#label-propagation-algorithm-lpa" id="markdown-toc-label-propagation-algorithm-lpa">Label Propagation Algorithm (LPA)</a></li>
-      <li><a href="#pagerank" id="markdown-toc-pagerank">PageRank</a></li>
-      <li><a href="#shortest-paths" id="markdown-toc-shortest-paths">Shortest paths</a></li>
-      <li><a href="#triangle-count" id="markdown-toc-triangle-count">Triangle count</a></li>
+      <li><a href="#label-propagation-algorithm-lpa">Label Propagation Algorithm (LPA)</a></li>
+      <li><a href="#pagerank">PageRank</a></li>
+      <li><a href="#shortest-paths">Shortest paths</a></li>
+      <li><a href="#triangle-count">Triangle count</a></li>
     </ul>
   </li>
-  <li><a href="#saving-and-loading-graphframes" id="markdown-toc-saving-and-loading-graphframes">Saving and loading GraphFrames</a></li>
-  <li><a href="#message-passing-via-aggregatemessages" id="markdown-toc-message-passing-via-aggregatemessages">Message passing via AggregateMessages</a></li>
-  <li><a href="#graphx-graphframe-conversions" id="markdown-toc-graphx-graphframe-conversions">GraphX-GraphFrame conversions</a>    <ul>
-      <li><a href="#graphframe-to-graphx" id="markdown-toc-graphframe-to-graphx">GraphFrame to GraphX</a></li>
-      <li><a href="#graphx-to-graphframe" id="markdown-toc-graphx-to-graphframe">GraphX to GraphFrame</a></li>
-      <li><a href="#example-conversions" id="markdown-toc-example-conversions">Example conversions</a></li>
+  <li><a href="#saving-and-loading-graphframes">Saving and loading GraphFrames</a></li>
+  <li><a href="#message-passing-via-aggregatemessages">Message passing via AggregateMessages</a></li>
+  <li><a href="#graphx-graphframe-conversions">GraphX-GraphFrame conversions</a>    <ul>
+      <li><a href="#graphframe-to-graphx">GraphFrame to GraphX</a></li>
+      <li><a href="#graphx-to-graphframe">GraphX to GraphFrame</a></li>
+      <li><a href="#example-conversions">Example conversions</a></li>
     </ul>
   </li>
 </ul>
@@ -331,9 +331,9 @@ in the motif.  In this case, the returned columns will be &#8220;a, b, e, e2.&#8
       <li>The names are used as column names in the result <code>DataFrame</code>.  If a motif contains
   named vertex <code>a</code>, then the result <code>DataFrame</code> will contain a column &#8220;a&#8221; which is a
   <code>StructType</code> with sub-fields equivalent to the schema (columns) of
-  [[GraphFrame.vertices]]. Similarly, an edge <code>e</code> in a motif will produce a column &#8220;e&#8221;
+  <code>GraphFrame.vertices</code>. Similarly, an edge <code>e</code> in a motif will produce a column &#8220;e&#8221;
   in the result <code>DataFrame</code> with sub-fields equivalent to the schema (columns) of
-  [[GraphFrame.edges]].</li>
+  <code>GraphFrame.edges</code>.</li>
     </ul>
   </li>
   <li>It is acceptable to omit names for vertices or edges in motifs when not needed.
@@ -620,6 +620,10 @@ assigned a component ID.</p>
 
 <p>See <a href="https://en.wikipedia.org/wiki/Connected_component_(graph_theory)">Wikipedia</a> for background.</p>
 
+<p>NOTE: With GraphFrames 0.3.0 and later releases, the default Connected Components algorithm
+requires setting a Spark checkpoint directory.  Users can revert to the old algorithm using
+<code>.setAlgorithm("graphx")</code>.</p>
+
 <div class="codetabs">
 
 <div data-lang="scala">
@@ -730,7 +734,7 @@ trivial solutions (all nodes are identified into a single community).</p>
 <p>There are two implementations of PageRank.</p>
 
 <ul>
-  <li>The first implementation uses the standalone [[GraphFrame]] interface and runs PageRank
+  <li>The first implementation uses the standalone <code>GraphFrame</code> interface and runs PageRank
  for a fixed number of iterations.  This can be run by setting <code>maxIter</code>.</li>
   <li>The second implementation uses the <code>org.apache.spark.graphx.Pregel</code> interface and runs PageRank
 until convergence.  This can be run by setting <code>tol</code>.</li>
