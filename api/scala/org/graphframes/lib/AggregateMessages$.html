@@ -147,6 +147,23 @@
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="org.graphframes.lib.AggregateMessages#MSG_COL_NAME" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MSG_COL_NAME:String"></a>
+      <a id="MSG_COL_NAME:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">MSG_COL_NAME</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.AggregateMessages$@MSG_COL_NAME:String" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Column name for aggregated messages, used in <a href="#msg:org.apache.spark.sql.Column" class="extmbr" name="org.graphframes.lib.AggregateMessages#msg">AggregateMessages.msg</a></p>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <a id="asInstanceOf[T0]:T0"></a>
@@ -294,7 +311,7 @@
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Cache a DataFrame, and returned the cached version.</p><div class="fullcomment"><div class="comment cmt"><p>Cache a DataFrame, and returned the cached version. For iterative DataFrame-based algorithms.</p><p>WARNING: This is NOT the same as <code>DataFrame.cache()</code>.
+      <p class="shortcomment cmt">Create a new cached copy of a DataFrame.</p><div class="fullcomment"><div class="comment cmt"><p>Create a new cached copy of a DataFrame. For iterative DataFrame-based algorithms.</p><p>WARNING: This is NOT the same as <code>DataFrame.cache()</code>.
          The original DataFrame will NOT be cached.</p><p>This is a workaround for SPARK-13346, which makes it difficult to use DataFrames in iterative
 algorithms.  This workaround converts the DataFrame to an RDD, caches the RDD, and creates
 a new DataFrame.  This is important for avoiding the creation of extremely complex DataFrame

@@ -1,9 +1,9 @@
 <!DOCTYPE html >
 <html>
         <head>
-          <title>AggregateMessages - org.graphframes.lib.AggregateMessages</title>
-          <meta name="description" content="AggregateMessages - org.graphframes.lib.AggregateMessages" />
-          <meta name="keywords" content="AggregateMessages org.graphframes.lib.AggregateMessages" />
+          <title>ParallelPersonalizedPageRank - org.graphframes.lib.ParallelPersonalizedPageRank</title>
+          <meta name="description" content="ParallelPersonalizedPageRank - org.graphframes.lib.ParallelPersonalizedPageRank" />
+          <meta name="keywords" content="ParallelPersonalizedPageRank org.graphframes.lib.ParallelPersonalizedPageRank" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
@@ -16,7 +16,7 @@
       <script type="text/javascript">
          if(top === self) {
             var url = '../../../index.html';
-            var hash = 'org.graphframes.lib.AggregateMessages';
+            var hash = 'org.graphframes.lib.ParallelPersonalizedPageRank';
             var anchor = window.location.hash;
             var anchor_opt = '';
             if (anchor.length >= 1)
@@ -28,14 +28,12 @@
         </head>
         <body class="type">
       <div id="definition">
-        <a href="AggregateMessages$.html" title="See companion object"><img alt="Class/Object" src="../../../lib/class_to_object_big.png" /></a>
+        <img alt="Class" src="../../../lib/class_big.png" />
         <p id="owner"><a href="../../package.html" class="extype" name="org">org</a>.<a href="../package.html" class="extype" name="org.graphframes">graphframes</a>.<a href="package.html" class="extype" name="org.graphframes.lib">lib</a></p>
-        <h1><a href="AggregateMessages$.html" title="See companion object">AggregateMessages</a></h1><h3><span class="morelinks"><div>
-            Related Docs:
-            <a href="AggregateMessages$.html" title="See companion object">object AggregateMessages</a>
-            | <a href="package.html" class="extype" name="org.graphframes.lib">package lib</a>
+        <h1>ParallelPersonalizedPageRank</h1><h3><span class="morelinks"><div>Related Doc:
+            <a href="package.html" class="extype" name="org.graphframes.lib">package lib</a>
           </div></span></h3><span class="permalink">
-      <a href="../../../index.html#org.graphframes.lib.AggregateMessages" title="Permalink" target="_top">
+      <a href="../../../index.html#org.graphframes.lib.ParallelPersonalizedPageRank" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -47,27 +45,29 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <span class="name">AggregateMessages</span><span class="result"> extends <span class="extype" name="org.graphframes.lib.Arguments">Arguments</span> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <span class="name">ParallelPersonalizedPageRank</span><span class="result"> extends <span class="extype" name="org.graphframes.lib.Arguments">Arguments</span></span>
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>This is a primitive for implementing graph algorithms.
-This method aggregates messages from the neighboring edges and vertices of each vertex.</p><p>For each triplet (source vertex, edge, destination vertex) in <a href="../GraphFrame.html#triplets:org.apache.spark.sql.DataFrame" class="extmbr" name="org.graphframes.GraphFrame#triplets">GraphFrame.triplets</a>,
-this can send a message to the source and/or destination vertices.</p><ul><li><code>AggregateMessages.sendToSrc()</code> sends a message to the source vertex of each
-   triplet</li><li><code>AggregateMessages.sendToDst()</code> sends a message to the destination vertex of each
-   triplet</li><li><code>AggregateMessages.agg</code> specifies an aggregation function for aggregating the
-   messages sent to each vertex.  It also runs the aggregation, computing a DataFrame
-   with one row for each vertex which receives &gt; 0 messages.  The DataFrame has 2 columns:<ul><li>vertex column ID (named <a href="../GraphFrame$.html#ID:String" class="extmbr" name="org.graphframes.GraphFrame#ID">GraphFrame.ID</a>)</li><li>aggregate from messages sent to vertex (with the name given to the <code>Column</code> specified
-      in <code>AggregateMessages.agg()</code>)</li></ul></li></ul><p>When specifying the messages and aggregation function, the user may reference columns using:</p><ul><li><a href="AggregateMessages$.html#src:org.apache.spark.sql.Column" class="extmbr" name="org.graphframes.lib.AggregateMessages#src">AggregateMessages.src</a>: column for source vertex of edge</li><li><a href="AggregateMessages$.html#edge:org.apache.spark.sql.Column" class="extmbr" name="org.graphframes.lib.AggregateMessages#edge">AggregateMessages.edge</a>: column for edge</li><li><a href="AggregateMessages$.html#dst:org.apache.spark.sql.Column" class="extmbr" name="org.graphframes.lib.AggregateMessages#dst">AggregateMessages.dst</a>: column for destination vertex of edge</li><li><a href="AggregateMessages$.html#msg:org.apache.spark.sql.Column" class="extmbr" name="org.graphframes.lib.AggregateMessages#msg">AggregateMessages.msg</a>: message sent to vertex (for aggregation function)</li></ul><p>Note: If you use this operation to write an iterative algorithm, you may want to use
-<a href="AggregateMessages$.html#getCachedDataFrame(df:org.apache.spark.sql.DataFrame):org.apache.spark.sql.DataFrame" class="extmbr" name="org.graphframes.lib.AggregateMessages#getCachedDataFrame">getCachedDataFrame()</a> as a workaround for caching
-issues.
-</p></div><dl class="attributes block"> <div class="block">Example:
-               <ol><li class="cmt"><p>We can use this function to compute the in-degree of each vertex</p><pre><span class="kw">val</span> g: GraphFrame = Graph.textFile(<span class="lit">"twittergraph"</span>)
-<span class="kw">val</span> inDeg: DataFrame =
-  g.aggregateMessages().sendToDst(lit(<span class="num">1</span>)).agg(sum(AggregateMessagesBuilder.msg))</pre></li></ol>
-            </div></dl><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Parallel Personalized PageRank algorithm implementation.</p><p>This implementation uses the standalone <a href="../GraphFrame.html" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a> interface and
+runs personalized PageRank in parallel for a fixed number of iterations.
+This can be run by setting <code>maxIter</code>.
+The source vertex Ids are set in <code>sourceIds</code>.
+A simple local implementation of this algorithm is as follows.</p><pre><span class="kw">var</span> oldPR = <span class="std">Array</span>.fill(n)( <span class="num">1.0</span> )
+<span class="kw">val</span> PR = (<span class="num">0</span> until n).map(i <span class="kw">=&gt;</span> <span class="kw">if</span> sourceIds.contains(i) alpha <span class="kw">else</span> <span class="num">0.0</span>)
+<span class="kw">for</span>( iter <span class="kw">&lt;-</span> <span class="num">0</span> until maxIter ) {
+  swap(oldPR, PR)
+  <span class="kw">for</span>( i <span class="kw">&lt;-</span> <span class="num">0</span> until n ) {
+    PR[i] = (<span class="num">1</span> - alpha) * inNbrs[i].map(j <span class="kw">=&gt;</span> oldPR[j] / outDeg[j]).sum
+    <span class="kw">if</span> (sourceIds.contains(i)) PR[i] += alpha
+  }
+}</pre><p><code>alpha</code> is the random reset probability (typically 0.15), <code>inNbrs[i]</code> is the set of
+neighbors which link to <code>i</code> and <code>outDeg[j]</code> is the out degree of vertex <code>j</code>.</p><p>Note that this is not the &quot;normalized&quot; PageRank and as a consequence pages that have no
+inlinks will have a PageRank of alpha. In particular, the pageranks may have some values
+greater than 1.</p><p>The resulting vertices DataFrame contains one additional column:</p><ul><li>pageranks (<code>VectorType</code>): the pageranks of this vertex from all input source vertices</li></ul><p>The resulting edges DataFrame contains one additional column:</p><ul><li>weight (<code>DoubleType</code>): the normalized weight of this edge after running PageRank
+</li></ul></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a>, <span class="extype" name="java.io.Serializable">Serializable</span>, <span class="extype" name="org.graphframes.lib.Arguments">Arguments</span>, <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a>, <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Any" class="extype" target="_top">Any</a></div>
+          <div class="superTypes hiddenContent"><span class="extype" name="org.graphframes.lib.Arguments">Arguments</span>, <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a>, <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Any" class="extype" target="_top">Any</a></div>
         </div></div>
         
 
@@ -85,7 +85,7 @@ issues.
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="org.graphframes.lib.AggregateMessages"><span>AggregateMessages</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="org.graphframes.lib.Arguments"><span>Arguments</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="org.graphframes.lib.ParallelPersonalizedPageRank"><span>ParallelPersonalizedPageRank</span></li><li class="in" name="org.graphframes.lib.Arguments"><span>Arguments</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
                 <span class="filtertype">Implicitly<br />
@@ -127,7 +127,7 @@ issues.
         <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#org.graphframes.lib.AggregateMessages@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+      <a href="../../../index.html#org.graphframes.lib.ParallelPersonalizedPageRank@!=(x$1:Any):Boolean" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -144,7 +144,7 @@ issues.
         <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#org.graphframes.lib.AggregateMessages@##():Int" title="Permalink" target="_top">
+      <a href="../../../index.html#org.graphframes.lib.ParallelPersonalizedPageRank@##():Int" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -161,34 +161,34 @@ issues.
         <span title="gt4s: $plus" class="implicit">+</span><span class="params">(<span name="other">other: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#org.graphframes.lib.AggregateMessages@+(other:String):String" title="Permalink" target="_top">
+      <a href="../../../index.html#org.graphframes.lib.ParallelPersonalizedPageRank@+(other:String):String" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
-            This member is added by an implicit conversion from <a href="" class="extype" name="org.graphframes.lib.AggregateMessages">AggregateMessages</a> to
-            <span class="extype" name="scala.Predef.any2stringadd">any2stringadd</span>[<a href="" class="extype" name="org.graphframes.lib.AggregateMessages">AggregateMessages</a>] performed by method any2stringadd in scala.Predef.
+            This member is added by an implicit conversion from <a href="" class="extype" name="org.graphframes.lib.ParallelPersonalizedPageRank">ParallelPersonalizedPageRank</a> to
+            <span class="extype" name="scala.Predef.any2stringadd">any2stringadd</span>[<a href="" class="extype" name="org.graphframes.lib.ParallelPersonalizedPageRank">ParallelPersonalizedPageRank</a>] performed by method any2stringadd in scala.Predef.
             
           </dd><dt>Definition Classes</dt><dd>any2stringadd</dd></dl></div>
     </li><li name="scala.Predef.ArrowAssoc#-&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="-&gt;[B](y:B):(A,B)"></a>
-      <a id="-&gt;[B](B):(AggregateMessages,B)"></a>
+      <a id="-&gt;[B](B):(ParallelPersonalizedPageRank,B)"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span title="gt4s: $minus$greater" class="implicit">-&gt;</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="y">y: <span class="extype" name="scala.Predef.ArrowAssoc.-&gt;.B">B</span></span>)</span><span class="result">: (<a href="" class="extype" name="org.graphframes.lib.AggregateMessages">AggregateMessages</a>, <span class="extype" name="scala.Predef.ArrowAssoc.-&gt;.B">B</span>)</span>
+        <span title="gt4s: $minus$greater" class="implicit">-&gt;</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="y">y: <span class="extype" name="scala.Predef.ArrowAssoc.-&gt;.B">B</span></span>)</span><span class="result">: (<a href="" class="extype" name="org.graphframes.lib.ParallelPersonalizedPageRank">ParallelPersonalizedPageRank</a>, <span class="extype" name="scala.Predef.ArrowAssoc.-&gt;.B">B</span>)</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#org.graphframes.lib.AggregateMessages@-&gt;[B](y:B):(A,B)" title="Permalink" target="_top">
+      <a href="../../../index.html#org.graphframes.lib.ParallelPersonalizedPageRank@-&gt;[B](y:B):(A,B)" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
-            This member is added by an implicit conversion from <a href="" class="extype" name="org.graphframes.lib.AggregateMessages">AggregateMessages</a> to
-            <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="" class="extype" name="org.graphframes.lib.AggregateMessages">AggregateMessages</a>] performed by method ArrowAssoc in scala.Predef.
+            This member is added by an implicit conversion from <a href="" class="extype" name="org.graphframes.lib.ParallelPersonalizedPageRank">ParallelPersonalizedPageRank</a> to
+            <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="" class="extype" name="org.graphframes.lib.ParallelPersonalizedPageRank">ParallelPersonalizedPageRank</a>] performed by method ArrowAssoc in scala.Predef.
             
           </dd><dt>Definition Classes</dt><dd>ArrowAssoc</dd><dt>Annotations</dt><dd>
                 <span class="name">@inline</span><span class="args">()</span>
@@ -206,52 +206,11 @@ issues.
         <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#org.graphframes.lib.AggregateMessages@==(x$1:Any):Boolean" title="Permalink" target="_top">
+      <a href="../../../index.html#org.graphframes.lib.ParallelPersonalizedPageRank@==(x$1:Any):Boolean" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="org.graphframes.lib.AggregateMessages#agg" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="agg(aggCol:String):org.apache.spark.sql.DataFrame"></a>
-      <a id="agg(String):DataFrame"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">agg</span><span class="params">(<span name="aggCol">aggCol: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="org.apache.spark.sql.DataFrame">DataFrame</span></span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../index.html#org.graphframes.lib.AggregateMessages@agg(aggCol:String):org.apache.spark.sql.DataFrame" title="Permalink" target="_top">
-        <img src="../../../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">Run the aggregation, specifying SQL expression as a String</p><div class="fullcomment"><div class="comment cmt"><p>Run the aggregation, specifying SQL expression as a String</p><p>See the overloaded method documentation for more details.
-</p></div></div>
-    </li><li name="org.graphframes.lib.AggregateMessages#agg" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="agg(aggCol:org.apache.spark.sql.Column):org.apache.spark.sql.DataFrame"></a>
-      <a id="agg(Column):DataFrame"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">agg</span><span class="params">(<span name="aggCol">aggCol: <span class="extype" name="org.apache.spark.sql.Column">Column</span></span>)</span><span class="result">: <span class="extype" name="org.apache.spark.sql.DataFrame">DataFrame</span></span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../index.html#org.graphframes.lib.AggregateMessages@agg(aggCol:org.apache.spark.sql.Column):org.apache.spark.sql.DataFrame" title="Permalink" target="_top">
-        <img src="../../../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">Run the aggregation, returning the resulting DataFrame of aggregated messages.</p><div class="fullcomment"><div class="comment cmt"><p>Run the aggregation, returning the resulting DataFrame of aggregated messages.
-This is a lazy operation, so the DataFrame will not be materialized until an action is
-executed on it.</p><p>This returns a DataFrame with schema:</p><ul><li>column &quot;id&quot;: vertex ID</li><li>aggCol: aggregate result
-If you need to join this with the original <a href="../GraphFrame.html#vertices:org.apache.spark.sql.DataFrame" class="extmbr" name="org.graphframes.GraphFrame#vertices">GraphFrame.vertices</a>, you can run an inner
-join of the form:</li></ul><pre><span class="kw">val</span> g: GraphFrame = ...
-<span class="kw">val</span> aggResult = g.AggregateMessagesBuilder.sendToSrc(msg).agg(aggFunc)
-aggResult.join(g.vertices, ID)</pre></div></div>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <a id="asInstanceOf[T0]:T0"></a>
@@ -264,7 +223,7 @@ aggResult.join(g.vertices, ID)</pre></div></div>
         <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#org.graphframes.lib.AggregateMessages@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+      <a href="../../../index.html#org.graphframes.lib.ParallelPersonalizedPageRank@asInstanceOf[T0]:T0" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -281,7 +240,7 @@ aggResult.join(g.vertices, ID)</pre></div></div>
         <span class="name">clone</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#org.graphframes.lib.AggregateMessages@clone():Object" title="Permalink" target="_top">
+      <a href="../../../index.html#org.graphframes.lib.ParallelPersonalizedPageRank@clone():Object" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -294,86 +253,86 @@ aggResult.join(g.vertices, ID)</pre></div></div>
         </dd></dl></div>
     </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ensuring(cond:A=&gt;Boolean,msg:=&gt;Any):A"></a>
-      <a id="ensuring((AggregateMessages)⇒Boolean,⇒Any):AggregateMessages"></a>
+      <a id="ensuring((ParallelPersonalizedPageRank)⇒Boolean,⇒Any):ParallelPersonalizedPageRank"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="" class="extype" name="org.graphframes.lib.AggregateMessages">AggregateMessages</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="msg">msg: ⇒ <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.AggregateMessages">AggregateMessages</a></span>
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="" class="extype" name="org.graphframes.lib.ParallelPersonalizedPageRank">ParallelPersonalizedPageRank</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="msg">msg: ⇒ <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.ParallelPersonalizedPageRank">ParallelPersonalizedPageRank</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#org.graphframes.lib.AggregateMessages@ensuring(cond:A=&gt;Boolean,msg:=&gt;Any):A" title="Permalink" target="_top">
+      <a href="../../../index.html#org.graphframes.lib.ParallelPersonalizedPageRank@ensuring(cond:A=&gt;Boolean,msg:=&gt;Any):A" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
-            This member is added by an implicit conversion from <a href="" class="extype" name="org.graphframes.lib.AggregateMessages">AggregateMessages</a> to
-            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="org.graphframes.lib.AggregateMessages">AggregateMessages</a>] performed by method Ensuring in scala.Predef.
+            This member is added by an implicit conversion from <a href="" class="extype" name="org.graphframes.lib.ParallelPersonalizedPageRank">ParallelPersonalizedPageRank</a> to
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="org.graphframes.lib.ParallelPersonalizedPageRank">ParallelPersonalizedPageRank</a>] performed by method Ensuring in scala.Predef.
             
           </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
     </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ensuring(cond:A=&gt;Boolean):A"></a>
-      <a id="ensuring((AggregateMessages)⇒Boolean):AggregateMessages"></a>
+      <a id="ensuring((ParallelPersonalizedPageRank)⇒Boolean):ParallelPersonalizedPageRank"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="" class="extype" name="org.graphframes.lib.AggregateMessages">AggregateMessages</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.AggregateMessages">AggregateMessages</a></span>
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="" class="extype" name="org.graphframes.lib.ParallelPersonalizedPageRank">ParallelPersonalizedPageRank</a>) ⇒ <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.ParallelPersonalizedPageRank">ParallelPersonalizedPageRank</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#org.graphframes.lib.AggregateMessages@ensuring(cond:A=&gt;Boolean):A" title="Permalink" target="_top">
+      <a href="../../../index.html#org.graphframes.lib.ParallelPersonalizedPageRank@ensuring(cond:A=&gt;Boolean):A" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
-            This member is added by an implicit conversion from <a href="" class="extype" name="org.graphframes.lib.AggregateMessages">AggregateMessages</a> to
-            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="org.graphframes.lib.AggregateMessages">AggregateMessages</a>] performed by method Ensuring in scala.Predef.
+            This member is added by an implicit conversion from <a href="" class="extype" name="org.graphframes.lib.ParallelPersonalizedPageRank">ParallelPersonalizedPageRank</a> to
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="org.graphframes.lib.ParallelPersonalizedPageRank">ParallelPersonalizedPageRank</a>] performed by method Ensuring in scala.Predef.
             
           </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
     </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ensuring(cond:Boolean,msg:=&gt;Any):A"></a>
-      <a id="ensuring(Boolean,⇒Any):AggregateMessages"></a>
+      <a id="ensuring(Boolean,⇒Any):ParallelPersonalizedPageRank"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="msg">msg: ⇒ <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.AggregateMessages">AggregateMessages</a></span>
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="msg">msg: ⇒ <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.ParallelPersonalizedPageRank">ParallelPersonalizedPageRank</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#org.graphframes.lib.AggregateMessages@ensuring(cond:Boolean,msg:=&gt;Any):A" title="Permalink" target="_top">
+      <a href="../../../index.html#org.graphframes.lib.ParallelPersonalizedPageRank@ensuring(cond:Boolean,msg:=&gt;Any):A" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
-            This member is added by an implicit conversion from <a href="" class="extype" name="org.graphframes.lib.AggregateMessages">AggregateMessages</a> to
-            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="org.graphframes.lib.AggregateMessages">AggregateMessages</a>] performed by method Ensuring in scala.Predef.
+            This member is added by an implicit conversion from <a href="" class="extype" name="org.graphframes.lib.ParallelPersonalizedPageRank">ParallelPersonalizedPageRank</a> to
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="org.graphframes.lib.ParallelPersonalizedPageRank">ParallelPersonalizedPageRank</a>] performed by method Ensuring in scala.Predef.
             
           </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
     </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ensuring(cond:Boolean):A"></a>
-      <a id="ensuring(Boolean):AggregateMessages"></a>
+      <a id="ensuring(Boolean):ParallelPersonalizedPageRank"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.AggregateMessages">AggregateMessages</a></span>
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.ParallelPersonalizedPageRank">ParallelPersonalizedPageRank</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#org.graphframes.lib.AggregateMessages@ensuring(cond:Boolean):A" title="Permalink" target="_top">
+      <a href="../../../index.html#org.graphframes.lib.ParallelPersonalizedPageRank@ensuring(cond:Boolean):A" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
-            This member is added by an implicit conversion from <a href="" class="extype" name="org.graphframes.lib.AggregateMessages">AggregateMessages</a> to
-            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="org.graphframes.lib.AggregateMessages">AggregateMessages</a>] performed by method Ensuring in scala.Predef.
+            This member is added by an implicit conversion from <a href="" class="extype" name="org.graphframes.lib.ParallelPersonalizedPageRank">ParallelPersonalizedPageRank</a> to
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="org.graphframes.lib.ParallelPersonalizedPageRank">ParallelPersonalizedPageRank</a>] performed by method Ensuring in scala.Predef.
             
           </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
     </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
@@ -388,7 +347,7 @@ aggResult.join(g.vertices, ID)</pre></div></div>
         <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#org.graphframes.lib.AggregateMessages@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+      <a href="../../../index.html#org.graphframes.lib.ParallelPersonalizedPageRank@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -405,7 +364,7 @@ aggResult.join(g.vertices, ID)</pre></div></div>
         <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#org.graphframes.lib.AggregateMessages@equals(x$1:Any):Boolean" title="Permalink" target="_top">
+      <a href="../../../index.html#org.graphframes.lib.ParallelPersonalizedPageRank@equals(x$1:Any):Boolean" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -422,7 +381,7 @@ aggResult.join(g.vertices, ID)</pre></div></div>
         <span class="name">finalize</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#org.graphframes.lib.AggregateMessages@finalize():Unit" title="Permalink" target="_top">
+      <a href="../../../index.html#org.graphframes.lib.ParallelPersonalizedPageRank@finalize():Unit" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -445,13 +404,13 @@ aggResult.join(g.vertices, ID)</pre></div></div>
         <span class="implicit">formatted</span><span class="params">(<span name="fmtstr">fmtstr: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#org.graphframes.lib.AggregateMessages@formatted(fmtstr:String):String" title="Permalink" target="_top">
+      <a href="../../../index.html#org.graphframes.lib.ParallelPersonalizedPageRank@formatted(fmtstr:String):String" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
-            This member is added by an implicit conversion from <a href="" class="extype" name="org.graphframes.lib.AggregateMessages">AggregateMessages</a> to
-            <span class="extype" name="scala.Predef.StringFormat">StringFormat</span>[<a href="" class="extype" name="org.graphframes.lib.AggregateMessages">AggregateMessages</a>] performed by method StringFormat in scala.Predef.
+            This member is added by an implicit conversion from <a href="" class="extype" name="org.graphframes.lib.ParallelPersonalizedPageRank">ParallelPersonalizedPageRank</a> to
+            <span class="extype" name="scala.Predef.StringFormat">StringFormat</span>[<a href="" class="extype" name="org.graphframes.lib.ParallelPersonalizedPageRank">ParallelPersonalizedPageRank</a>] performed by method StringFormat in scala.Predef.
             
           </dd><dt>Definition Classes</dt><dd>StringFormat</dd><dt>Annotations</dt><dd>
                 <span class="name">@inline</span><span class="args">()</span>
@@ -469,7 +428,7 @@ aggResult.join(g.vertices, ID)</pre></div></div>
         <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#org.graphframes.lib.AggregateMessages@getClass():Class[_]" title="Permalink" target="_top">
+      <a href="../../../index.html#org.graphframes.lib.ParallelPersonalizedPageRank@getClass():Class[_]" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -486,7 +445,7 @@ aggResult.join(g.vertices, ID)</pre></div></div>
         <span class="name">hashCode</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#org.graphframes.lib.AggregateMessages@hashCode():Int" title="Permalink" target="_top">
+      <a href="../../../index.html#org.graphframes.lib.ParallelPersonalizedPageRank@hashCode():Int" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -503,11 +462,28 @@ aggResult.join(g.vertices, ID)</pre></div></div>
         <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#org.graphframes.lib.AggregateMessages@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+      <a href="../../../index.html#org.graphframes.lib.ParallelPersonalizedPageRank@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="org.graphframes.lib.ParallelPersonalizedPageRank#maxIter" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="maxIter(value:Int):ParallelPersonalizedPageRank.this.type"></a>
+      <a id="maxIter(Int):ParallelPersonalizedPageRank.this.type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">maxIter</span><span class="params">(<span name="value">value: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.ParallelPersonalizedPageRank">ParallelPersonalizedPageRank</a>.this.type</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.ParallelPersonalizedPageRank@maxIter(value:Int):ParallelPersonalizedPageRank.this.type" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Number of iterations to run</p>
     </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a>
       <a id="ne(AnyRef):Boolean"></a>
@@ -520,7 +496,7 @@ aggResult.join(g.vertices, ID)</pre></div></div>
         <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#org.graphframes.lib.AggregateMessages@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+      <a href="../../../index.html#org.graphframes.lib.ParallelPersonalizedPageRank@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -537,7 +513,7 @@ aggResult.join(g.vertices, ID)</pre></div></div>
         <span class="name">notify</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#org.graphframes.lib.AggregateMessages@notify():Unit" title="Permalink" target="_top">
+      <a href="../../../index.html#org.graphframes.lib.ParallelPersonalizedPageRank@notify():Unit" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -554,79 +530,62 @@ aggResult.join(g.vertices, ID)</pre></div></div>
         <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#org.graphframes.lib.AggregateMessages@notifyAll():Unit" title="Permalink" target="_top">
+      <a href="../../../index.html#org.graphframes.lib.ParallelPersonalizedPageRank@notifyAll():Unit" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="org.graphframes.lib.AggregateMessages#sendToDst" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="sendToDst(value:String):AggregateMessages.this.type"></a>
-      <a id="sendToDst(String):AggregateMessages.this.type"></a>
+    </li><li name="org.graphframes.lib.ParallelPersonalizedPageRank#resetProbability" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="resetProbability(value:Double):ParallelPersonalizedPageRank.this.type"></a>
+      <a id="resetProbability(Double):ParallelPersonalizedPageRank.this.type"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">sendToDst</span><span class="params">(<span name="value">value: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.AggregateMessages">AggregateMessages</a>.this.type</span>
+        <span class="name">resetProbability</span><span class="params">(<span name="value">value: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Double" class="extype" target="_top">Double</a></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.ParallelPersonalizedPageRank">ParallelPersonalizedPageRank</a>.this.type</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#org.graphframes.lib.AggregateMessages@sendToDst(value:String):AggregateMessages.this.type" title="Permalink" target="_top">
+      <a href="../../../index.html#org.graphframes.lib.ParallelPersonalizedPageRank@resetProbability(value:Double):ParallelPersonalizedPageRank.this.type" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Send message to destination vertex, specifying SQL expression as a String</p>
-    </li><li name="org.graphframes.lib.AggregateMessages#sendToDst" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="sendToDst(value:org.apache.spark.sql.Column):AggregateMessages.this.type"></a>
-      <a id="sendToDst(Column):AggregateMessages.this.type"></a>
+      <p class="shortcomment cmt">Reset probability &quot;alpha&quot;</p>
+    </li><li name="org.graphframes.lib.ParallelPersonalizedPageRank#run" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="run():org.graphframes.GraphFrame"></a>
+      <a id="run():GraphFrame"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">sendToDst</span><span class="params">(<span name="value">value: <span class="extype" name="org.apache.spark.sql.Column">Column</span></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.AggregateMessages">AggregateMessages</a>.this.type</span>
+        <span class="name">run</span><span class="params">()</span><span class="result">: <a href="../GraphFrame.html" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#org.graphframes.lib.AggregateMessages@sendToDst(value:org.apache.spark.sql.Column):AggregateMessages.this.type" title="Permalink" target="_top">
+      <a href="../../../index.html#org.graphframes.lib.ParallelPersonalizedPageRank@run():org.graphframes.GraphFrame" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Send message to destination vertex</p>
-    </li><li name="org.graphframes.lib.AggregateMessages#sendToSrc" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="sendToSrc(value:String):AggregateMessages.this.type"></a>
-      <a id="sendToSrc(String):AggregateMessages.this.type"></a>
+      
+    </li><li name="org.graphframes.lib.ParallelPersonalizedPageRank#sourceIds" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="sourceIds(values:Array[Any]):ParallelPersonalizedPageRank.this.type"></a>
+      <a id="sourceIds(Array[Any]):ParallelPersonalizedPageRank.this.type"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">sendToSrc</span><span class="params">(<span name="value">value: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.AggregateMessages">AggregateMessages</a>.this.type</span>
+        <span class="name">sourceIds</span><span class="params">(<span name="values">values: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Array" class="extype" target="_top">Array</a>[<a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Any" class="extype" target="_top">Any</a>]</span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.ParallelPersonalizedPageRank">ParallelPersonalizedPageRank</a>.this.type</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#org.graphframes.lib.AggregateMessages@sendToSrc(value:String):AggregateMessages.this.type" title="Permalink" target="_top">
+      <a href="../../../index.html#org.graphframes.lib.ParallelPersonalizedPageRank@sourceIds(values:Array[Any]):ParallelPersonalizedPageRank.this.type" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Send message to source vertex, specifying SQL expression as a String</p>
-    </li><li name="org.graphframes.lib.AggregateMessages#sendToSrc" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="sendToSrc(value:org.apache.spark.sql.Column):AggregateMessages.this.type"></a>
-      <a id="sendToSrc(Column):AggregateMessages.this.type"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">sendToSrc</span><span class="params">(<span name="value">value: <span class="extype" name="org.apache.spark.sql.Column">Column</span></span>)</span><span class="result">: <a href="" class="extype" name="org.graphframes.lib.AggregateMessages">AggregateMessages</a>.this.type</span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../index.html#org.graphframes.lib.AggregateMessages@sendToSrc(value:org.apache.spark.sql.Column):AggregateMessages.this.type" title="Permalink" target="_top">
-        <img src="../../../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">Send message to source vertex</p>
+      <p class="shortcomment cmt">Source vertices for a Personalized Page Rank</p>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
       <a id="synchronized[T0](⇒T0):T0"></a>
@@ -639,7 +598,7 @@ aggResult.join(g.vertices, ID)</pre></div></div>
         <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#org.graphframes.lib.AggregateMessages@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
+      <a href="../../../index.html#org.graphframes.lib.ParallelPersonalizedPageRank@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -656,7 +615,7 @@ aggResult.join(g.vertices, ID)</pre></div></div>
         <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#org.graphframes.lib.AggregateMessages@toString():String" title="Permalink" target="_top">
+      <a href="../../../index.html#org.graphframes.lib.ParallelPersonalizedPageRank@toString():String" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -673,7 +632,7 @@ aggResult.join(g.vertices, ID)</pre></div></div>
         <span class="name">wait</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#org.graphframes.lib.AggregateMessages@wait():Unit" title="Permalink" target="_top">
+      <a href="../../../index.html#org.graphframes.lib.ParallelPersonalizedPageRank@wait():Unit" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -696,7 +655,7 @@ aggResult.join(g.vertices, ID)</pre></div></div>
         <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Long" class="extype" target="_top">Long</a></span>, <span name="arg1">arg1: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#org.graphframes.lib.AggregateMessages@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
+      <a href="../../../index.html#org.graphframes.lib.ParallelPersonalizedPageRank@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -719,7 +678,7 @@ aggResult.join(g.vertices, ID)</pre></div></div>
         <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Long" class="extype" target="_top">Long</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#org.graphframes.lib.AggregateMessages@wait(x$1:Long):Unit" title="Permalink" target="_top">
+      <a href="../../../index.html#org.graphframes.lib.ParallelPersonalizedPageRank@wait(x$1:Long):Unit" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -732,23 +691,23 @@ aggResult.join(g.vertices, ID)</pre></div></div>
         </dd></dl></div>
     </li><li name="scala.Predef.ArrowAssoc#→" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="→[B](y:B):(A,B)"></a>
-      <a id="→[B](B):(AggregateMessages,B)"></a>
+      <a id="→[B](B):(ParallelPersonalizedPageRank,B)"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span title="gt4s: $u2192" class="implicit">→</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="y">y: <span class="extype" name="scala.Predef.ArrowAssoc.→.B">B</span></span>)</span><span class="result">: (<a href="" class="extype" name="org.graphframes.lib.AggregateMessages">AggregateMessages</a>, <span class="extype" name="scala.Predef.ArrowAssoc.→.B">B</span>)</span>
+        <span title="gt4s: $u2192" class="implicit">→</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="y">y: <span class="extype" name="scala.Predef.ArrowAssoc.→.B">B</span></span>)</span><span class="result">: (<a href="" class="extype" name="org.graphframes.lib.ParallelPersonalizedPageRank">ParallelPersonalizedPageRank</a>, <span class="extype" name="scala.Predef.ArrowAssoc.→.B">B</span>)</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#org.graphframes.lib.AggregateMessages@→[B](y:B):(A,B)" title="Permalink" target="_top">
+      <a href="../../../index.html#org.graphframes.lib.ParallelPersonalizedPageRank@→[B](y:B):(A,B)" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit information</dt><dd>
-            This member is added by an implicit conversion from <a href="" class="extype" name="org.graphframes.lib.AggregateMessages">AggregateMessages</a> to
-            <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="" class="extype" name="org.graphframes.lib.AggregateMessages">AggregateMessages</a>] performed by method ArrowAssoc in scala.Predef.
+            This member is added by an implicit conversion from <a href="" class="extype" name="org.graphframes.lib.ParallelPersonalizedPageRank">ParallelPersonalizedPageRank</a> to
+            <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="" class="extype" name="org.graphframes.lib.ParallelPersonalizedPageRank">ParallelPersonalizedPageRank</a>] performed by method ArrowAssoc in scala.Predef.
             
           </dd><dt>Definition Classes</dt><dd>ArrowAssoc</dd></dl></div>
     </li></ol>
@@ -760,11 +719,7 @@ aggResult.join(g.vertices, ID)</pre></div></div>
         </div>
 
         <div id="inheritedMembers">
-        <div class="parent" name="scala.Serializable">
-              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></h3>
-            </div><div class="parent" name="java.io.Serializable">
-              <h3>Inherited from <span class="extype" name="java.io.Serializable">Serializable</span></h3>
-            </div><div class="parent" name="org.graphframes.lib.Arguments">
+        <div class="parent" name="org.graphframes.lib.Arguments">
               <h3>Inherited from <span class="extype" name="org.graphframes.lib.Arguments">Arguments</span></h3>
             </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></h3>
@@ -773,19 +728,19 @@ aggResult.join(g.vertices, ID)</pre></div></div>
             </div>
         <div class="conversion" name="scala.Predef.any2stringadd">
               <h3>Inherited by implicit conversion any2stringadd from
-                <a href="" class="extype" name="org.graphframes.lib.AggregateMessages">AggregateMessages</a> to <span class="extype" name="scala.Predef.any2stringadd">any2stringadd</span>[<a href="" class="extype" name="org.graphframes.lib.AggregateMessages">AggregateMessages</a>]
+                <a href="" class="extype" name="org.graphframes.lib.ParallelPersonalizedPageRank">ParallelPersonalizedPageRank</a> to <span class="extype" name="scala.Predef.any2stringadd">any2stringadd</span>[<a href="" class="extype" name="org.graphframes.lib.ParallelPersonalizedPageRank">ParallelPersonalizedPageRank</a>]
               </h3>
             </div><div class="conversion" name="scala.Predef.StringFormat">
               <h3>Inherited by implicit conversion StringFormat from
-                <a href="" class="extype" name="org.graphframes.lib.AggregateMessages">AggregateMessages</a> to <span class="extype" name="scala.Predef.StringFormat">StringFormat</span>[<a href="" class="extype" name="org.graphframes.lib.AggregateMessages">AggregateMessages</a>]
+                <a href="" class="extype" name="org.graphframes.lib.ParallelPersonalizedPageRank">ParallelPersonalizedPageRank</a> to <span class="extype" name="scala.Predef.StringFormat">StringFormat</span>[<a href="" class="extype" name="org.graphframes.lib.ParallelPersonalizedPageRank">ParallelPersonalizedPageRank</a>]
               </h3>
             </div><div class="conversion" name="scala.Predef.Ensuring">
               <h3>Inherited by implicit conversion Ensuring from
-                <a href="" class="extype" name="org.graphframes.lib.AggregateMessages">AggregateMessages</a> to <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="org.graphframes.lib.AggregateMessages">AggregateMessages</a>]
+                <a href="" class="extype" name="org.graphframes.lib.ParallelPersonalizedPageRank">ParallelPersonalizedPageRank</a> to <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="org.graphframes.lib.ParallelPersonalizedPageRank">ParallelPersonalizedPageRank</a>]
               </h3>
             </div><div class="conversion" name="scala.Predef.ArrowAssoc">
               <h3>Inherited by implicit conversion ArrowAssoc from
-                <a href="" class="extype" name="org.graphframes.lib.AggregateMessages">AggregateMessages</a> to <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="" class="extype" name="org.graphframes.lib.AggregateMessages">AggregateMessages</a>]
+                <a href="" class="extype" name="org.graphframes.lib.ParallelPersonalizedPageRank">ParallelPersonalizedPageRank</a> to <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="" class="extype" name="org.graphframes.lib.ParallelPersonalizedPageRank">ParallelPersonalizedPageRank</a>]
               </h3>
             </div>
         </div>

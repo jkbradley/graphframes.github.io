@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>graphframes.graphframe &#8212; pygraphframes 0.4.0 documentation</title>
+    <title>graphframes.graphframe &#8212; pygraphframes 0.5.0 documentation</title>
     
     <link rel="stylesheet" href="../../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '0.4.0',
+        VERSION:     '0.5.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -40,7 +40,7 @@
           <a href="../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
     
-        <li class="nav-item nav-item-0"><a href="../../index.html">pygraphframes 0.4.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">pygraphframes 0.5.0 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Module code</a> &#187;</li> 
       </ul>
@@ -69,8 +69,12 @@
 <span class="c1"># limitations under the License.</span>
 <span class="c1">#</span>
 
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version</span> <span class="o">&gt;</span> <span class="s1">&#39;3&#39;</span><span class="p">:</span>
+    <span class="n">basestring</span> <span class="o">=</span> <span class="nb">str</span>
+
 <span class="kn">from</span> <span class="nn">pyspark</span> <span class="k">import</span> <span class="n">SparkContext</span>
-<span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="k">import</span> <span class="n">DataFrame</span><span class="p">,</span> <span class="n">SQLContext</span>
+<span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="k">import</span> <span class="n">Column</span><span class="p">,</span> <span class="n">DataFrame</span><span class="p">,</span> <span class="n">SQLContext</span>
 <span class="kn">from</span> <span class="nn">pyspark.storagelevel</span> <span class="k">import</span> <span class="n">StorageLevel</span>
 
 <span class="k">def</span> <span class="nf">_from_java_gf</span><span class="p">(</span><span class="n">jgf</span><span class="p">,</span> <span class="n">sqlContext</span><span class="p">):</span>
@@ -114,22 +118,27 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_sc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sqlContext</span><span class="o">.</span><span class="n">_sc</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_sc</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">org</span><span class="o">.</span><span class="n">apache</span><span class="o">.</span><span class="n">spark</span><span class="o">.</span><span class="n">ml</span><span class="o">.</span><span class="n">feature</span><span class="o">.</span><span class="n">Tokenizer</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_jvm_gf_api</span> <span class="o">=</span> <span class="n">_java_api</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_sc</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_jvm_graph</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jvm_gf_api</span><span class="o">.</span><span class="n">createGraph</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">_jdf</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">_jdf</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">ID</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jvm_gf_api</span><span class="o">.</span><span class="n">ID</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">SRC</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jvm_gf_api</span><span class="o">.</span><span class="n">SRC</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">DST</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jvm_gf_api</span><span class="o">.</span><span class="n">DST</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_ATTR</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jvm_gf_api</span><span class="o">.</span><span class="n">ATTR</span><span class="p">()</span>
 
-        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">ID</span> <span class="ow">in</span> <span class="n">v</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span>\
-            <span class="s2">&quot;Vertex ID column &#39;</span><span class="si">%s</span><span class="s2">&#39; missing from vertex DataFrame, which has columns: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span>\
-            <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ID</span><span class="p">,</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">columns</span><span class="p">))</span>
-        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">SRC</span> <span class="ow">in</span> <span class="n">e</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span>\
-            <span class="s2">&quot;Source vertex ID column &#39;</span><span class="si">%s</span><span class="s2">&#39; missing from edge DataFrame, which has columns: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span>\
-            <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">SRC</span><span class="p">,</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">columns</span><span class="p">))</span>
-        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">DST</span> <span class="ow">in</span> <span class="n">e</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span>\
-            <span class="s2">&quot;Destination vertex ID column &#39;</span><span class="si">%s</span><span class="s2">&#39; missing from edge DataFrame, which has columns: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="o">%</span>\
-            <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">DST</span><span class="p">,</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">columns</span><span class="p">))</span>
+        <span class="c1"># Check that provided DataFrames contain required columns</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ID</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">v</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;Vertex ID column </span><span class="si">{}</span><span class="s2"> missing from vertex DataFrame, which has columns: </span><span class="si">{}</span><span class="s2">&quot;</span>
+                <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ID</span><span class="p">,</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">columns</span><span class="p">)))</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">SRC</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">e</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;Source vertex ID column </span><span class="si">{}</span><span class="s2"> missing from edge DataFrame, which has columns: </span><span class="si">{}</span><span class="s2">&quot;</span>
+                <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">SRC</span><span class="p">,</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">columns</span><span class="p">)))</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">DST</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">e</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;Destination vertex ID column </span><span class="si">{}</span><span class="s2"> missing from edge DataFrame, which has columns: </span><span class="si">{}</span><span class="s2">&quot;</span>
+                <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">DST</span><span class="p">,</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">columns</span><span class="p">)))</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_jvm_graph</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jvm_gf_api</span><span class="o">.</span><span class="n">createGraph</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">_jdf</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">_jdf</span><span class="p">)</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">vertices</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -219,7 +228,7 @@
     <span class="k">def</span> <span class="nf">triplets</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        The triplets (source vertex)-[edge]-&gt;(destination vertex) for all edges in the graph.</span>
-<span class="sd">        </span>
+
 <span class="sd">        Returned as a :class:`DataFrame` with three columns:</span>
 <span class="sd">         - &quot;src&quot;: source vertex with schema matching &#39;vertices&#39;</span>
 <span class="sd">         - &quot;edge&quot;: edge with schema matching &#39;edges&#39;</span>
@@ -257,6 +266,48 @@
         <span class="k">if</span> <span class="n">edgeFilter</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">builder</span><span class="o">.</span><span class="n">edgeFilter</span><span class="p">(</span><span class="n">edgeFilter</span><span class="p">)</span>
         <span class="n">jdf</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">DataFrame</span><span class="p">(</span><span class="n">jdf</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sqlContext</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GraphFrame.aggregateMessages"><a class="viewcode-back" href="../../graphframes.html#graphframes.GraphFrame.aggregateMessages">[docs]</a>    <span class="k">def</span> <span class="nf">aggregateMessages</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">aggCol</span><span class="p">,</span> <span class="n">sendToSrc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sendToDst</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Aggregates messages from the neighbours.</span>
+
+<span class="sd">        When specifying the messages and aggregation function, the user may reference columns using</span>
+<span class="sd">        the static methods in :class:`graphframes.lib.AggregateMessages`.</span>
+
+<span class="sd">        See Scala documentation for more details.</span>
+
+<span class="sd">        :param aggCol: the requested aggregation output either as</span>
+<span class="sd">            :class:`pyspark.sql.Column` or SQL expression string</span>
+<span class="sd">        :param sendToSrc: message sent to the source vertex of each triplet either as</span>
+<span class="sd">            :class:`pyspark.sql.Column` or SQL expression string (default: None)</span>
+<span class="sd">        :param sendToDst: message sent to the destination vertex of each triplet either as</span>
+<span class="sd">            :class:`pyspark.sql.Column` or SQL expression string (default: None)</span>
+
+<span class="sd">        :return: DataFrame with columns for the vertex ID and the resulting aggregated message</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Check that either sendToSrc, sendToDst, or both are provided</span>
+        <span class="k">if</span> <span class="n">sendToSrc</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">sendToDst</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Either `sendToSrc`, `sendToDst`, or both have to be provided&quot;</span><span class="p">)</span>
+        <span class="n">builder</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jvm_graph</span><span class="o">.</span><span class="n">aggregateMessages</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">sendToSrc</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">sendToSrc</span><span class="p">,</span> <span class="n">Column</span><span class="p">):</span>
+                <span class="n">builder</span><span class="o">.</span><span class="n">sendToSrc</span><span class="p">(</span><span class="n">sendToSrc</span><span class="o">.</span><span class="n">_jc</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">sendToSrc</span><span class="p">,</span> <span class="n">basestring</span><span class="p">):</span>
+                <span class="n">builder</span><span class="o">.</span><span class="n">sendToSrc</span><span class="p">(</span><span class="n">sendToSrc</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Provide message either as `Column` or `str`&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">sendToDst</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">sendToDst</span><span class="p">,</span> <span class="n">Column</span><span class="p">):</span>
+                <span class="n">builder</span><span class="o">.</span><span class="n">sendToDst</span><span class="p">(</span><span class="n">sendToDst</span><span class="o">.</span><span class="n">_jc</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">sendToDst</span><span class="p">,</span> <span class="n">basestring</span><span class="p">):</span>
+                <span class="n">builder</span><span class="o">.</span><span class="n">sendToDst</span><span class="p">(</span><span class="n">sendToDst</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Provide message either as `Column` or `str`&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">aggCol</span><span class="p">,</span> <span class="n">Column</span><span class="p">):</span>
+            <span class="n">jdf</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">aggCol</span><span class="o">.</span><span class="n">_jc</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">jdf</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">aggCol</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">DataFrame</span><span class="p">(</span><span class="n">jdf</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sqlContext</span><span class="p">)</span></div>
 
     <span class="c1"># Standard algorithms</span>
@@ -423,7 +474,7 @@
           <a href="../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
     
-        <li class="nav-item nav-item-0"><a href="../../index.html">pygraphframes 0.4.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">pygraphframes 0.5.0 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../index.html" >Module code</a> &#187;</li> 
       </ul>

@@ -6,9 +6,9 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>User Guide - GraphFrames 0.4.0 Documentation</title>
+        <title>User Guide - GraphFrames 0.5.0 Documentation</title>
         
-          <meta name="description" content="GraphFrames 0.4.0 user guide">
+          <meta name="description" content="GraphFrames 0.5.0 user guide">
         
 
         
@@ -29,19 +29,6 @@
         <link rel="stylesheet" href="css/pygments-default.css">
 
         
-        <!-- Google analytics script -->
-        <script type="text/javascript">
-          var _gaq = _gaq || [];
-          _gaq.push(['_setAccount', 'UA-32518208-2']);
-          _gaq.push(['_trackPageview']);
-
-          (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-          })();
-        </script>
-        
 
     </head>
     <body>
@@ -55,7 +42,7 @@
             <div class="navbar-inner">
                 <div class="container">
                     <div class="brand"><a href="index.html">
-                      GraphFrames</a><span class="version">0.4.0</span>
+                      GraphFrames</a><span class="version">0.5.0</span>
                     </div>
                     <ul class="nav">
                         <li><a href="index.html">Overview</a></li>
@@ -76,7 +63,7 @@
                             </ul>
                         </li>
                     </ul>
-                    <!--<p class="navbar-text pull-right"><span class="version-text">v0.4.0</span></p>-->
+                    <!--<p class="navbar-text pull-right"><span class="version-text">v0.5.0</span></p>-->
                 </div>
             </div>
         </div>
@@ -962,14 +949,36 @@ of adjacent users.</p>
   <span class="o">.</span><span class="n">agg</span><span class="o">(</span><span class="n">sum</span><span class="o">(</span><span class="nc">AM</span><span class="o">.</span><span class="n">msg</span><span class="o">).</span><span class="n">as</span><span class="o">(</span><span class="s">&quot;summedAges&quot;</span><span class="o">))</span>  <span class="c1">// sum up ages, stored in AM.msg column</span>
 <span class="n">agg</span><span class="o">.</span><span class="n">show</span><span class="o">()</span></code></pre></figure>
 
+    <p>For a more complex example, look at the code used to implement the
+<a href="api/scala/index.html#org.graphframes.examples.BeliefPropagation$">Belief Propagation example</a>.</p>
+
+  </div>
+
+<div data-lang="python">
+
+    <p>For API details, refer to the
+<a href="api/python/graphframes.html#graphframes.GraphFrame.aggregateMessages">API docs</a>.</p>
+
+    <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">pyspark.sql.functions</span> <span class="kn">import</span> <span class="nb">sum</span> <span class="k">as</span> <span class="n">sqlsum</span>
+<span class="kn">from</span> <span class="nn">graphframes.lib</span> <span class="kn">import</span> <span class="n">AggregateMessages</span> <span class="k">as</span> <span class="n">AM</span>
+<span class="kn">from</span> <span class="nn">graphframes.examples</span> <span class="kn">import</span> <span class="n">Graphs</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">Graphs</span><span class="p">(</span><span class="n">sqlContext</span><span class="p">)</span><span class="o">.</span><span class="n">friends</span><span class="p">()</span>  <span class="c"># Get example graph</span>
+
+<span class="c"># For each user, sum the ages of the adjacent users.</span>
+<span class="n">msgToSrc</span> <span class="o">=</span> <span class="n">AM</span><span class="o">.</span><span class="n">dst</span><span class="p">[</span><span class="s">&quot;age&quot;</span><span class="p">]</span>
+<span class="n">msgToDst</span> <span class="o">=</span> <span class="n">AM</span><span class="o">.</span><span class="n">src</span><span class="p">[</span><span class="s">&quot;age&quot;</span><span class="p">]</span>
+<span class="n">agg</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">aggregateMessages</span><span class="p">(</span>
+    <span class="n">sqlsum</span><span class="p">(</span><span class="n">AM</span><span class="o">.</span><span class="n">msg</span><span class="p">)</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s">&quot;summedAges&quot;</span><span class="p">),</span>
+    <span class="n">sendToSrc</span><span class="o">=</span><span class="n">msgToSrc</span><span class="p">,</span>
+    <span class="n">sendToDst</span><span class="o">=</span><span class="n">msgToDst</span><span class="p">)</span>
+<span class="n">agg</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></code></pre></figure>
+
+    <p>For a more complex example, look at the code used to implement the
+<a href="api/python/graphframes.examples.html#graphframes.examples.BeliefPropagation">Belief Propagation example</a>.</p>
+
   </div>
 
 </div>
-
-<p><code>AggregateMessages</code> does not yet have a Python API, but we expect to add one in the future.</p>
-
-<p>For a more complex example, look at the code used to implement the
-<a href="api/scala/index.html#org.graphframes.examples.BeliefPropagation$">Belief Propagation example</a>.</p>
 
 <h1 id="graphx-graphframe-conversions">GraphX-GraphFrame conversions</h1>
 

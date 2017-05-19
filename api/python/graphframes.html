@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>graphframes package &#8212; pygraphframes 0.4.0 documentation</title>
+    <title>graphframes package &#8212; pygraphframes 0.5.0 documentation</title>
     
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.4.0',
+        VERSION:     '0.5.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -48,7 +48,7 @@
           <a href="index.html" title="Welcome to the GraphFrames Python API docs!"
              accesskey="P">previous</a> |</li>
     
-        <li class="nav-item nav-item-0"><a href="index.html">pygraphframes 0.4.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pygraphframes 0.5.0 documentation</a> &#187;</li>
  
       </ul>
     </div>  
@@ -65,6 +65,7 @@
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="graphframes.examples.html">graphframes.examples package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graphframes.lib.html">graphframes.lib package</a></li>
 </ul>
 </div>
 </div>
@@ -97,6 +98,34 @@ vertex IDs and destination vertex IDs of edges, respectively.</li>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">g</span> <span class="o">=</span> <span class="n">GraphFrame</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
 </pre></div>
 </div>
+<dl class="method">
+<dt id="graphframes.GraphFrame.aggregateMessages">
+<code class="descname">aggregateMessages</code><span class="sig-paren">(</span><em>aggCol</em>, <em>sendToSrc=None</em>, <em>sendToDst=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/graphframes/graphframe.html#GraphFrame.aggregateMessages"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphframes.GraphFrame.aggregateMessages" title="Permalink to this definition">¶</a></dt>
+<dd><p>Aggregates messages from the neighbours.</p>
+<p>When specifying the messages and aggregation function, the user may reference columns using
+the static methods in <a class="reference internal" href="graphframes.lib.html#graphframes.lib.AggregateMessages" title="graphframes.lib.AggregateMessages"><code class="xref py py-class docutils literal"><span class="pre">graphframes.lib.AggregateMessages</span></code></a>.</p>
+<p>See Scala documentation for more details.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>aggCol</strong> &#8211; the requested aggregation output either as
+<code class="xref py py-class docutils literal"><span class="pre">pyspark.sql.Column</span></code> or SQL expression string</li>
+<li><strong>sendToSrc</strong> &#8211; message sent to the source vertex of each triplet either as
+<code class="xref py py-class docutils literal"><span class="pre">pyspark.sql.Column</span></code> or SQL expression string (default: None)</li>
+<li><strong>sendToDst</strong> &#8211; message sent to the destination vertex of each triplet either as
+<code class="xref py py-class docutils literal"><span class="pre">pyspark.sql.Column</span></code> or SQL expression string (default: None)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">DataFrame with columns for the vertex ID and the resulting aggregated message</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 <dl class="method">
 <dt id="graphframes.GraphFrame.bfs">
 <code class="descname">bfs</code><span class="sig-paren">(</span><em>fromExpr</em>, <em>toExpr</em>, <em>edgeFilter=None</em>, <em>maxPathLength=10</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/graphframes/graphframe.html#GraphFrame.bfs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphframes.GraphFrame.bfs" title="Permalink to this definition">¶</a></dt>
@@ -450,7 +479,7 @@ for vertex IDs.</p>
           <a href="index.html" title="Welcome to the GraphFrames Python API docs!"
              >previous</a> |</li>
     
-        <li class="nav-item nav-item-0"><a href="index.html">pygraphframes 0.4.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pygraphframes 0.5.0 documentation</a> &#187;</li>
  
       </ul>
     </div>

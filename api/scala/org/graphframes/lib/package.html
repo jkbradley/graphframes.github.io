@@ -217,6 +217,39 @@ neighbors which link to <code>i</code> and <code>outDeg[j]</code> is the out deg
 inlinks will have a PageRank of alpha. In particular, the pageranks may have some values
 greater than 1.</p><p>The resulting vertices DataFrame contains one additional column:</p><ul><li>pagerank (<code>DoubleType</code>): the pagerank of this vertex</li></ul><p>The resulting edges DataFrame contains one additional column:</p><ul><li>weight (<code>DoubleType</code>): the normalized weight of this edge after running PageRank
 </li></ul></div></div>
+    </li><li name="org.graphframes.lib.ParallelPersonalizedPageRank" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ParallelPersonalizedPageRankextendsArguments"></a>
+      <a id="ParallelPersonalizedPageRank:ParallelPersonalizedPageRank"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ParallelPersonalizedPageRank.html"><span class="name">ParallelPersonalizedPageRank</span></a><span class="result"> extends <span class="extype" name="org.graphframes.lib.Arguments">Arguments</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.graphframes.lib.package@ParallelPersonalizedPageRankextendsArguments" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Parallel Personalized PageRank algorithm implementation.</p><div class="fullcomment"><div class="comment cmt"><p>Parallel Personalized PageRank algorithm implementation.</p><p>This implementation uses the standalone <a href="../GraphFrame.html" class="extype" name="org.graphframes.GraphFrame">GraphFrame</a> interface and
+runs personalized PageRank in parallel for a fixed number of iterations.
+This can be run by setting <code>maxIter</code>.
+The source vertex Ids are set in <code>sourceIds</code>.
+A simple local implementation of this algorithm is as follows.</p><pre><span class="kw">var</span> oldPR = <span class="std">Array</span>.fill(n)( <span class="num">1.0</span> )
+<span class="kw">val</span> PR = (<span class="num">0</span> until n).map(i <span class="kw">=&gt;</span> <span class="kw">if</span> sourceIds.contains(i) alpha <span class="kw">else</span> <span class="num">0.0</span>)
+<span class="kw">for</span>( iter <span class="kw">&lt;-</span> <span class="num">0</span> until maxIter ) {
+  swap(oldPR, PR)
+  <span class="kw">for</span>( i <span class="kw">&lt;-</span> <span class="num">0</span> until n ) {
+    PR[i] = (<span class="num">1</span> - alpha) * inNbrs[i].map(j <span class="kw">=&gt;</span> oldPR[j] / outDeg[j]).sum
+    <span class="kw">if</span> (sourceIds.contains(i)) PR[i] += alpha
+  }
+}</pre><p><code>alpha</code> is the random reset probability (typically 0.15), <code>inNbrs[i]</code> is the set of
+neighbors which link to <code>i</code> and <code>outDeg[j]</code> is the out degree of vertex <code>j</code>.</p><p>Note that this is not the &quot;normalized&quot; PageRank and as a consequence pages that have no
+inlinks will have a PageRank of alpha. In particular, the pageranks may have some values
+greater than 1.</p><p>The resulting vertices DataFrame contains one additional column:</p><ul><li>pageranks (<code>VectorType</code>): the pageranks of this vertex from all input source vertices</li></ul><p>The resulting edges DataFrame contains one additional column:</p><ul><li>weight (<code>DoubleType</code>): the normalized weight of this edge after running PageRank
+</li></ul></div></div>
     </li><li name="org.graphframes.lib.SVDPlusPlus" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="SVDPlusPlusextendsArguments"></a>
       <a id="SVDPlusPlus:SVDPlusPlus"></a>

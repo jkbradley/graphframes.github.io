@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>graphframes.examples package &#8212; pygraphframes 0.4.0 documentation</title>
+    <title>graphframes.examples package &#8212; pygraphframes 0.5.0 documentation</title>
     
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.4.0',
+        VERSION:     '0.5.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -28,6 +28,7 @@
     <script type="text/javascript" src="_static/pygraphframes.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="graphframes.lib package" href="graphframes.lib.html" />
     <link rel="prev" title="graphframes package" href="graphframes.html" /> 
   </head>
   <body role="document">
@@ -41,10 +42,13 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
+          <a href="graphframes.lib.html" title="graphframes.lib package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
           <a href="graphframes.html" title="graphframes package"
              accesskey="P">previous</a> |</li>
     
-        <li class="nav-item nav-item-0"><a href="index.html">pygraphframes 0.4.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pygraphframes 0.5.0 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="graphframes.html" accesskey="U">graphframes package</a> &#187;</li> 
       </ul>
@@ -60,13 +64,96 @@
 <div class="section" id="module-graphframes.examples">
 <span id="example-graphs-and-code"></span><h2>Example Graphs and Code<a class="headerlink" href="#module-graphframes.examples" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
+<dt id="graphframes.examples.BeliefPropagation">
+<em class="property">class </em><code class="descclassname">graphframes.examples.</code><code class="descname">BeliefPropagation</code><a class="reference internal" href="_modules/graphframes/examples/belief_propagation.html#BeliefPropagation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphframes.examples.BeliefPropagation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Example code for Belief Propagation (BP)</p>
+<p>This provides a template for building customized BP algorithms for different types of graphical
+models.</p>
+<p>This example:</p>
+<ul class="simple">
+<li>Ising model on a grid</li>
+<li>Parallel Belief Propagation using colored fields</li>
+</ul>
+<p>Ising models are probabilistic graphical models over binary variables
+(see <a class="reference internal" href="#graphframes.examples.Graphs.gridIsingModel" title="graphframes.examples.Graphs.gridIsingModel"><code class="xref py py-meth docutils literal"><span class="pre">Graphs.gridIsingModel()</span></code></a>).</p>
+<p>Belief Propagation (BP) provides marginal probabilities of the values of the variables
+x<sub>i</sub> i.e., P(x<sub>i</sub>) for each i.  This allows a user to understand likely values of
+variables. See <a class="reference external" href="https://en.wikipedia.org/wiki/Belief_propagation">Wikipedia</a> for more
+information on BP.</p>
+<p>We use a batch synchronous BP algorithm, where batches of vertices are updated synchronously.
+We follow the mean field update algorithm in Slide 13 of the
+<a class="reference external" href="http://www.eecs.berkeley.edu/~wainwrig/Talks/A_GraphModel_Tutorial">talk slides</a> from:
+Wainwright. &#8220;Graphical models, message-passing algorithms, and convex optimization.&#8221;</p>
+<p>The batches are chosen according to a coloring. For background on graph colorings for
+inference, see for example: Gonzalez et al. &#8220;Parallel Gibbs Sampling: From Colored Fields to
+Thin Junction Trees.&#8221; AISTATS, 2011.</p>
+<p>The BP algorithm works by:</p>
+<ul class="simple">
+<li>Coloring the graph by assigning a color to each vertex such that no neighboring vertices
+share the same color.</li>
+<li>In each step of BP, update all vertices of a single color.  Alternate colors.</li>
+</ul>
+<dl class="classmethod">
+<dt id="graphframes.examples.BeliefPropagation.runBPwithGraphFrames">
+<em class="property">classmethod </em><code class="descname">runBPwithGraphFrames</code><span class="sig-paren">(</span><em>g</em>, <em>numIter</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/graphframes/examples/belief_propagation.html#BeliefPropagation.runBPwithGraphFrames"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphframes.examples.BeliefPropagation.runBPwithGraphFrames" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run Belief Propagation using GraphFrame.</p>
+<p>This implementation of BP shows how to use GraphFrame&#8217;s aggregateMessages method.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
 <dt id="graphframes.examples.Graphs">
-<em class="property">class </em><code class="descclassname">graphframes.examples.</code><code class="descname">Graphs</code><span class="sig-paren">(</span><em>sqlContext</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/graphframes/examples.html#Graphs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphframes.examples.Graphs" title="Permalink to this definition">¶</a></dt>
-<dd><p>Example GraphFrames</p>
+<em class="property">class </em><code class="descclassname">graphframes.examples.</code><code class="descname">Graphs</code><span class="sig-paren">(</span><em>sqlContext</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/graphframes/examples/graphs.html#Graphs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphframes.examples.Graphs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Example GraphFrames for testing the API</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>sqlContext</strong> &#8211; SQLContext</td>
+</tr>
+</tbody>
+</table>
 <dl class="method">
 <dt id="graphframes.examples.Graphs.friends">
-<code class="descname">friends</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/graphframes/examples.html#Graphs.friends"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphframes.examples.Graphs.friends" title="Permalink to this definition">¶</a></dt>
+<code class="descname">friends</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/graphframes/examples/graphs.html#Graphs.friends"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphframes.examples.Graphs.friends" title="Permalink to this definition">¶</a></dt>
 <dd><p>A GraphFrame of friends in a (fake) social network.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="graphframes.examples.Graphs.gridIsingModel">
+<code class="descname">gridIsingModel</code><span class="sig-paren">(</span><em>n</em>, <em>vStd=1.0</em>, <em>eStd=1.0</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/graphframes/examples/graphs.html#Graphs.gridIsingModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#graphframes.examples.Graphs.gridIsingModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Grid Ising model with random parameters.</p>
+<p>Ising models are probabilistic graphical models over binary variables x<sub>i</sub>.
+Each binary variable x<sub>i</sub> corresponds to one vertex, and it may take values -1 or +1.
+The probability distribution P(X) (over all x<sub>i</sub>) is parameterized by vertex factors
+a<sub>i</sub> and edge factors b<sub>ij</sub>:</p>
+<blockquote>
+<div>P(X) = (1/Z) * exp[ sum_i a_i x_i + sum_{ij} b_{ij} x_i x_j ]</div></blockquote>
+<p>where Z is the normalization constant (partition function). See <a class="reference external" href="https://en.wikipedia.org/wiki/Ising_model">Wikipedia</a> for more information on Ising models.</p>
+<p>Each vertex is parameterized by a single scalar a<sub>i</sub>.
+Each edge is parameterized by a single scalar b<sub>ij</sub>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>n</strong> &#8211; Length of one side of the grid.  The grid will be of size n x n.</li>
+<li><strong>vStd</strong> &#8211; Standard deviation of normal distribution used to generate vertex factors &#8220;a&#8221;.
+Default of 1.0.</li>
+<li><strong>eStd</strong> &#8211; Standard deviation of normal distribution used to generate edge factors &#8220;b&#8221;.
+Default of 1.0.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">GraphFrame. Vertices have columns &#8220;id&#8221; and &#8220;a&#8221;. Edges have columns &#8220;src&#8221;, &#8220;dst&#8221;,
+and &#8220;b&#8221;.  Edges are directed, but they should be treated as undirected in any algorithms
+run on this model. Vertex IDs are of the form &#8220;i,j&#8221;.  E.g., vertex &#8220;1,3&#8221; is in the
+second row and fourth column of the grid.</p>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
@@ -91,6 +178,9 @@
   <h4>Previous topic</h4>
   <p class="topless"><a href="graphframes.html"
                         title="previous chapter">graphframes package</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="graphframes.lib.html"
+                        title="next chapter">graphframes.lib package</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -122,10 +212,13 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
+          <a href="graphframes.lib.html" title="graphframes.lib package"
+             >next</a> |</li>
+        <li class="right" >
           <a href="graphframes.html" title="graphframes package"
              >previous</a> |</li>
     
-        <li class="nav-item nav-item-0"><a href="index.html">pygraphframes 0.4.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pygraphframes 0.5.0 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="graphframes.html" >graphframes package</a> &#187;</li> 
       </ul>
